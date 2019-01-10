@@ -1,8 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ include file="/WEB-INF/views/common/public2.jsp" %>
-<c:set var="root" value="${pageContext.request.contextPath}" />
+<%@ include file="/WEB-INF/views/common/public.jsp" %>
 
     <style>
       * {
@@ -222,15 +220,8 @@
 	
 </script>
 
-    <!-- IE8 에서 HTML5 요소와 미디어 쿼리를 위한 HTML5 shim 와 Respond.js -->
-    <!-- WARNING: Respond.js 는 당신이 file:// 을 통해 페이지를 볼 때는 동작하지 않습니다. -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
   </head>
   <body>
-   <%@ include file="/WEB-INF/views/common/headerSub.jsp"%>
    <form name="join" method="post" action="${root}/member/join" id="join-form" method="post" onsubmit="return check()">
     <div align="center">
     <ul class="list-group" >
