@@ -9,7 +9,6 @@ package com.bitcamp.artgo.board.model;
 
 public class NoticeDto extends BoardDto {
   private int noticeNo;
-  private int importantType;
   
   public int getNoticeNo() {
     return noticeNo;
@@ -17,12 +16,5 @@ public class NoticeDto extends BoardDto {
   public void setNoticeNo(int noticeNo) {
     this.noticeNo = noticeNo;
   }
-  public int getImportantType() {
-    return importantType;
-  }
-  public void setImportantType(int importantType) {
-    this.importantType = importantType;
-  }
-  
   
 }

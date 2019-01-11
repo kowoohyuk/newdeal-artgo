@@ -9,11 +9,10 @@ package com.bitcamp.artgo.board.model;
 
 public class ReviewDto {
   private int reviewNo;
-  private int score;
   private int comment;
+  private int score;
   private int status;
   private int exhibitionNo;
-  private int writerId;
   private int memberNo;
   
   public int getReviewNo() {
@@ -58,11 +57,4 @@ public class ReviewDto {
   public void setStatus(int status) {
     this.status = status;
   }
-  public int getWriterId() {
-    return writerId;
-  }
-  public void setWriterId(int writerId) {
-    this.writerId = writerId;
-  }
-  
 }

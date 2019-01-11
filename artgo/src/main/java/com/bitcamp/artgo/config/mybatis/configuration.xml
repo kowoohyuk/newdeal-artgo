@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- dtd(Document Type Definition = 문서 형식 정의) 설정 mybatis.org -> product -> 
+	mybatis3 / doc -> Getting started -> -->
+
+<!-- 닥타입 뒤에는 루트 엘리먼트가 나와야한다. -->
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	<typeAliases>
+		<typeAlias alias="memberDto" type="com.bitcamp.artgo.member.model.MemberDto"/>
+		<typeAlias alias="favoriteDto" type="com.bitcamp.artgo.member.model.FavoriteDto"/>
+		<typeAlias alias="boardDto" type="com.bitcamp.artgo.board.model.BoardDto"/>
+		<typeAlias alias="noticeDto" type="com.bitcamp.artgo.board.model.NoticeDto"/>
+		<typeAlias alias="exhibitionDto" type="com.bitcamp.artgo.board.model.ExhibitionDto"/>
+		<typeAlias alias="reviewDto" type="com.bitcamp.artgo.board.model.ReviewDto"/>
+		<typeAlias alias="fileDto" type="com.bitcamp.artgo.board.model.FileDto"/>
+		<typeAlias alias="boardDto" type="com.bitcamp.artgo.board.model.BoardDto"/>
+	</typeAliases>
+</configuration>

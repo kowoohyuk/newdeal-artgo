@@ -17,12 +17,12 @@
 @import url(css/font-awesome.min.css);
 @font-face {
   font-family: 'helveticaneuebold';
-  src: url("/artgo/fonts/helvetica_neu_bold-webfont.woff2") format("woff2"), url("/artgo/fonts/helvetica_neu_bold-webfont.woff") format("woff");
+  src: url("fonts/helvetica_neu_bold-webfont.woff2") format("woff2"), url("fonts/helvetica_neu_bold-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal; }
 @font-face {
   font-family: 'helveticaneuemedium';
-  src: url("/artgo/fonts/helveticaneue_medium-webfont.woff2") format("woff2"), url("/artgo/fonts/helveticaneue_medium-webfont.woff") format("woff");
+  src: url("fonts/helveticaneue_medium-webfont.woff2") format("woff2"), url("fonts/helveticaneue_medium-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal; }
 /* :: Import All CSS */
@@ -467,16 +467,16 @@ img {
   .hero-slides .single-hero-slide {
     position: relative;
     z-index: 1;
-    height: 670px; }
+    height: 400px; }
     @media only screen and (min-width: 992px) and (max-width: 1199px) {
       .hero-slides .single-hero-slide {
-        height: 500px; } }
+        height: 400px; } }
     @media only screen and (min-width: 768px) and (max-width: 991px) {
       .hero-slides .single-hero-slide {
-        height: 450px; } }
+        height: 360px; } }
     @media only screen and (max-width: 767px) {
       .hero-slides .single-hero-slide {
-        height: 250px; } }
+        height: 200px; } }
     .hero-slides .single-hero-slide .slide-content {
       display: none; }
       .hero-slides .single-hero-slide .slide-content .post-tag {

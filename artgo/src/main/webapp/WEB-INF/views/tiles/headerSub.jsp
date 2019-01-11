@@ -33,7 +33,7 @@ a{color:black;}
 		<div class="logo-area text-center">
 				<div class="row h-100 align-items-center">
 					<div class="col-12" id="logo">
-						<a href="main.jsp" class="original-logo">
+						<a href="/testPage.do" class="original-logo">
 						<img src="/resources/img/core-img/logo.png" alt=""></a>
 					</div>
 				</div>

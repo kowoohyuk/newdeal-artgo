@@ -13,8 +13,6 @@ public class ExhibitionDto extends BoardDto {
   private int normalPrice;
   private String startDate;
   private String endDate;
-  private int genreNo;
-  private int areaNo;
   
   public int getExhibitionNo() {
     return exhibitionNo;
@@ -46,17 +44,6 @@ public class ExhibitionDto extends BoardDto {
   public void setEndDate(String endDate) {
     this.endDate = endDate;
   }
-  public int getGenreNo() {
-    return genreNo;
-  }
-  public void setGenreNo(int genreNo) {
-    this.genreNo = genreNo;
-  }
-  public int getAreaNo() {
-    return areaNo;
-  }
-  public void setAreaNo(int areaNo) {
-    this.areaNo = areaNo;
-  }
+
   
 }

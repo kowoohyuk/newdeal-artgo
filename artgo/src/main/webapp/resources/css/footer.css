@@ -1,11 +1,347 @@
-@charset "UTF-8";
+@charset "utf-8";
 
-#border{
-	height: auto; width: 100%; border-top:1px solid #555555; margin-top: 40px; 
-	
+html,body{height:100%}
+body,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,th,td,form,fieldset,legend,input,textarea,button,select{margin:0;padding:0}
+body,input,textarea,select,button,table,p,div{font-family:'돋움',dotum,sans-serif;font-size:12px;color:#444}
+img,fieldset,iframe,button{border:0}
+button::-moz-focus-inner{padding:0;border:0}
+ul,ol{list-style:none}
+em,address{font-style:normal}
+input,select,button,img,textarea{vertical-align:middle}
+a{color:#444;text-decoration:none}
+a:hover{text-decoration:none}
+hr{display:none}
+table{table-layout:fixed;padding:0;border-spacing:0px;border:0;border-collapse:collapse}
+th,td{padding:0px}
+caption{visibility:hidden;overflow:hidden;width:0;height:0;font-size:0;line-height:0}
+
+
+  #scrollUp:hover {
+    color: #30336b;
+    border-color: #30336b; }
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+    #scrollUp {
+      bottom: 30px;
+      right: 30px; } }
+  @media only screen and (max-width: 767px) {
+    #scrollUp {
+      bottom: 30px;
+      right: 30px; } }
+
+        @media only screen and (min-width: 768px) and (max-width: 991px) {
+          .header-area .top-header .top-social-area a {
+            padding: 5px 7px; } }
+        @media only screen and (max-width: 767px) {
+          .header-area .top-header .top-social-area a {
+            padding: 5px 7px; } }
+        @media only screen and (min-width: 576px) and (max-width: 767px) {
+          .header-area .top-header .top-social-area a {
+            padding: 5px 4px; } }
+
+
+/* footer */
+
+.open_spot .maintop_right .movie_tit button span, .maintop_new .header a.more,
+	.tbl04 th span, #footer .co_info a.co_check, #top_banner .close, h1,
+	#header .notice .more, #header .search_area .logo, #header .search .btn_search,
+	#header .menu li em, .ribbon, .sport_ban li .today, #footer strong,
+	#back_to_top, .ui-datepicker .ui-datepicker-header a, .social li a span,
+	.layer a.close, .radio, .checkbox, .ui-datepicker-title span,
+	.detail_box_top .title em, .wing_ban strong, .detailbox_bot_right strong,
+	.help_rcont .search_help .btn_search, .paging a.first, .paging a.prev,
+	.paging a.next, .paging a.end, .notes p span, .notes2 h6 span,
+	.mtmwrite_tbl .attach_list li a.delete, .list_search .input_field .btn_search,
+	.notes2 ol li a span, .mberguide dd p span, #wrap_member .input_txt_area button.btn_del,
+	#wrap_member .btn_view em, .reserve_guide .info_memlist_block .gray_box em,
+	#header .search_area .promo_ban .close_ban, .review_list .review_info a.delete,
+	.layer_mother .help, #header .gnb .family_site a, .btn_help_gray,
+	.slide_ctrl button, .ico_dnld, .hd_selt .selt .sp {
+	display: inline-block;
+	overflow: hidden;
+	font-size: 0;
 }
-#footer{
-	margin: 0 auto;
-	text-align: center; 
-	font-size: 10px;
+
+#footer {
+	background: #333;
+	height: 153px;
+	padding-top: 50px;
+	position: relative
+}
+
+.inner {
+    width: 990px;
+    margin: 0 auto;
+    position: relative
+}
+
+#gnb .inner:after {
+    display: block;
+    clear: both;
+    content: ''
+}
+
+#container .inner {
+    padding: 193px 0 263px
+}
+
+.subwrap #container.etc_cont .inner {
+    padding-top: 290px
+}
+
+#header:after, #container:after, .inner:after, #wrap_reserve .reserve_ban {
+    display: block;
+    clear: both;
+    content: ''
+}
+
+#footer .inner {
+	padding-left: 52px;
+	width: 738px;
+	color: #757575
+}
+
+#footer strong {
+	position: absolute;
+	top: -16px;
+	left: 0;
+	width: 150px;
+	height: 59px;
+	background-position: 0 -65px
+}
+
+#footer .f_menu {
+	font-weight: bold;
+	height: 11px;
+	line-height: 12px;
+	color: #999;
+	margin-bottom: 23px
+}
+
+#footer .f_menu a {
+	color: #999
+}
+
+#footer .f_menu a.personal {
+	color: #ccc
+}
+
+#footer .f_menu span {
+	font-weight: normal;
+	display: inline-block;
+	margin: 0 1px 0 4px;
+	color: #4a4a4a
+}
+
+#footer address, #footer .co_info, #footer .copy {
+	font-size: 11px
+}
+
+#footer address, #footer .co_info {
+	letter-spacing: -1px
+}
+
+#footer .co_info {
+	margin-top: 6px;
+	color: #757575
+}
+
+#footer address span, #footer .co_info span {
+	display: inline-block;
+	margin: 0 4px;
+	color: #545454
+}
+
+#footer .co_info a {
+	color: #757575
+}
+
+#footer .co_info a.co_check {
+	text-decoration: underline;
+	padding-right: 7px;
+	background-position: -2px -466px;
+	font-size: 11px;
+	line-height: 12px !important;
+	display: inline;
+	color: #999;
+	margin: 0 3px 0 5px;
+}
+
+#footer .copy {
+	font-family: Tahoma;
+	margin-top: 23px;
+	color: #757575
+}
+
+/* footerSub */
+#member_footer {
+    width: 562px;
+    margin: 42px auto 0;
+    padding-bottom: 42px;
+    text-align: center
+}
+
+#member_footer .footer_policy {
+    overflow: hidden;
+    width: 449px;
+    margin: 0 auto;
+    text-align: center
+}
+
+#member_footer .footer_policy li {
+    float: left;
+    margin-left: 21px;
+    padding-left: 21px;
+    background: url(//cdnimg.melon.co.kr/resource/image/web/member/bl_footer_line.png) 0 5px no-repeat
+}
+
+#member_footer .footer_policy li.first_child {
+    margin-left: 0;
+    padding-left: 0;
+    background: 0
+}
+
+#member_footer .footer_policy li a {
+    display: inline-block;
+    padding: 0 3px;
+    font-size: 13px;
+    font-family: "맑은 고딕", "Malgun Gothic", "Apple Gothic", sans-serif;
+    color: #767676
+}
+
+#member_footer .footer_policy li a:hover {
+    text-decoration: underline
+}
+
+#member_footer.ticket {
+    margin: 39px auto 0
+}
+
+#member_header.ticket #gnb h1 {
+    width: 290px
+}
+
+#member_footer.ticket .footer_policy {
+    width: 547px
+}
+
+#member_footer.ticket .footer_policy li.first_child {
+    margin-left: 0;
+    padding-left: 0;
+    background: 0
+}
+
+#member_footer.ticket .footer_policy li {
+    margin-left: 11px;
+    padding-left: 11px
+}
+
+#member_footer .footer_menu {
+    overflow: hidden;
+    margin-top: 32px
+}
+
+#member_footer .footer_menu li {
+    display: inline;
+    padding: 0 10px 0 14px;
+    background: url(//cdnimg.melon.co.kr/resource/image/web/member/bl_footer_line.png) 0 0 no-repeat
+}
+
+#member_footer .footer_menu li.first {
+    background: 0;
+    padding: 0 10px 0 0
+}
+
+#member_footer .footer_menu li a {
+    display: inline-block;
+    vertical-align: top;
+    cursor: pointer
+}
+
+#member_footer.ticket .footer_menu li a {
+    margin-left: 11px
+}
+
+#member_footer .footer_menu li a span {
+    display: block;
+    height: 17px;
+    font-size: 0;
+    line-height: 0;
+    background: url(//cdnimg.melon.co.kr/resource/image/web/member/footer_menu_161122.png) no-repeat
+}
+
+#member_footer .footer_menu li.menu01 a {
+    margin-left: 0
+}
+
+#member_footer .footer_menu li.menu01 a span {
+    width: 70px;
+    background-position: 0 0
+}
+
+#member_footer .footer_menu li.menu01 a:hover span {
+    background-position: -95px 0
+}
+
+#member_footer .footer_menu li.menu02 a span {
+    width: 69px;
+    background-position: 0 -18px
+}
+
+#member_footer .footer_menu li.menu02 a:hover span {
+    background-position: -95px -18px
+}
+
+#member_footer .footer_menu li.menu03 a span {
+    width: 65px;
+    background-position: 0 -35px
+}
+
+#member_footer .footer_menu li.menu03 a:hover span {
+    background-position: -95px -35px
+}
+
+#member_footer .footer_menu li.menu04 a span {
+    width: 45px;
+    background-position: 0 -52px
+}
+
+#member_footer .footer_menu li.menu04 a:hover span {
+    background-position: -95px -52px
+}
+
+#member_footer .footer_menu li.menu05 a {
+    margin-left: 0
+}
+
+#member_footer .footer_menu li.menu05 a span {
+    width: 47px;
+    background-position: 0 -70px
+}
+
+#member_footer .footer_menu li.menu05 a:hover span {
+    background-position: -95px -70px
+}
+
+#member_footer .footer_menu li.txt {
+    margin-right: 12px;
+    color: #969696
+}
+
+#member_footer .footer_menu li.txt span {
+    display: inline-block
+}
+
+#member_footer .footer_menu li.txt a {
+    padding: 0
+}
+
+#member_footer p {
+    margin-top: 21px;
+    font-size: 11px;
+    color: #969696;
+    font-family: "돋움", "Dotum", "Apple Gothic", sans-serif
+}
+
+#member_footer p a {
+    color: #969696
 }
