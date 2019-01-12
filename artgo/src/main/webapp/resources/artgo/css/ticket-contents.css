@@ -16,7 +16,7 @@
 .rank_bx p span{font-weight:bold}
 .rank_bx p span.color_green{letter-spacing:0}
 .rank_con{overflow:hidden;margin-top:50px;background:#fff}
-.rank_con .rslt_bx{margin-top:-1px;padding:20px 30px 100px;border:1px solid #dedede;border-width:0 1px 1px}
+.rank_con .rslt_bx{margin-top:1px;padding:20px 30px 100px;border:1px solid #dedede;}
 .rank_tab{overflow:hidden}
 .rank_tab li{float:left}
 .rank_tab li a{display:block;width:165px;height:58px}

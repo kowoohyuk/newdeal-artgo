@@ -38,25 +38,28 @@
             <table>
               <thead>
                 <tr>
-                  <th scope="col">번호</th>
-                  <th scope="col" colspan="2">전시명</th>
+                  <th scope="col">공연정보</th>
+                  <th scope="col" colspan="2">제목</th>
                   <th scope="col">전시일정</th>
                   <th scope="col">장소</th>
                   <th scope="col">예매하기</th>
                 </tr>
               </thead>
               <tbody>
+              </tbody>
                 <tr>
-                  <td><span style="position: relative; top: -8px"
-                    class="ranknum n1">1</span> <input type="hidden"
-                    name="productId" value="26677"> <input type="hidden"
-                    name="saleStatus" value="ON_SALE"> <span class="bx">1</span>
+                  
+                  <td class="img_box">
+	                  <a class="detail_link" href="javascript:;">
+	                   <img src="#" width="100px" height="122px" alt="공연 포스터">
+	                  </a>
                   </td>
-                  <td class="img_box"><a class="detail_link"
-                    href="javascript:;"> <img src="#" width="100px"
-                      height="122px" alt="공연 포스터"></a></td>
-                  <td class="tl tx"><a class="detail_link"
-                    href="javascript:;">김건모 25th Anniversary Tour-울산</a></td>
+                      
+                  <td class="tl tx">
+                  <a class="detail_link" href="javascript:;">김건모 25th Anniversary Tour-울산</a></td>
+                  <td>
+                  <!-- 범위 잡기 위한 td -->       
+                  </td>
                   <td class="tl ff_tahoma">2019.03.30 ~ 2019.03.30</td>
                   <td class="tl desc_vt">울산동천체육관</td>
                   <td>
@@ -73,7 +76,35 @@
                     </div>
                   </td>
                 </tr>
-              </tbody>
+                <tr>
+                  
+                  <td class="img_box">
+	                  <a class="detail_link" href="javascript:;">
+	                   <img src="#" width="100px" height="122px" alt="공연 포스터">
+	                  </a>
+                  </td>
+                      
+                  <td class="tl tx">
+                  <a class="detail_link" href="javascript:;">김건모 25th Anniversary Tour-울산</a></td>
+                  <td>
+                  <!-- 범위 잡기 위한 td -->       
+                  </td>
+                  <td class="tl ff_tahoma">2019.03.30 ~ 2019.03.30</td>
+                  <td class="tl desc_vt">울산동천체육관</td>
+                  <td>
+                    <div style="display: block;" class="btn_ticketing_type">
+                      <div class="btn_table">
+                        <div class="box_txt" id="box_tkt_txt"></div>
+                        <div class="box_btn">
+                          <button class="button btColorGreen"
+                            onclick="javascript:simpleReservation('202895','PT0002')">
+                            <span class="btSizeL">예매하기</span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
             </table>
           </div>
           <!-- //랭킹 테이블 -->
