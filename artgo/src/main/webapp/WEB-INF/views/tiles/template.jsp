@@ -50,7 +50,7 @@
 <link rel="stylesheet" type="text/css" href="/resources/base/css/common.css">
 <link rel="stylesheet" type="text/css" href="/resources/base/css/main_ui.css">
 <link rel="stylesheet" type="text/css" href="/resources/base/css/header.css">
-<link rel="stylesheet" href="/resources/base/css/footer.css" type="text/css">
+<link rel="stylesheet" type="text/css" href="/resources/base/css/footer.css">
 
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>

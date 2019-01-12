@@ -1,0 +1,52 @@
+@charset "utf-8";
+
+/* jindoStarRating */
+.starrating-background {
+	background-image: transparent url(../img/T_03.png)
+		repeat-x scroll 0 0;
+	cursor: pointer;
+	display: inline-block;
+	height: 30px;
+	margin: 0;
+	width: 125px;
+	vertical-align: middle;
+}
+
+.starrating-background span {
+	background-image: transparent url(../img/T_01.png)
+		repeat-x scroll 0 0;
+	cursor: pointer;
+	display: inline-block;
+	height: 30px !important;
+}
+
+.starrating-background em {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 0;
+	height: 0;
+	overflow: hidden;
+	visibility: hidden;
+	font-size: 0;
+	line-height: 0;
+}
+
+.starrating-background-mobile {
+	background-image: transparent url(T_03_mobile.png)
+	repeat-x scroll 0 0;
+	cursor: pointer;
+	display: inline-block;
+	height: 30px;
+	margin: 0;
+	width: 125px;
+	vertical-align: middle;
+}
+
+.starrating-background-mobile span {
+	background-image: transparent url(T_01_mobile.png)
+	repeat-x scroll 0 0;
+	cursor: pointer;
+	display: inline-block;
+	height: 30px !important;
+}

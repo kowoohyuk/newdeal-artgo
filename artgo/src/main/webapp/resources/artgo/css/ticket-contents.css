@@ -1,0 +1,235 @@
+@charset "utf-8";
+
+.total_wrap{background:#dadad9}
+.subwrap .inner+.total_wrap{margin:-230px 0 -60px}
+.total_wrap h3.total{width:44px;height:25px;background-position:-563px -162px}
+
+/* 랭킹 */
+#container.ranking_wrap .inner{padding-top:233px}
+.sp,.rank_tab li a,.ranknum,.new{overflow:hidden;display:inline-block;background:url(../img/sp_ranking.png) no-repeat;line-height:999px}
+
+.rank_bx{padding:31px 28px;border:1px solid #41b40a;background:#fff; margin-top:50px}
+.rank_bx li{overflow:hidden;padding-top:20px;line-height:20px}
+.rank_bx li:first-child{padding-top:2px}
+.rank_bx strong{float:left;margin:-3px 0;font-weight:bold;color:#339e00}
+.rank_bx p{float:left;margin:-3px 0 -3px 20px;padding:0 15px;border-left:1px solid #eaeaea;letter-spacing:-1px}
+.rank_bx p span{font-weight:bold}
+.rank_bx p span.color_green{letter-spacing:0}
+.rank_con{overflow:hidden;margin-top:50px;background:#fff}
+.rank_con .rslt_bx{margin-top:-1px;padding:20px 30px 100px;border:1px solid #dedede;border-width:0 1px 1px}
+.rank_tab{overflow:hidden}
+.rank_tab li{float:left}
+.rank_tab li a{display:block;width:165px;height:58px}
+.rank_tab li .n_category1{width:165px;background-position:0 0}
+.rank_tab li .n_category2{background-position:-165px 0}
+.rank_tab li .n_category3{background-position:-330px 0}
+.rank_tab li .n_category4{background-position:-495px 0}
+.rank_tab li .n_category5{background-position:-660px 0}
+.rank_tab li .n_category6{background-position:-825px 0}
+.rank_tab li.on{position:relative}
+.rank_tab li.on .n_category1{background-position:0 -60px}
+.rank_tab li.on .n_category2{background-position:-165px -60px}
+.rank_tab li.on .n_category3{background-position:-330px -60px}
+.rank_tab li.on .n_category4{background-position:-495px -60px}
+.rank_tab li.on .n_category5{background-position:-660px -60px}
+.rank_tab li.on .n_category6{background-position:-825px -60px}
+.ranknum{width:34px;height:22px}
+.ranknum.n1{background-position:0 -120px}
+.ranknum.n2{background-position:-37px -120px}
+.ranknum.n3{background-position:-72px -120px}
+.ranknum.n4{background-position:-108px -120px}
+.ranknum.n5{background-position:-144px -120px}
+.ranknum.n6{background-position:-180px -120px}
+.ranknum.n7{background-position:-216px -120px}
+.ranknum.n8{background-position:-252px -120px}
+.ranknum.n9{background-position:-288px -120px}
+.ranknum.n10{background-position:-324px -120px}
+
+
+/* 버튼*/
+.layerPop .box_result .wrap_sorting .box_btn {overflow:hidden; float:right; height:26px; margin-top:22px; line-height:26px;}
+
+.btSizeL {display: inline-block;height:45px;width:100px;line-height:46px;font-size:16px;font-family: '맑은 고딕', 'Malgun Gothic';color: white;}
+.btSizeL:hover{text-decoration: none}
+.btSizeM {display:inline-block;height:32px;line-height:31px;font-size:13px;color:#fff;}
+.btSizeM40 {height:40px;font-size:13px;line-height:38px;color:#fff;}
+.btSizeM:hover{text-decoration: none}
+.btSizeS {display:inline-block; height:26px; font-family:"돋움",Dotum; font-size:12px; line-height:28px; color:#666;}
+.btSizeS:hover {text-decoration:none;}
+
+
+.btColorGreen{border:1px solid #41d26b;background: #41d26b;}
+.btColorGreen:hover{border:1px solid #00b523;background: #00b523;}
+.btColorGreen a.btSizeL {color: #fff;}
+.btColorGreen a.btSizeM {color: #fff;}
+.btColorGreen a.btSizeS {color: #fff;}
+
+@charset "utf-8";
+/* HIVELAB (http://www.hivelab.co.kr) */
+
+/* location path */
+.location_path{padding-top:20px;line-height:31px;height:31px}
+
+.submain_front h4.hotissue,
+.submain_front .hotissue_area h3,
+.detail_tab li a,
+.title_wrap .title,
+.submain_front h3,
+.submain_district h3{display:inline-block;overflow:hidden;font-size:1px;line-height:999px !important;background:url(../img/sp_theater.png) no-repeat}
+
+.bottom_area .inner{padding-top:0 !important;}
+
+/* 상품상세 */
+.detail_box_top{min-height:530px;padding:36px 29px 30px;margin-bottom:40px;border:1px solid #dedede;border-radius:2px;background:#fff;*zoom:1}
+.detail_box_top:after{display:block;clear:both;content:'';}
+.detail_box_top span.num{font-weight:bold;color:#339e00}
+.detail_box_top .bx_title{border-bottom:2px solid #999}
+.detail_box_top .bx_title .title{display:inline-block;position:relative;min-height:34px;padding-bottom:26px;font-weight:bold;font-family:Malgun Gothic,'맑은 고딕';font-size:26px;color:#000;letter-spacing:-1px;vertical-align:top;word-break:break-all}
+.detail_box_top .bx_title .title.long_case{padding-bottom:16px}
+.detail_box_top .bx_title .title.long_case .group_tag{display:block;margin:10px 0 0 0}
+.detail_box_top .bx_title .group_tag{display:inline-block;position:relative;margin:5px 0 0 5px;font-size:0;vertical-align:top}
+.detail_box_top .bx_title .ico_tag{display:inline-block;width:64px;height:30px;margin-left:5px;background-image:url(../img/sp.png);background-repeat:no-repeat;font-size:0;vertical-align:middle}
+
+/*.detail_box_top .bx_title .flag_type3{background-position:-167px -129px}*/
+.detail_box_top .detail_info{float:left;position:relative;width:675px;min-height:382px;margin-top:30px;padding:0 30px 0 342px;box-sizing:border-box}
+.detail_box_top .detail_info .bx_thumb{position:absolute;top:0;left:0}
+.detail_box_top .detail_info .bx_thumb .bx_img{display:block}
+.detail_box_top .etc_info{padding-top:7px}
+.detail_box_top .etc_info .bx_dummy{position:relative;margin-top:9px}
+.detail_box_top .etc_info .bx_dummy:first-child{margin-top:0}
+.detail_box_top .etc_info .bx_dummy.border_type{margin-bottom:17px;padding-bottom:13px;border-bottom:1px dotted #9d9d9d}
+.detail_box_top .etc_info .bx_dummy.include_layer{margin-bottom:17px}
+.detail_box_top .etc_info .bx_dummy.border_type.include_layer{padding-bottom:20px}
+.detail_box_top .etc_info .info_tit{position:absolute;top:0;left:0;bottom:0;width:68px;font-weight:bold;line-height:18px}
+.detail_box_top .etc_info .lst_dsc li + li{margin-top:2px}
+.detail_box_top .etc_info .txt{display:block;min-height:20px;padding-left:68px;line-height:18px}
+.detail_box_top .etc_info .ly_btn{display:inline-block;min-width:105px;height:28px;margin-top:6px;padding:0 20px 0 7px;border:1px solid #d4d4d4;box-sizing:border-box;background:url(../img/sp_ico.gif) no-repeat 100% -32px;font-size:11px;line-height:28px;letter-spacing:-1px}
+.detail_box_top .coupon .info_tit{line-height:28px}
+.detail_box_top .coupon .ly_btn{width:180px;margin-top:0;font-weight:bold;color:#339e00}
+.detail_box_top .detail_info .layer{display:none;width:306px;right:0;margin-top:-3px;padding:10px 20px 15px;*margin-top:35px;}
+.detail_box_top .detail_info .layer.ly_pop_coupon{right:auto;left:-369px;width:575px;margin-top:3px}
+.detail_box_top .detail_info .layer.info_price,.detail_box_top .detail_info .layer.info_sale{right:0;left:68px;width:200px;margin-top:3px}
+.detail_box_top .detail_info .social{top:403px;margin-top:0;}
+
+.detail_box_top .detail_info .penclub{position:absolute;top:456px;left:0}
+.detail_box_top .detail_info_right{float:right;margin-top:30px;padding-left:30px;width:224px;min-height:382px;border-left:1px solid #e1e1e1}
+.detail_box_top .ui-datepicker{padding-bottom:21px;margin-top:-2px}
+.detail_box_top .detail_info_right dl{padding-bottom:21px;margin-bottom:20px}
+.detail_box_top .detail_info_right dt{font-size:11px;letter-spacing:-1px;font-weight:bold;line-height:26px;height:26px;margin-top:12px}
+.detail_box_top .detail_info_right .seat{border:1px solid #d4d4d4;height:104px;overflow-y:auto}
+.detail_box_top .detail_info_right .seat li{min-height:23px;line-height:23px;padding-left:10px}
+.detail_box_top .detail_info_right .seat li:first-child{padding-top:7px}
+.detail_box_top .detail_info_right .reserve{background-position:0 -65px;width:224px;height:64px}
+.detail_box_top .detail_info_right .reserve.s_after{background-position:0 0}
+.detail_box_top .detail_info_right .reserve.disabled{background-position:-244px -659px;cursor:default}
+.detail_box_top .detail_info_right .reserve.due{background-position:0 -792px;cursor:default}
+.detail_box_top .detail_info_right .reserve.end{background-position:-226px -792px;cursor:default}
+.detail_box_top .detail_info_right .reserve.soldout{background-position:-226px -858px;cursor:default}
+.detail_box_top .detail_info_right .noinfo_txt,
+.detail_box_top .detail_info_right.noinfo .ui-datepicker,
+.detail_box_top .detail_info_right.noinfo dl{display:none;}
+.detail_box_top .detail_info_right.noinfo .noinfo_txt{display:block;min-height:185px;padding-top:137px;text-align:center;line-height:18px;}
+
+.detail_info_right .dsc{margin-bottom:17px;padding-left:12px;line-height:20px;text-indent:-12px}
+.detail_info_right .dsc em{display:block;font-weight:bold}
+.detail_info_right .ticket_open{padding-top:23px}
+.detail_info_right .ticket_open .dsc{margin-bottom:33px;padding:0;font-size:14px;font-weight:bold;line-height:22px;text-align:center;text-indent:0}
+.detail_info_right .ticket_open .dsc:before{display:block;width:111px;height:92px;margin:0 auto 11px;background:url(../img/img_comingsoon.jpg) no-repeat;content:''}
+
+.detail_box_top.has_penclub{min-height:610px}
+.detail_box_bot{overflow:hidden}
+.detail_box_bot .detailbox_bot_left{width:754px;float:left;margin-right:10px;background:#fff;border-radius:2px;overflow:hidden}
+
+
+
+.detail_box_bot .detailbox_bot_left .detail_cont{clear:both;padding:41px 30px 100px;border-width:0 1px 1px;border-style:solid;border-color:#dedede;margin-top:-1px;min-height:20px}
+.detail_box_bot .detailbox_bot_left .detail_cont strong{display:inline-block;margin-bottom:8px}
+.detail_box_bot .detailbox_bot_left .detail_cont .bx_banner{margin-bottom:8px}
+.detail_box_bot .detailbox_bot_left .detail_cont .bx_banner a{display:block}
+.detail_box_bot .detailbox_bot_left .detail_cont .bx_banner img{display:block}
+.detail_box_bot .detailbox_bot_left .detail_cont .contents{margin-bottom:28px;line-height:18px;color:#767676}
+.detail_box_bot .detailbox_bot_left .detail_cont .contents strong{margin:5px 0 0}
+.detail_box_bot .detailbox_bot_left .detail_cont .contents p{padding:10px 0 0;color:#767676}
+.detail_box_bot .detailbox_bot_left .detail_cont .contents .bx{overflow:hidden;margin-top:5px}
+.detail_box_bot .detailbox_bot_left .detail_cont .contents .btn_map{float:left;width:98px;height:24px;border:1px solid #d4d4d4;font-size:11px;color:#767676;line-height:26px;text-align:center}
+.detail_box_bot .detailbox_bot_left .detail_cont .contents .map_area{height:370px;border:1px solid #dedede}
+.detail_box_bot .detailbox_bot_left .detail_cont .contents .poweredby{overflow:hidden;float:right;width:105px;height:10px;margin-top:8px;background:url(../img/sp_theater.png) no-repeat;background-position:-398px -221px;line-height:999px}
+.detailbox_bot_left .detail_cont .contents .detail_info_tbl{width:100%;background:#f2f2f0;font-size:11px;letter-spacing:-1px;color:#767676}
+.detailbox_bot_left .detail_cont .contents .detail_info_tbl thead th{background:#dbdbd9;font-weight:bold;text-align:center;padding:0}
+.detailbox_bot_left .detail_cont .contents .detail_info_tbl th{font-weight:normal;border:1px solid #dbdbd9;text-align:left;height:36px;padding:0 0 0 18px}
+.detailbox_bot_left .detail_cont .contents .detail_info_tbl td{border:1px solid #dbdbd9;padding:9px 10px 9px 20px;line-height:18px;letter-spacing:-1px}
+.detail_cont .contents .detail_info_tbl+p{padding-top:18px !important}
+.detail_cont .contents .additional_prd li{font-weight:bold;line-height:22px;}
+.detail_cont .contents .additional_prd .img_info{overflow:hidden;padding:5px 0 !important;*margin-bottom:10px;margin-left:-11px;}
+.detail_cont .contents .additional_prd .img_info img{float:left;margin-left:11px;margin-bottom:10px;}
+
+.detail_box_bot .detailbox_bot_right{overflow:hidden;border:1px solid #dedede;border-radius:2px;background:#fff;text-align:center;padding:19px 29px}
+.detail_box_bot .detailbox_bot_right strong{width:100px;height:18px;line-height:18px;margin-bottom:14px;background-position:-270px -74px}
+.detail_box_bot .detailbox_bot_right li{text-align:left}
+.detail_box_bot .detailbox_bot_right li .thum{margin-bottom:10px}
+.detail_box_bot .detailbox_bot_right li .title{font-weight:bold;margin-bottom:5px;color:#4d4d4d;line-height:17px}
+.detail_box_bot .detailbox_bot_right li .date{display:inline-block;margin-bottom:18px;color:#767676}
+
+/* 상품상세 - 관람후기/문의 */
+.star_rating .rating,
+.star_rating .rating .btn_star,
+.star_average dd.grade_star,
+.star_average dd.grade_star .star_gauge{display:block;background:url(../img/sp_theater.png) no-repeat}
+
+.detail_cont .title_wrap{margin-bottom:3px;*overflow:hidden}
+.detail_cont .title_wrap:after{display:block;clear:both;content:''}
+.detail_cont .title_wrap .title21{background-position:0 -111px;width:126px;height:17px}
+.detail_cont .title_wrap .title22{background-position:0 -135px;width:53px;height:16px}
+.detail_cont .title_wrap .title31{background-position:0 -155px;width:237px;height:17px}
+.detail_cont .title_wrap .title32{background-position:0 -176px;width:52px;height:16px}
+.detail_cont .title_wrap .btn_text2{margin:-6px 0 0 12px;*margin-top:4px}
+.detail_cont .title_wrap .btn_text3{margin-top:6px}
+.detail_cont .guide_txt{margin-bottom:25px}
+.detail_cont .guide_txt a{color:#339e00;text-decoration:underline}
+
+.star_review{background:#f0f0f0;padding:19px 20px 21px}
+.star_rating{float:left}
+.star_rating .rating{background-position:-269px -119px;width:120px;height:24px;float:left}
+.star_rating .rating button{cursor:pointer}
+.star_rating .rating .btn_star{float:left;overflow:hidden;line-height:999px;background-position:-269px -149px;width:12px;height:24px;border:0}
+.star_rating .rating .btn_star:first-child{position:absolute;top:-9999px}
+.star_rating .rating .btn_star.st_r{background-position:-281px -149px}
+.star_rating .rating .btn_star.on~.btn_star{background-position:0 -9999px}
+.star_rating .rating.st_over .btn_star.on~.btn_star{background-position:-269px -149px}
+.star_rating .rating.st_over .btn_star.on~.btn_star.st_r{background-position:-281px -149px}
+.star_rating .rating.st_over .btn_star:hover~.btn_star{background-position:0 -9999px !important}
+.star_rating .star_score{float:left;font-family:Tahoma;font-size:15px;font-weight:bold;color:#40b409;height:24px;line-height:24px;margin-left:8px}
+.star_average{float:right;margin-top:9px}
+.star_average dl{overflow:hidden}
+.star_average dt,.star_average dd{float:left;font-size:11px;letter-spacing:-1px;color:#4d4d4d}
+.star_average dt{margin-right:2px}
+.star_average dd.grade{color:#40b409;font-weight:bold;margin-right:8px}
+.star_average dd.grade_star{background-position:-400px -119px;width:64px;height:12px;margin-top:-2px}
+.star_average dd.grade_star .star_gauge{background-position:-400px -134px;width:64px;height:12px}
+.star_average dd.bar{color:#ddd;padding:0 15px 0 11px}
+.star_average dd.person{font-weight:bold}
+.write_review{clear:both;height:70px;overflow:hidden;padding-top:9px}
+.write_review textarea{border:1px solid #d4d4d4;width:528px;height:45px;*height:44px;padding:16px 18px 7px;line-height:18px;overflow-y:auto;color:#999}
+.write_review .btn{margin-left:-5px;*margin-top:1px}
+
+.star_review.inquire{padding:20px}
+.star_review.inquire .write_review{padding-top:0}
+
+/* 탭메뉴 */
+.link_policy{color:#3c64e6}
+
+.tab_policy{overflow:hidden;height:50px;vertical-align: inherit}
+.tab_policy + .txt_article{padding-top:40px}
+.tab_policy li{position:relative;display:table;float:left;width:189px;height:48px;margin-right:-1px;border:1px solid #d4d4d4;text-align:center;line-height:46px}.tab_policy .lst{width:189px}.tab_policy .link_policy{display:table-cell;color:#666;font-size:14px;line-height:20px;vertical-align:middle;height: 48px;}
+.tab_policy .link_policy:hover{color:#1e1e1e;font-weight:bold;text-decoration:underline;height: 48px;}
+.tab_policy .on{z-index:1;border-color:#1e1e1e} /* 2018-07-24 추가 */
+.tab_policy .on .link_policy{width:189px;height:48px;position:relative;color:#fff;background-color:#1e1e1e;border:1px solid #1e1e1e;z-index:99}
+html:lang(en) .tab_policy li, html:lang(ja) .tab_policy li{width:231px} /* 2018-05-03 */
+html:lang(en) .tab_policy .lst, html:lang(ja) .tab_policy .lst{width:230px} /* 2018-05-03 */
+.tab_policy2{padding-top:96px}
+.tab_policy2 li{width:578px}/* 2018-11-30 수정 */
+.tab_policy2 li:first-child{width:579px}/* 2018-11-30 수정 */
+html:lang(en) .tab_policy2 li, html:lang(ja) .tab_policy2 li{width:578px}/* 2018-11-30_v2 수정 */
+html:lang(en) .tab_policy2 li:first-child, html:lang(ja) .tab_policy2 li:first-child{width:579px}/* 2018-11-30_v2 수정 */
+
+
