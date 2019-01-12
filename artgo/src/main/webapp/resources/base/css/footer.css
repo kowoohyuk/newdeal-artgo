@@ -65,7 +65,10 @@ caption{visibility:hidden;overflow:hidden;width:0;height:0;font-size:0;line-heig
 	background: #333;
 	height: 153px;
 	padding-top: 50px;
-	position: relative
+	position: relative;
+	margin: 0 auto;
+	text-align: center; 
+	font-size: 10px;
 }
 
 .inner {

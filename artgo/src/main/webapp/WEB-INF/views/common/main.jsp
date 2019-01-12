@@ -7,23 +7,23 @@
 		<div class="hero-slides owl-carousel col-lg-12">
 			<!-- Single Slide -->
 			<div id="myDiv" class="single-hero-slide bg-img"
-				style="background-image: url(/resources/img/bg-img/b2.jpg);">
+				style="background-image: url(/resources/base/img/bg-img/b2.jpg);">
 			</div>
 			<!-- Single Slide -->
 			<div id="myDiv" class="single-hero-slide bg-img"
-				style="background-image: url(/resources/img/bg-img/b1.jpg);">
+				style="background-image: url(/resources/base/img/bg-img/b1.jpg);">
 			</div>
 			<!-- Single Slide -->
 			<div id="myDiv" class="single-hero-slide bg-img"
-				style="background-image: url(/resources/img/bg-img/b3.jpg);">
+				style="background-image: url(/resources/base/img/bg-img/b3.jpg);">
 			</div>
 			<!-- Single Slide -->
 			<div id="myDiv" class="single-hero-slide bg-img"
-				style="background-image: url(/resources/img/bg-img/b4.jpg);">
+				style="background-image: url(/resources/base/img/bg-img/b4.jpg);">
 			</div>
 			<!-- Single Slide -->
 			<div id="myDiv" class="single-hero-slide bg-img"
-				style="background-image: url(/resources/img/bg-img/b5.jpg);">
+				style="background-image: url(/resources/base/img/bg-img/b5.jpg);">
 			</div>
 
 		</div>
@@ -48,13 +48,13 @@
             <!-- Single Blog Area -->
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="single-catagory-area clearfix mb-100">
-                    <img src="/resources/img/blog-img/1.jpg" alt="">
+                    <img src="/resources/base/img/blog-img/1.jpg" alt="">
                 </div>
             </div>
             <!-- Single Blog Area -->
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="single-catagory-area clearfix mb-100">
-                    <img src="/resources/img/blog-img/1.jpg" alt="">
+                    <img src="/resources/base/img/blog-img/1.jpg" alt="">
                 </div>
             </div>
         </div>
@@ -111,15 +111,7 @@
 
 	<!-- ##### Instagram Feed Area End ##### -->
 		<!-- jQuery (Necessary for All JavaScript Plugins) -->
-		<script src="/resources/js/jquery/jquery-2.2.4.min.js"></script>
-		<!-- Popper js -->
-		<script src="/resources/js/popper.min.js"></script>
-		<!-- Bootstrap js -->
-		<script src="/resources/js/bootstrap.min.js"></script>
-		<!-- Plugins js -->
-		<script src="/resources/js/plugins.js"></script>
-		<!-- Active js -->
-		<script src="/resources/js/active.js"></script>
+
 
 		<script>
     $('.btn-search').click(function(){

@@ -1,8 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!-- ##### Header Area Start ##### -->
 <header class="header-area">
-
 	<!-- Top Header Area -->
 	<div class="top-header">
 		<div class="container h-100">
@@ -14,10 +12,15 @@
 				<!-- Top Social Area -->
 				<div class="col-12 col-sm-4">
 					<div class="top-social-area">
-						<a href="/member/loginPart.do" data-toggle="tooltip" data-placement="bottom"
-							title="login"><span>로그인</span></a> <a href="/member/joinPart.do"
-							data-toggle="tooltip" data-placement="bottom" title="join"><span>회원가입</span></a>
-
+						<a href="/member/login.do" data-toggle="tooltip" data-placement="bottom"
+							title="login"><span>로그인</span>
+						</a>
+					 	<a href="/member/join.do"
+							data-toggle="tooltip" data-placement="bottom" title="join"><span>회원가입</span>
+						</a>
+					 	<a href="/member/main.do"
+							data-toggle="tooltip" data-placement="bottom" title="mypage"><span>마이 페이지</span>
+						</a>
 					</div>
 				</div>
 			</div>
@@ -30,8 +33,8 @@
 		<div class="container h-100">
 			<div class="row h-100 align-items-center">
 				<div class="col-12">
-					<a href="/testPage.do" class="original-logo"><img
-						src="/resources/img/core-img/logo.png" alt=""></a>
+					<a href="/main.do" class="original-logo"><img
+						src="/resources/artgo/img/logo.png" alt=""></a>
 				</div>
 			</div>
 		</div>

@@ -16,27 +16,11 @@ public class CommonController {
 
   @RequestMapping(value = "/", method = RequestMethod.GET)
   public String startPage() {
-    /**
-    * @함수명 : startPage()
-    * @작성일 : 2019. 1. 11.
-    * @작성자 : 고 우 혁
-    * @설명 : 최초 페이지 이동 (메인 페이지)
-    * @param : 없음
-    * @return : 페이지
-    **/
     return "common/main.page";
   }
 
-  @RequestMapping(value = "/mainPage.do", method = RequestMethod.GET)
+  @RequestMapping(value = "/main.do", method = RequestMethod.GET)
   public String mainPage() {
-    /**
-    * @함수명 : mainPage()
-    * @작성일 : 2019. 1. 11.
-    * @작성자 : 고 우 혁
-    * @설명 : 메인 페이지로 이동
-    * @param : 없음
-    * @return : 페이지
-    **/
     return "common/main.page";
   }
 

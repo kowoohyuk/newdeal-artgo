@@ -3,7 +3,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
 <meta charset="UTF-8">
 <meta name="description" content="">
@@ -16,41 +15,42 @@
 <title>Original - Lifestyle Blog Template</title>
 
 <!-- Favicon -->
-<link rel="icon" href="/resources/img/core-img/favicon.ico">
+<link rel="icon" href="/resources/base/img/core-img/favicon.ico">
 
 <!-- Style CSS -->
-<link rel="stylesheet" type="text/css" href="/resources/css/animate.css">
+<link rel="stylesheet" type="text/css" href="/resources/base/css/animate.css">
 <link rel="stylesheet" type="text/css"
-	href="/resources/css/bootstrap.min.css">
+	href="/resources/base/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css"
-	href="/resources/css/classy-nav.css">
+	href="/resources/base/css/classy-nav.css">
 <link rel="stylesheet" type="text/css"
-	href="/resources/css/font-awesome.min.css">
+	href="/resources/base/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css"
-	href="/resources/css/owl.carousel.css">
+	href="/resources/base/css/owl.carousel.css">
 	<link rel="stylesheet" type="text/css"
-	href="/resources/css/header.css">
+	href="/resources/base/css/header.css">
 
 <link rel="stylesheet" type="text/css"
-	href="/resources/scss/_fonts.scss">
+	href="/resources/base/scss/_fonts.scss">
 <link rel="stylesheet" type="text/css"
-	href="/resources/scss/_mixin.scss">
+	href="/resources/base/scss/_mixin.scss">
 <link rel="stylesheet" type="text/css"
-	href="/resources/scss/_responsive.scss">
+	href="/resources/base/scss/_responsive.scss">
 <link rel="stylesheet" type="text/css"
-	href="/resources/scss/_theme_color.scss">
-<link rel="stylesheet" type="text/css" href="/resources/style.css">
-<link rel="stylesheet" type="text/css" href="/resources/style.css.map">
+	href="/resources/base/scss/_theme_color.scss">
+<link rel="stylesheet" type="text/css" href="/resources/base/style.css">
+<link rel="stylesheet" type="text/css" href="/resources/base/style.css.map">
 
 <link rel="stylesheet" type="text/css"
-	href="/resources/fonts/stylesheet.css">
+	href="/resources/base/fonts/stylesheet.css">
 
 <link rel="stylesheet" type="text/css"
-	href="/resources/css/searchbar.scss">
+	href="/resources/base/css/searchbar.scss">
 
-<link rel="stylesheet" type="text/css" href="/resources/css/common.css">
-<link rel="stylesheet" type="text/css" href="/resources/css/main_ui.css">
-<link rel="stylesheet" type="text/css" href="/resources/css/header.css">
+<link rel="stylesheet" type="text/css" href="/resources/base/css/common.css">
+<link rel="stylesheet" type="text/css" href="/resources/base/css/main_ui.css">
+<link rel="stylesheet" type="text/css" href="/resources/base/css/header.css">
+<link rel="stylesheet" href="/resources/base/css/footer.css" type="text/css">
 
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
@@ -70,5 +70,14 @@
     <div id="main"><tiles:insertAttribute name="body" /></div>    
     <div id="footer"><tiles:insertAttribute name="footer" /></div>
     </div>
+		<script src="/resources/base/js/jquery/jquery-2.2.4.min.js"></script>
+		<!-- Popper js -->
+		<script src="/resources/base/js/popper.min.js"></script>
+		<!-- Bootstrap js -->
+		<script src="/resources/base/js/bootstrap.min.js"></script>
+		<!-- Plugins js -->
+		<script src="/resources/base/js/plugins.js"></script>
+		<!-- Active js -->
+		<script src="/resources/base/js/active.js"></script>
 </body>
 </html>

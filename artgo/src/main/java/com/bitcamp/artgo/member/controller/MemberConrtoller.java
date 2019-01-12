@@ -13,34 +13,50 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class MemberConrtoller {
 	
-	  @RequestMapping("member/loginPart.do")
-	  public String login() {
+	  @RequestMapping("member/login.do")
+	  public String memberLogin() {
 	    return "member/login.part";
 	  }
+	  
+      @RequestMapping("member/main.do")
+      public String memberMain() {
+        return "member/main.page";
+      }
 
-	  @RequestMapping("member/joinPart.do")
-	  public String join() {
+	  @RequestMapping("member/join.do")
+	  public String memberJoin() {
 	    return "member/join.part";
 	  }
 	  
-	  @RequestMapping("member/findIdPart.do")
-	  public String findId() {
+	  @RequestMapping("member/findId.do")
+	  public String memberFindId() {
 	    return "member/findId.part";
 	  }
 
-	  @RequestMapping("member/findPwdPart.do")
-	  public String findPwd() {
+	  @RequestMapping("member/findPwd.do")
+	  public String memberFindPwdPart() {
 	    return "member/findPwd.part";
 	  }
+//	  @RequestMapping("member/ticket/list")
+//  	  public String ticketList() {
+//	    /**
+//	    * @함수명 : cardInsert(CardDTO card)
+//	    * @작성일 : 2019. 1. 11.
+//	    * @작성자 : 고 우 혁
+//        * @설명 : 미정
+//        * @param  : 미정
+//        * @return : 페이지
+//	    **/
+//  	    return "ticket/list";
+//  	  }
+//	  @RequestMapping("member/ticket/list")
+//	  public String ticket() {
+//	    /**
+//        * @설명 : 미정
+//        * @param  : 미정
+//        * @return : 페이지
+//        **/
+//	    return "ticket/list";
+//	  }
 
 }
-
-
-/**
-* @함수명 : cardInsert(CardDTO card)
-* @작성일 : 2019. 1. 11.
-* @작성자 : 고 우 혁
-* @설명 : 카드를 생성한다.
-* @param CardDTO - projectNum, cardName
-* @return int 성공한 갯수
-**/

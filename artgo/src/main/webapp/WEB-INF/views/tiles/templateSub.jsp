@@ -1,18 +1,24 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
+	<meta charset="UTF-8">
+	<meta name="description" content="">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>제목</title>
-    <link href="/resources/css/bootstrap.min.css" rel="stylesheet">
-	<link href="/resources/css/bootstrap.css" rel="stylesheet">
-	<link href="/resources/css/_bootswatch.scss" rel="stylesheet">
+    <link href="/resources/base/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/resources/base/css/bootstrap.css" rel="stylesheet">
+	<link href="/resources/base/css/_bootswatch.scss" rel="stylesheet">
 	
-	<link href="/resources/css/_variables.scss" rel="stylesheet">
-	<link href="/resources/css/login.css" rel="stylesheet">
+	<link href="/resources/base/css/_variables.scss" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="/resources/css/footer.css" type="text/css">
+    <link rel="stylesheet" href="/resources/base/css/footer.css" type="text/css">
+    <link rel="stylesheet" href="/resources/artgo/css/header-sub.css" type="text/css">
+    <link rel="icon" href="/resources/base/img/core-img/favicon.ico">
 </head>
 <body>
     <div style="width:100%; height:100%;" >
