@@ -27,5 +27,6 @@
       <div><button type="button" class="btn btn-outline-primary">로그인</button></div>
       <div> <button type="button" class="btn btn-outline-primary">네이버 아이디로 로그인</button></div>
 
+
     </div>
     </form>
