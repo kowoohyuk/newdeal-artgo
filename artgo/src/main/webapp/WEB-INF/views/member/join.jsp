@@ -6,48 +6,46 @@
     <ul class="list-group member-join-ul" >
       <li id="padding" class="list-group-item d-flex justify-content-between align-items-center member-join-li">
         <div class="form-group member-join-div">
-          <input type="text" class="form-control member-join-input-text" placeholder="아이디" id="id" name="id" maxlength="12" size="300px">
+          <input type="text" class="form-control member-join-input-text" placeholder="아이디" id="id" name="id" maxlength="12" >
           <label class="hidden-label member-join-label"></label>
         </div>
       </li>
       <li id="padding" class="list-group-item d-flex justify-content-between align-items-center member-join-li">
         <div class="form-group member-join-div">
-          <input type="password" class="form-control member-join-input-pwd" id="exampleInputPassword1" placeholder="비밀번호" size="300px" id="pwd" name="pwd" maxlength="15">
+          <input type="password" class="form-control member-join-input-pwd" placeholder="비밀번호"  id="pwd" name="pwd" maxlength="15">
+          <label class="hidden-label member-join-label"></label>
         </div>
       </li>
       <li id="padding" class="list-group-item d-flex justify-content-between align-items-center member-join-li">
         <div class="form-group member-join-div">
-          <input type="password" class="form-control member-join-input-pwd" id="exampleInputPassword1" placeholder="비밀번호 확인" size="300px" placeholder="비밀번호 확인" id="pwd2" maxlength="15">
+          <input type="password" class="form-control member-join-input-pwd" placeholder="비밀번호 확인"  placeholder="비밀번호 확인" id="pwd2" maxlength="15">
        	  <label class="hidden-label member-join-label"></label>
         </div>
       </li>
     </ul>
-
-
-
     <ul class="list-group member-join-ul" >
       <li id="padding" class="list-group-item d-flex justify-content-between align-items-center member-join-li">
         <div class="form-group member-join-div">
-          <input type="text" class="form-control member-join-input-text" placeholder="이름" id="name" name="name" maxlength="6" size="300px">
+          <input type="text" class="form-control member-join-input-text" placeholder="이름" id="name" name="name" maxlength="6">
           <label class="hidden-label member-join-label"></label>
         </div>
       </li>
       <li id="padding" class="list-group-item d-flex justify-content-between align-items-center member-join-li">
         <div class="form-group member-join-div">
-          <input type="text" class="form-control member-join-input-text" placeholder="이메일" size="300px" id="email" name="email" maxlength="60">
+          <input type="text" class="form-control member-join-input-text" placeholder="생년월일"  id="birth" name="birth" maxlength="60">
           <label class="hidden-label member-join-label"></label>
         </div>
       </li>
       <li id="padding" class="list-group-item d-flex justify-content-between align-items-center member-join-li">
         <div class="form-group member-join-div">
-          <input type="text" class="form-control member-join-input-text" placeholder="휴대폰" id="phone" name="phone" size="300px" >
+          <input type="text" class="form-control member-join-input-text" placeholder="휴대폰" id="phone" name="phone">
         </div>
       </li>
     </ul>
     </div>
 </form>
   	<div class="member-join-div" align="center">
-  		<button type="submit" class="btn btn-primary btn-sm member-join-btn-sub">회원가입하기</button>
+  		<button type="submit" class="btn btn-primary btn-sm member-join-btn-sub btn-red">회원가입하기</button>
   	</div>
 
 

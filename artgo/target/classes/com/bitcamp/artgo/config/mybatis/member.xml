@@ -3,4 +3,65 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.bitcamp.artgo.member.dao.MemberDao">
+	<insert id="addMember" parameterType="memberDto">
+		INSERT INTO member (id, pwd, type, name, tell, status, confirm, grade, joindate, finaldate)
+		VALUES (#{id}, #{pwd}, #{type}, #{name}, #{tell}, 1, #{confirm}, 1, now(), now())
+	</insert>
+	
+	<select id="selectMember" parameterType="Map" resultType="memberDto">
+		SELECT mno, id, name, type, birth, tell, status, confirm, grade, joindate, finaldate
+		FROM member
+		WHERE id = #{id}
+	</select>
+	
+	<select id="selectMemberByTell" parameterType="String" resultType="memberDto">
+		SELECT tell
+		FROM member
+		WHERE tell = #{tell}	
+	</select>
+	
+	<select id="checkMember" parameterType="memberDto" resultType="memberDto">
+		SELECT mno, id, name, type, birth, tell, status, confirm, grade, joindate, finaldate FROM member
+		WHERE id = #{id}
+		AND pwd = #{pwd}
+	</select>
+	
+	<select id="selectMemberList" resultType="memberDto">
+		SELECT mno, id, name, type, birth, tell, status, confirm, grade, joindate, finaldate
+		FROM member
+	</select>
+	
+	<update id="updateMember" parameterType="memberDto">
+		UPDATE member
+		SET name = #{name},
+			tell = #{tell},
+			birth = #{birth},
+			status = #{status},
+			grade = #{grade},
+		WHERE id = #{id}
+	</update>
+	
+	<delete id="deleteMember" parameterType="memberDto">
+		DELETE member
+		WHERE id = #{id}
+	</delete>
+	
+	<update id="updateVisitMember" parameterType="memberDto">
+		UPDATE member
+		SET finaldate = now()
+		WHERE id = #{id}
+	</update>
+	
+	<update id="updateGradeMember" parameterType="memberDto">
+		UPDATE member
+		SET grade = #{grade}
+		WHERE id = #{id}
+	</update>
+	
+	<update id="updateConfirmMember" parameterType="memberDto">
+		UPDATE member
+		SET confirm = 1
+		WHERE id = #{id}
+	</update>
+	
 </mapper>

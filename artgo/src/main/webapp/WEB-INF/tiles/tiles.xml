@@ -41,6 +41,26 @@
     
     <definition name="*/*/*.part" extends="baseEmpty">
         <put-attribute name="body" value="/WEB-INF/views/{1}/{2}/{3}.jsp" />
-    </definition>        
+    </definition>
+    
+    
+    <!-- 관리자용 페이지 -->
+    <definition name="admin" template="/WEB-INF/views/tiles/templateAdmin.jsp">
+        <put-attribute name="left"   value="" />
+        <put-attribute name="header" value="" />
+        <put-attribute name="footer" value="" />
+    </definition>
+    
+    <definition name="*.ad" extends="admin">
+        <put-attribute name="body" value="/WEB-INF/views/{1}.jsp" />
+    </definition>
+ 
+     <definition name="*/*.ad" extends="admin">
+         <put-attribute name="body" value="/WEB-INF/views/{1}/{2}.jsp" />
+     </definition>
+    
+    <definition name="*/*/*.ad" extends="admin">
+        <put-attribute name="body" value="/WEB-INF/views/{1}/{2}/{3}.jsp" />
+    </definition>          
     
 </tiles-definitions>

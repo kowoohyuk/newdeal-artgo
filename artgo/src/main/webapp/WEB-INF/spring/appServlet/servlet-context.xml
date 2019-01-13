@@ -7,6 +7,8 @@
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
  
+ 	<mvc:annotation-driven />
+	<mvc:default-servlet-handler />
     <!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
     <context:component-scan base-package="com.bitcamp.artgo.**.controller" />
     
@@ -44,6 +46,18 @@
         <beans:property name="order" value="2" />
     </beans:bean>    
     
+	
+	<beans:bean id="loginInterceptor"
+		class="com.bitcamp.artgo.common.interceptor.LoginInterceptor">
+	</beans:bean>
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/admin/**"/>
+			<mvc:exclude-mapping path="/artgo/**"/>
+			<mvc:exclude-mapping path="/base/**"/>
+			<beans:ref bean="loginInterceptor"/>
+		</mvc:interceptor>
+	</mvc:interceptors>
     
     <!-- Tiles -->
     <beans:bean id="tilesConfigurer" class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">

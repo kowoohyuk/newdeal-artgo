@@ -16,7 +16,7 @@ public class AdminController {
 
   @RequestMapping(value = "/admin/main.do", method = RequestMethod.GET)
   public String adminMain() {
-    return "admin/main.page";
+    return "admin/main.ad";
   }
   
   @RequestMapping(value = "/admin/reviewList.do", method = RequestMethod.GET)

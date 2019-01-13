@@ -60,8 +60,20 @@ input[type=submit]:hover {
 	font-size: 10px;
 }
 
-.list-group {
-	width: 50%;
+@media(min-width :990px){
+	.list-group, .btn-red {
+		width: 25%;
+	}
+}
+@media(max-width :989px){
+	.list-group, .btn-red {
+		width: 40%;
+	}
+}
+@media(max-width :600px){
+	.list-group, .btn-red {
+		width: 70%;
+	}
 }
 
 .info {
@@ -72,7 +84,6 @@ input[type=submit]:hover {
 
 #padding {
 	padding: 10px;
-	width: 450px;
 }
 
 ul {
@@ -102,4 +113,20 @@ label {
 		width: 100%;
 		margin-top: 0;
 	}
+}
+.btn-red{
+	background-color: black !important;
+	cursor: pointer !important;
+	color: white !important;
+}
+.btn-red:hover, .btn-red:active, .btn-red:focus{
+	border-color: crimson !important;
+	background-color: crimson !important;
+}
+.member-join-label{
+	color : red;
+	display: none;
+}
+.member-join-div{
+	width: 100%;
 }
