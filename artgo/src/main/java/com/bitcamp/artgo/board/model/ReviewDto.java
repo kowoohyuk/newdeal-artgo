@@ -8,24 +8,18 @@ package com.bitcamp.artgo.board.model;
 */
 
 public class ReviewDto {
-  private int rno;
+  private int reviewNo;
   private int comment;
   private int score;
   private int status;
-  private int exno;
-  private int mno;
+  private int exhibitionNo;
+  private int memberNo;
   
-  public int getRno() {
-    return rno;
+  public int getReviewNo() {
+    return reviewNo;
   }
-  public void setRno(int rno) {
-    this.rno = rno;
-  }
-  public int getComment() {
-    return comment;
-  }
-  public void setComment(int comment) {
-    this.comment = comment;
+  public void setReviewNo(int reviewNo) {
+    this.reviewNo = reviewNo;
   }
   public int getScore() {
     return score;
@@ -33,23 +27,34 @@ public class ReviewDto {
   public void setScore(int score) {
     this.score = score;
   }
+  public int getComment() {
+    return comment;
+  }
+  public void setComment(int comment) {
+    this.comment = comment;
+  }
+  public int getReviewStatus() {
+    return status;
+  }
+  public void setReviewStatus(int status) {
+    this.status = status;
+  }
+  public int getExhibitionNo() {
+    return exhibitionNo;
+  }
+  public void setExhibitionNo(int exhibitionNo) {
+    this.exhibitionNo = exhibitionNo;
+  }
+  public int getMemberNo() {
+    return memberNo;
+  }
+  public void setMemberNo(int memberNo) {
+    this.memberNo = memberNo;
+  }
   public int getStatus() {
     return status;
   }
   public void setStatus(int status) {
     this.status = status;
   }
-  public int getExno() {
-    return exno;
-  }
-  public void setExno(int exno) {
-    this.exno = exno;
-  }
-  public int getMno() {
-    return mno;
-  }
-  public void setMno(int mno) {
-    this.mno = mno;
-  }
-  
 }

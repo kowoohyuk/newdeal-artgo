@@ -76,7 +76,7 @@ public class AdminSerivceImpl implements AdminService {
   
   @Override
   public List<MemberDto> getMemberList(Map<String, String> param) {
-    return sqlSession.getMapper(MemberDao.class).selectMemberList();
+    return sqlSession.getMapper(MemberDao.class).getMemberList(param);
   }
 
   @Override
@@ -86,7 +86,7 @@ public class AdminSerivceImpl implements AdminService {
 
   @Override
   public int updateMember(MemberDto memberDto) {
-    return sqlSession.getMapper(MemberDao.class).updateMember(memberDto);
+    return sqlSession.getMapper(MemberDao.class).modifyMember(memberDto);
   }
 
 }

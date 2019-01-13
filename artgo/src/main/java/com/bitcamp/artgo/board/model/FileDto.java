@@ -8,25 +8,25 @@ package com.bitcamp.artgo.board.model;
 */
 
 public class FileDto {
-  private int fno;
-  private String folder;
+  private int fileNo;
+  private String folderName;
   private String saveName;
   private String name;
-  private int fileSize;
+  private int size;
   private int thumb;
-  private int bno;
+  private int boardNo;
   
-  public int getFno() {
-    return fno;
+  public int getFileNo() {
+    return fileNo;
   }
-  public void setFno(int fno) {
-    this.fno = fno;
+  public void setFileNo(int fileNo) {
+    this.fileNo = fileNo;
   }
-  public String getFolder() {
-    return folder;
+  public String getFolderName() {
+    return folderName;
   }
-  public void setFolder(String folder) {
-    this.folder = folder;
+  public void setFolderName(String folderName) {
+    this.folderName = folderName;
   }
   public String getSaveName() {
     return saveName;
@@ -40,11 +40,11 @@ public class FileDto {
   public void setName(String name) {
     this.name = name;
   }
-  public int getFileSize() {
-    return fileSize;
+  public int getSize() {
+    return size;
   }
-  public void setFileSize(int fileSize) {
-    this.fileSize = fileSize;
+  public void setSize(int size) {
+    this.size = size;
   }
   public int getThumb() {
     return thumb;
@@ -52,11 +52,11 @@ public class FileDto {
   public void setThumb(int thumb) {
     this.thumb = thumb;
   }
-  public int getBno() {
-    return bno;
+  public int getBoardNo() {
+    return boardNo;
   }
-  public void setBno(int bno) {
-    this.bno = bno;
+  public void setBoardNo(int boardNo) {
+    this.boardNo = boardNo;
   }
   
 }

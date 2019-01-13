@@ -67,6 +67,10 @@ input[type=submit]:hover {
 	font-size: 10px;
 }
 
+.list-group {
+	width: 50%;
+}
+
 .info {
 	font-size: 8px;
 	align: center;
@@ -75,6 +79,7 @@ input[type=submit]:hover {
 
 #padding {
 	padding: 10px;
+	width: 450px;
 }
 
 ul {
@@ -155,56 +160,3 @@ label {
 		margin-top: 0;
 	}
 }
-@media(min-width :990px){
-	.list-group, .btn-red, .btn-kakao {
-		width: 25%;
-	}
-	.btn-red-mini, .btn-kakao {
-		width: 12.5% !important;
-	}
-}
-@media(max-width :989px){
-	.list-group, .btn-red {
-		width: 40%;
-	}
-	.btn-red-mini, .btn-kakao {
-		width: 20% !important;
-	}
-}
-@media(max-width :600px){
-	.list-group, .btn-red {
-		width: 70%;
-	}
-	.btn-red-mini, .btn-kakao {
-		width: 35% !important;
-	}
-}
-
-.btn-red, .btn-red-mini{
-	background-color: black !important;
-	cursor: pointer !important;
-	color: white !important;
-}
-.btn-red:hover, .btn-red:active, .btn-red:focus, .btn-red-mini:hover, .btn-red-mini:active, .btn-red-mini:focus{
-	border-color: crimson !important;
-	background-color: crimson !important;
-}
-.member-login-label{
-	color : red;
-	display: none;
-}
-.member-login-div{
-	width: 100%;	
-}
-#kakao-login{
-	width: 100%;
-	height: 100%;
-}
-.btn-kakao{
-	background-color: white !important;
-	padding: 0px;
-	border: none !important;
-	cursor: pointer !important;
-}
-
-

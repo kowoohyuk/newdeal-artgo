@@ -21,9 +21,6 @@
 					 	<a href="/member/main.do"
 							data-toggle="tooltip" data-placement="bottom" title="mypage"><span>마이 페이지</span>
 						</a>
-						<a href="/admin/main.do"
-							data-toggle="tooltip" data-placement="bottom" title="mypage"><span>관리 페이지</span>
-						</a>
 					</div>
 				</div>
 			</div>
@@ -53,7 +50,7 @@
 					<!-- Subscribe btn -->
 					<div class="subscribe-btn">
 						<a href="#" class="btn subscribe-btn" data-toggle="modal"
-							data-target="#subsModal">내 정보</a>
+							data-target="#subsModal">사이트 정보 확인</a>
 					</div>
 
 					<!-- Navbar Toggler -->
@@ -105,21 +102,4 @@
 			</div>
 		</div>
 	</div>
-	
-	<div class="subscribe-newsletter-area">
-        <div class="modal fade" id="subsModal" tabindex="-1" role="dialog" aria-labelledby="subsModal" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                    <div class="modal-body">
-                        <h5 class="title">Subscribe to my newsletter</h5>
-                        <form action="#" class="newsletterForm" method="post">
-                            <input type="email" name="email" id="subscribesForm2" placeholder="Your e-mail here">
-                            <button type="submit" class="btn original-btn">Subscribe</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 </header>

@@ -1,15 +1,13 @@
-function check() {
-  var name = $("#name");
-  var phone = $("#phone");
-	if (name.val() == "") {
+function memberFindIdCheck() {
+	if (document.findId.name.value == "") {
 		alert("이름을 입력하세요");
-		name.focus();
+		document.findId.name.focus();
 		return false;
 	}
-	if (phone.val() == "") {
+	if (document.findId.phone.value == "") {
 		alert("휴대폰번호를 입력하세요");
-    phone.focus();
-    return false;
+		document.findId.phone.focus();
+		return false;
 	}
 	return true;
 }

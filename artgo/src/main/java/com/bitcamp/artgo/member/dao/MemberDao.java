@@ -12,16 +12,11 @@ import com.bitcamp.artgo.member.model.MemberDto;
 */
 
 public interface MemberDao {
-  int addMember(MemberDto memberDto);
-  MemberDto selectMember(String id);
-  MemberDto selectMemberByTell(String tell);
-  List<MemberDto> selectMemberList();
-  MemberDto checkMember(MemberDto memberDto);
-  int updateMember(MemberDto memberDto);
-  int deleteMember(MemberDto memberDto);
-  int updateVisitMember(MemberDto memberDto);
-  int updateGradeMember(MemberDto memberDto);
-  int updateConfirmMember(MemberDto memberDto);
+  int joinMember(MemberDto memberDto);
+  int modifyMember(MemberDto memberDto);
+  int deleteMember(int memberNo);
+  MemberDto getMember(int memberNo);
+  List<MemberDto> getMemberList(Map<String, String> param);
 }
 
 

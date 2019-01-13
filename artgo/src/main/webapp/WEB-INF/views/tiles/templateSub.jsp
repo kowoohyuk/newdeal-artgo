@@ -9,11 +9,16 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport"
 		content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>제목</title>
+    <link href="/resources/base/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/resources/base/css/bootstrap.css" rel="stylesheet">
+	<link href="/resources/base/css/_bootswatch.scss" rel="stylesheet">
+	
+	<link href="/resources/base/css/_variables.scss" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet" href="/resources/base/css/footer.css" type="text/css">
     <link rel="stylesheet" href="/resources/artgo/css/header-sub.css" type="text/css">
     <link rel="icon" href="/resources/base/img/core-img/favicon.ico">
-    <link href="/resources/base/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
     <div style="width:100%; height:100%;" >

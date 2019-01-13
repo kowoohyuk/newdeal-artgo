@@ -8,20 +8,20 @@ package com.bitcamp.artgo.board.model;
 */
 
 public class BoardDto {
-  private int bno;
+  private int boardNo;
   private String title;
   private String content;
   private int hit;
   private int date;
   private int status;
-  private int mno;
-  private int bcode;
+  private int memberNo;
+  private int boardCode;
   
-  public int getBno() {
-    return bno;
+  public int getBoardNo() {
+    return boardNo;
   }
-  public void setBno(int bno) {
-    this.bno = bno;
+  public void setBoardNo(int boardNo) {
+    this.boardNo = boardNo;
   }
   public String getTitle() {
     return title;
@@ -53,21 +53,17 @@ public class BoardDto {
   public void setStatus(int status) {
     this.status = status;
   }
-  public int getMno() {
-    return mno;
+  public int getMemberNo() {
+    return memberNo;
   }
-  public void setMno(int mno) {
-    this.mno = mno;
+  public void setMemberNo(int memberNo) {
+    this.memberNo = memberNo;
   }
-  public int getBcode() {
-    return bcode;
+  public int getBoardCode() {
+    return boardCode;
   }
-  public void setBcode(int bcode) {
-    this.bcode = bcode;
+  public void setBoardCode(int boardCode) {
+    this.boardCode = boardCode;
   }
-  @Override
-  public String toString() {
-    return "BoardDto [bno=" + bno + ", title=" + title + ", content=" + content + ", hit=" + hit
-        + ", date=" + date + ", status=" + status + ", mno=" + mno + ", bcode=" + bcode + "]";
-  }
+  
 }
