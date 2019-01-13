@@ -47,22 +47,21 @@
               </thead>
               <tbody>
               </tbody>
-                <tr>
-                  
+                <tr> 
                   <td class="img_box">
-	                  <a class="detail_link" href="javascript:;">
+	                  <a class="detail_link" href="ticketView.do">
 	                   <img src="#" width="100px" height="122px" alt="공연 포스터">
 	                  </a>
                   </td>
                       
                   <td class="tl tx">
-                  <a class="detail_link" href="javascript:;">김건모 25th Anniversary Tour-울산</a></td>
+                  <a class="detail_link" href="ticketView.do">김건모 25th Anniversary Tour-울산</a></td>
                   <td>
                   <!-- 범위 잡기 위한 td -->       
                   </td>
                   <td class="tl ff_tahoma">2019.03.30 ~ 2019.03.30</td>
                   <td class="tl desc_vt">울산동천체육관</td>
-                  <td>
+                 <td>
                     <div style="display: block;" class="btn_ticketing_type">
                       <div class="btn_table">
                         <div class="box_txt" id="box_tkt_txt"></div>

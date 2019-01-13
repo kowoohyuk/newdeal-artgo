@@ -70,14 +70,11 @@
 						<!-- Nav Start -->
 						<div class="classynav">
 							<ul>
-								<li><a href="index.html">홈</a></li>
+								<li><a href="main.do">홈</a></li>
 								<li><a href="#">전시</a>
 									<ul class="dropdown">
-										<li><a href="index.html">전체</a></li>
-										<li><a href="about-us.html">장르1</a></li>
-										<li><a href="single-post.html">장르2</a></li>
-										<li><a href="contact.html">장르3</a></li>
-										<li><a href="coming-soon.html">장르4</a></li>
+										<li><a href="ticketList.do">전시 상황</a></li>
+
 									</ul></li>
 								<li><a href="#">지역</a>
 								</li>
