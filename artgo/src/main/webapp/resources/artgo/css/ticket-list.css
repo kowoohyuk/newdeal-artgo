@@ -1,0 +1,70 @@
+@charset "UTF-8";
+#ticket-list-container {
+	margin: 100px;
+	
+}
+.ticket-list-header{
+	border: 0.5px solid #F2F2F2;
+	text-align: center;
+    margin: 0px;
+    padding: 15px;
+	   
+}
+#ticketinfo{
+	text-align: center;
+}
+.card mb-3 { 
+    text-align: left;
+}
+.ticket-list-accordion {
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+  background-color: white;
+  text-align: center;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  
+
+  
+}
+#member-main-panel-padding{
+    padding-right: 40px;
+}
+.active, .ticket-list-accordion:hover {
+
+}
+
+.ticket-list-panel {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  padding-top: 10px;
+  margin: auto;
+  
+	
+}
+
+#ticket-list-info{
+	  margin: 0 auto;
+	  text-align: left;
+}
+.ticket-list-text{
+	padding-top: 50px;
+	padding-bottom: 30px;
+}
+
+#ticket-list-btn{
+	align: center;
+	background-color: red;
+    font-size: 13px;
+    border-bottom-width: 0px;
+}
+
