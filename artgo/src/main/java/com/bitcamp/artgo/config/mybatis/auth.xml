@@ -2,19 +2,19 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.bitcamp.artgo.mail.MailDao">
+<mapper namespace="com.bitcamp.artgo.mail.AuthDao">
 	<insert id="createAuthKey" parameterType="authDto">
 		insert into
 		userAuth
 		values (#{id}, #{authKey})
 	</insert>
 	
-	<update id="userAuth" parameterType="authDto">
+	<update id="userAuth" parameterType="String">
 		update member
 		   set confirm = 1
 		 where id = #{id}
 		   and (select count(*)
 			   from userAuth
-			   where userEmail = #{userEmail}) > 0
+			   where userEmail = #{id}) > 0
 	</update>
 </mapper>

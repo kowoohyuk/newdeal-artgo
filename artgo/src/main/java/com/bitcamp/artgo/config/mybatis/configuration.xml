@@ -17,5 +17,6 @@
 		<typeAlias alias="reviewDto" type="com.bitcamp.artgo.board.model.ReviewDto"/>
 		<typeAlias alias="fileDto" type="com.bitcamp.artgo.board.model.FileDto"/>
 		<typeAlias alias="boardDto" type="com.bitcamp.artgo.board.model.BoardDto"/>
+		<typeAlias alias="authDto" type="com.bitcamp.artgo.mail.model.AuthDto"/>
 	</typeAliases>
 </configuration>

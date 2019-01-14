@@ -8,13 +8,13 @@ package com.bitcamp.artgo.board.model;
 */
 
 public class NoticeDto extends BoardDto {
-  private int noticeNo;
+  private int nno;
   
-  public int getNoticeNo() {
-    return noticeNo;
+  public int getNno() {
+    return nno;
   }
-  public void setNoticeNo(int noticeNo) {
-    this.noticeNo = noticeNo;
+  public void seNno(int nno) {
+    this.nno = nno;
   }
   
 }

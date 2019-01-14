@@ -1,4 +1,4 @@
-package com.bitcamp.artgo.mail;
+package com.bitcamp.artgo.mail.service;
 
 import java.io.UnsupportedEncodingException;
 import javax.activation.DataSource;

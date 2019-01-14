@@ -1,0 +1,44 @@
+@charset "UTF-8";
+@media(min-width :990px){
+	.list-group, .btn-red {
+		width: 40%;
+	}
+}
+@media(max-width :989px){
+	.list-group, .btn-red {
+		width: 55%;
+	}
+}
+@media(max-width :600px){
+	.list-group, .btn-red {
+		width: 70%;
+	}
+}
+.member-modify-div {
+	width: 100%;
+}
+.member-modify-div-center {
+	padding-bottom: 100px;
+}
+input[type=text], input[type=password], select, textarea, password {
+	width: 100%;
+	resize: vertical;
+	border: none;
+	font-size: 15px;
+}
+.member-modify-label{
+	color : red;
+	display: none;
+	width: 100%;
+}
+
+.btn-red, .btn-red-mini{
+	background-color: black !important;
+	cursor: pointer !important;
+	color: white !important;
+	height: 60px;
+}
+.btn-red:hover, .btn-red:active, .btn-red:focus, .btn-red-mini:hover, .btn-red-mini:active, .btn-red-mini:focus{
+	border-color: crimson !important;
+	background-color: crimson !important;
+}
