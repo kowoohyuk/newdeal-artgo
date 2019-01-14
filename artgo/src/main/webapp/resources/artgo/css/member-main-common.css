@@ -30,7 +30,7 @@ table.tbl_style03 tbody td{vertical-align: top}
 table .btn_flexible{vertical-align:top;margin-top: -6px;margin-left:5px;}
 
 /* 마이티켓 index */
-.wrap_person{margin-top:40px;border: 1px solid #dddddd;background:#fafafa;overflow:hidden;}
+.wrap_person{margin-top:40px;border: 1px solid #dddddd;overflow:hidden;}
 .box_person_info{float:left; position: relative;width:500px;padding:24px 24px;background:#fff;}
 .box_person_info:after{content: ""; display: block;clear: both;}
 .box_person_info .thumb{position:relative; float:left;width:100px;height:100px;}

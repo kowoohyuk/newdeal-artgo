@@ -3,7 +3,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>	
 <link href="/resources/artgo/css/member-main-common.css" rel="stylesheet">
 <link href="/resources/artgo/css/member-main.css" rel="stylesheet">
+<link rel="stylesheet" href="/resources/artgo/css/ticket-list.css"
+	type="text/css">
 
+	
 <c:if test="${userInfo.grade==1}">
 	<c:set var = "grade" value = "관리자"/>
 </c:if>
@@ -17,142 +20,150 @@
 	<c:set var = "grade" value = "VIP"/>
 </c:if>
 
-<div class="container">
+<div class="container member-main-div-container">
 	<!-- contents -->
 	<div id="conts" class="clear_g">
 	
 		<a href="/member/modify.do">내 정보 수정</a>
 		<!-- 최근 예매/취소 -->
-		<div class="row">
-			<div class="col-lg-10">
-				<h2 class="tit_sub_float">최근 예매/취소</h2>
-				<div class="ctr">
-					<a href="/myticket/rsrvList.htm" id="more" class="ico_more">더보기</a>
-				</div>
-	
-				<div class="box_ticket_list" id="divFound">
-					<table summary="최근 예매/취소 리스트" class="tbl tbl_style02">
-						<caption class="hide"></caption>
-						<colgroup>
-							<!-- 카카오페이 추가 -->
-							<col width="149" />
-							<col width="470" />
-							<col width="233" />
-							<col width="154" />
-							<!-- 카카오페이 추가 -->
-						</colgroup>
-						<thead>
-							<tr>
-								<th>예매일</th>
-								<th>공연정보</th>
-								<th>예매정보</th>
-								<th>상태</th>
-							</tr>
-						</thead>
-						<tbody id="rsrvTbody">
-							<tr style="text-align: center;">
-								<td>2019-01-12</td>
-								<td>빈 센트 반 고흐 전</td>
-								<td>7,000원</td>
-								<td>예매 완료</td>
-							</tr>
-							<tr>
-								<td colspan="2">
-								 	<img alt="" src="/resources/artgo/img/testImg.jpg">
-								</td>
-								<td colspan="2">
-									<p>티켓 구매 수량</p>
-									<p>청소년 : 5매</p>
-									<p>성인 : 0매</p>
-									<p>전시회 주소 : 서울시 강남구 봉은사로 ~~~~~~~ </p>
-								</td>
-							</tr>
-							<tr style="text-align: center;">
-								<td>2019-01-12</td>
-								<td>빈 센트 반 고흐 전</td>
-								<td>7,000원</td>
-								<td>예매 완료</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-				
-				<div class="col-lg-12 class-nav" id="divFound">
-					<ul>
-						<li class="col-lg-3 ">예매일</li>
-						<li class="col-lg-3">공연정보</li>
-						<li class="col-lg-3">예매정보</li>
-						<li class="col-lg-3">상태</li>
-					</ul>
-					<ul>
-						<li class="col-lg-3">2019-01-12</li>
-						<li class="col-lg-3">빈 센트 반 고흐 전</li>
-						<li class="col-lg-3">예매정보</li>
-						<li class="col-lg-3">예매 완료</li>
-					</ul>
-					<ul>
-						<li class="col-lg-2"><img alt="" src="/resources/artgo/img/testImg.jpg"></li>
-						<li class="col-lg-2">티켓 구매 수량</li>
-						<li class="col-lg-2">청소년 : 5매</li>
-						<li class="col-lg-2">성인 : 0매</li>
-						<li class="col-lg-2">전시회 주소 : 서울시 강남구 봉은사로 ~~~~~~~</li>
-					</ul>
-				</div>
-				
-				
-				
-				<div class="box_no_list" id="divNotFound" style="display: none">
-					<p>예매확인/ 취소내역이 없습니다.</p>
-				</div>
+				<!-- 최근 예매/취소 -->
+			<h2 class="tit_sub_float">최근 예매/취소</h2>
+		<div class="wrap_person">
+			<div class="ctr">
+				<a href="/myticket/rsrvList.htm" id="more" class="ico_more">더보기</a>
 			</div>
-			<!-- //최근 예매/취소 -->
-		</div>
-		
-		<div class="row">
-			<div class="warp_ticket col-lg-10">
-				<!-- 최근 참여 이벤트 -->
-				<div class="tit_sub_float">
-					<h2 class="tit_sub_float">즐겨찾기</h2>
-					<div class="ctr">
-						<a href="/myticket/rsrvList.htm" id="more" class="ico_more">더보기</a>
-					</div>
-	
-					<div class="wrap_taken">
-	
-						<div class="list-group">
-							<a href="#"
-								class="list-group-item list-group-item-action flex-column align-items-start">
-								<div class="d-flex w-100 justify-content-between">
-									<h5 class="mb-1">
-										<img class="member-main-img" src="/resources/base/img/core-img/img.png">
-									</h5>
-								</div>
-								<p class="mb-1">내용</p>
-							</a> <a href="#"
-								class="list-group-item list-group-item-action flex-column align-items-start">
-								<div class="d-flex w-100 justify-content-between">
-									<h5 class="mb-1">
-										<img class="member-main-img" src="/resources/base/img/core-img/img.png">
-									</h5>
-								</div>
-								<p class="mb-1">내용</p>
-							</a> <a href="#"
-								class="list-group-item list-group-item-action flex-column align-items-start">
-								<div class="d-flex w-100 justify-content-between">
-									<h5 class="mb-1">
-										<img class="member-main-img" src="/resources/base/img/core-img/img.png">
-									</h5>
-								</div>
-								<p class="mb-1">내용</p>
-							</a>
-						</div>
-					
-					</div>
-				</div>
-				<!--// 컨텐츠 영역 끝 -->
-			</div>
-		<!-- //contents -->
-		</div>
+
+				<div class="row">
+		<div class="col-sm-2 ticket-list-header">결제일자</div>
+		<div class="col-sm-5 ticket-list-header">상품명</div>
+		<div class="col-sm-3 ticket-list-header">금액</div>
+		<div class="col-sm-2 ticket-list-header">상태</div>
 	</div>
-</div>
-<script src="/resources/artgo/js/member-main.js"></script>
+		<div class="row">
+		<button class="ticket-list-accordion">
+			<div class="col-sm-2">2019-01-13</div>
+			<div class="col-sm-5">에이피사진전 빛이 남긴 감정</div>
+			<div class="col-sm-3">13,000원</div>
+			<div class="col-sm-2">취소</div>
+		</button>
+		
+		
+		<div class="ticket-list-panel">
+
+			<div class="col-sm-6" id="member-main-panel-padding">
+				<img id="member-main-panel-img" alt="" src="/resources/artgo/img/testImg.jpg">
+			</div>
+			<div class="col-sm-6" id="ticket-list-info">
+				<div class="card mb-3">
+					<h3 class="card-header member-main-info">티켓 상세 내역</h3>
+
+					<ul class="list-group list-group-flush">
+						<li class="list-group-item">
+							<h5 class="card-title" id="member-main-card-title">성인 : 0매</h5>
+							<h6 class="card-subtitle text-muted" id="member-main-card-cont">0원</h6>
+						</li>
+						<li class="list-group-item">
+							<h5 class="card-title"  id="member-main-card-title">청소년 : 5매</h5>
+							<h6 class="card-subtitle text-muted" id="member-main-card-cont">16,200원</h6>
+						</li>
+						<li class="list-group-item">
+							<h5 class="card-title"  id="member-main-card-title">주소</h5>
+							<h6 class="card-subtitle text-muted" id="member-main-card-cont">서울특별시 종로구 세종대로 175세종
+								문화회관</h6>
+						</li>
+						<button id="ticket-list-btn" type="button"
+					class="btn btn-primary disabled">자세히 보기</button>
+					</ul>
+						
+					</div>
+				</div>
+			</div>
+	</div>
+
+		<div class="row">
+		<button class="ticket-list-accordion">
+			<div class="col-sm-2">2019-01-13</div>
+			<div class="col-sm-5">에이피사진전 빛이 남긴 감정</div>
+			<div class="col-sm-3">13,000원</div>
+			<div class="col-sm-2">취소</div>
+		</button>
+		
+		
+		<div class="ticket-list-panel">
+
+			<div class="col-sm-6" id="member-main-panel-padding">
+				<img id="member-main-panel-img" alt="" src="/resources/artgo/img/testImg.jpg">
+			</div>
+			<div class="col-sm-6" id="ticket-list-info">
+				<div class="card mb-3">
+					<h3 class="card-header member-main-info">티켓 상세 내역</h3>
+
+					<ul class="list-group list-group-flush">
+						<li class="list-group-item">
+							<h5 class="card-title" id="member-main-card-title">성인 : 0매</h5>
+							<h6 class="card-subtitle text-muted" id="member-main-card-cont">0원</h6>
+						</li>
+						<li class="list-group-item">
+							<h5 class="card-title"  id="member-main-card-title">청소년 : 5매</h5>
+							<h6 class="card-subtitle text-muted" id="member-main-card-cont">16,200원</h6>
+						</li>
+						<li class="list-group-item">
+							<h5 class="card-title"  id="member-main-card-title">주소</h5>
+							<h6 class="card-subtitle text-muted" id="member-main-card-cont">서울특별시 종로구 세종대로 175세종
+								문화회관</h6>
+						</li>
+						<button id="ticket-list-btn" type="button"
+					class="btn btn-primary disabled">자세히 보기</button>
+					</ul>
+						
+					</div>
+				</div>
+			</div>
+	</div>
+	
+	<div class="row">
+		<button class="ticket-list-accordion">
+			<div class="col-sm-2">2019-01-13</div>
+			<div class="col-sm-5">에이피사진전 빛이 남긴 감정</div>
+			<div class="col-sm-3">13,000원</div>
+			<div class="col-sm-2">취소</div>
+		</button>
+		
+		
+		<div class="ticket-list-panel">
+
+			<div class="col-sm-6" id="member-main-panel-padding">
+				<img id="member-main-panel-img" alt="" src="/resources/artgo/img/testImg.jpg">
+			</div>
+			<div class="col-sm-6" id="ticket-list-info">
+				<div class="card mb-3">
+					<h3 class="card-header member-main-info">티켓 상세 내역</h3>
+
+					<ul class="list-group list-group-flush">
+						<li class="list-group-item">
+							<h5 class="card-title" id="member-main-card-title">성인 : 0매</h5>
+							<h6 class="card-subtitle text-muted" id="member-main-card-cont">0원</h6>
+						</li>
+						<li class="list-group-item">
+							<h5 class="card-title"  id="member-main-card-title">청소년 : 5매</h5>
+							<h6 class="card-subtitle text-muted" id="member-main-card-cont">16,200원</h6>
+						</li>
+						<li class="list-group-item">
+							<h5 class="card-title"  id="member-main-card-title">주소</h5>
+							<h6 class="card-subtitle text-muted" id="member-main-card-cont">서울특별시 종로구 세종대로 175세종
+								문화회관</h6>
+						</li>
+						<button id="ticket-list-btn" type="button"
+					class="btn btn-primary disabled">자세히 보기</button>
+					</ul>
+						
+					</div>
+				</div>
+			</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	
+
+<script src="/resources/base/js/ticket-list.js"></script>
