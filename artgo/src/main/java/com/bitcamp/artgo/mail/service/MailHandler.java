@@ -6,8 +6,14 @@ import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
+import javax.activation.DataSource;
+import javax.mail.MessagingException;
+import javax.mail.internet.MimeMessage;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.MimeMessageHelper;
 
-public class MailHandler { // 메일보내기 유틸
+public class MailHandler {
+
   private JavaMailSender mailSender;
   private MimeMessage message;
   private MimeMessageHelper messageHelper;

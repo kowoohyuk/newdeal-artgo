@@ -52,8 +52,7 @@
 
 					<!-- Subscribe btn -->
 					<div class="subscribe-btn">
-						<a href="#" class="btn subscribe-btn" data-toggle="modal"
-							data-target="#subsModal">내 정보</a>
+						<a href="#" class="btn btn-my-modal">내 정보</a>
 					</div>
 
 					<!-- Navbar Toggler -->
@@ -84,7 +83,7 @@
 									</ul></li>
 								<li><a href="#">지역</a>
 								</li>
-								<li><a href="about-us.html">즐겨찾기</a></li>
+								<li><a href="about-us.html" id="a-favorite">즐겨찾기</a></li>
 								<li><a href="#">마이 티켓</a>
 								</li>
 							</ul>
@@ -122,4 +121,48 @@
             </div>
         </div>
     </div>
+    
+	<!-- Subscribe btn -->
+	<div class="bbbbbbbbbbbb">
+		<a href="#" class="btn" id="abce">버트은</a>
+	</div>
+    
+    
+    <div class="modal-cutton" id="cutton">
+    
+    </div>
+    
+    <div class="subscribe-newsletter-area">
+        <div class="modal-my-content">
+            <div class="modal-my-body">
+            <button type="button" class="close" id="modal-close"><span aria-hidden="true">×</span></button>
+                <h5 class="title">Subscribe to my newsletter</h5>
+                <form action="#" class="newsletterForm" method="post">
+                    <input type="email" name="email" id="subscribesForm2" placeholder="Your e-mail here">
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <script type="text/javascript">
+    	$(function(){
+    		
+    		$("#abce").click(function(){
+    			$(".subscribe-newsletter-area").css("left", x);
+    			$(".subscribe-newsletter-area").css("top", y);
+	    		$("#cutton").fadeIn();
+	    		$(".modal-my-content").fadeIn();
+    		});
+    		$("#modal-close").click(function(){
+	    		$("#cutton").fadeOut();
+	    		$(".modal-my-content").fadeOut();
+    		});
+    		$(".modal-cutton").click(function(){
+	    		$("#cutton").fadeOut();
+	    		$(".modal-my-content").fadeOut();
+    		});
+    	});
+    
+    </script>
+
 </header>

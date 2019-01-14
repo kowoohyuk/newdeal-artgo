@@ -158,9 +158,9 @@ public class MemberController {
   @RequestMapping(value = "member/confirm.do", method = RequestMethod.GET)
   public String memberConfirm(String userEmail, Model model){ // 이메일인증
       authService.userAuth(userEmail);
-      return "/user/emailConfirm";
+      model.addAttribute("userEmail", userEmail);
+      return "/main.do";
   }
-
 
   // @RequestMapping("member/ticket/list")
   // public String ticketList() {

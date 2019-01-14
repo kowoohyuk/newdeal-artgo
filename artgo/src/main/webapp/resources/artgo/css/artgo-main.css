@@ -1,0 +1,46 @@
+@charset "UTF-8";
+
+.modal-backdrop {
+	display: none !important;
+}
+/* .modal-content, .modal-body, .close { */
+/* 	z-index: 150 !important; */
+/* } */
+.modal-my-content {
+	display: none;
+	margin: 0 auto;
+	border-radius: 0;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+	position: relative;
+	background-color: azure;
+	background-clip: padding-box;
+	border: 1px solid rgba(0, 0, 0, .2);
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	flex-direction: column;
+	width: 430px;
+	pointer-events: auto;
+	z-index: 250;
+}
+
+.modal-cutton {
+	position: fixed;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	width: 100%;
+	height: 1200px;
+	display: none;
+	background-color: #000;
+	opacity: 0.8;
+	z-index: 200;
+}
+
+.modal-my-body {
+	padding: 70px;
+	position: fixed;
+	-webkit-box-flex: 1;
+	flex: 1 1 auto;
+	background-color: azure;
+}

@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="/resources/artgo/css/member-join.css" rel="stylesheet">
    <form name="join" class="member-join-form" method="post" action="/member/join.do" id="join-form" onsubmit="return check();">
     <div align="center" class="member-join-div">
