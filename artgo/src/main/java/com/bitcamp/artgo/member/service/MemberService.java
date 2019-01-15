@@ -1,6 +1,7 @@
 package com.bitcamp.artgo.member.service;
 
 import java.util.List;
+import java.util.Map;
 import com.bitcamp.artgo.member.model.MemberDto;
 
 /**
@@ -20,7 +21,7 @@ public interface MemberService {
   //로그인 시
   MemberDto checkMember(MemberDto memberDto);
   //관리자 페이지 회원 목록
-  List<MemberDto> selectMemberList();
+  List<MemberDto> selectMemberList(Map<String, String> param);
   //회원 정보 수정
   int updateMember(MemberDto memberDto);
   //회원 탈퇴

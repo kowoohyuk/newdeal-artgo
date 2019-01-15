@@ -4,12 +4,12 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.bitcamp.artgo.member.dao.MemberDao">
 	<insert id="addMember" parameterType="memberDto">
-		INSERT INTO member (id, pwd, type, name, tell, status, confirm, grade, joindate, finaldate)
-		VALUES (#{id}, #{pwd}, #{type}, #{name}, #{tell}, 1, #{confirm}, 1, now(), now())
+		INSERT INTO member (id, pwd, type, name, tell, status, confirm, grade, role, joindate, finaldate)
+		VALUES (#{id}, #{pwd}, #{type}, #{name}, #{tell}, 1, #{confirm}, '일반', 'ROLE_USER', now(), now())
 	</insert>
 	
 	<select id="selectMember" parameterType="Map" resultType="memberDto">
-		SELECT mno, id, name, type, birth, tell, status, confirm, grade, joindate, finaldate
+		SELECT mno, id, name, type, birth, tell, status, confirm, grade, role, joindate, finaldate
 		FROM member
 		WHERE id = #{id}
 	</select>
@@ -21,14 +21,29 @@
 	</select>
 	
 	<select id="checkMember" parameterType="memberDto" resultType="memberDto">
-		SELECT mno, id, name, type, birth, tell, status, confirm, grade, joindate, finaldate FROM member
+		SELECT mno, id, name, type, birth, tell, status, confirm, grade, role, joindate, finaldate FROM member
 		WHERE id = #{id}
 		AND pwd = #{pwd}
 	</select>
 	
-	<select id="selectMemberList" resultType="memberDto">
-		SELECT mno, id, name, type, birth, tell, status, confirm, grade, joindate, finaldate
-		FROM member
+	<select id="selectMemberList" parameterType="Map" resultType="memberDto">
+		SELECT m.* 
+			FROM (SELECT @rownum:=@rownum+1 AS rnum, tmp.* FROM MEMBERLISTVIEW AS tmp,
+                 (SELECT @rownum:=0) as r
+			<if test="word != null and word != ''">
+				<choose>
+					<when test="key == 'id'">
+                		WHERE tmp.id LIKE CONCAT('%',#{word},'%')
+					</when>
+					<otherwise>
+						WHERE ${key} = CONCAT('%',#{word},'%')
+					</otherwise>
+				</choose>
+			</if>
+			ORDER BY tmp.mno DESC
+            ) AS m
+			WHERE rnum &lt;= #{end}
+			AND rnum &gt;= #{start}                
 	</select>
 	
 	<update id="updateMember" parameterType="memberDto">
@@ -49,6 +64,12 @@
 	<update id="updateVisitMember" parameterType="memberDto">
 		UPDATE member
 		SET finaldate = now()
+		WHERE id = #{id}
+	</update>
+
+	<update id="updateRoleMember" parameterType="memberDto">
+		UPDATE member
+		SET role = #{role}
 		WHERE id = #{id}
 	</update>
 	

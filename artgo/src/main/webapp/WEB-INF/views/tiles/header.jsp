@@ -4,14 +4,14 @@
 	<!-- Top Header Area -->
 	<div class="top-header">
 		<div class="container h-100">
-			<div class="row h-100 align-items-center">
+			<div class="row h-100 align-items-center header-div-top">
 				<!-- Breaking News Area -->
 				<div class="col-12 col-sm-8">
 					<div class="breaking-news-area"></div>
 				</div>
 				<!-- Top Social Area -->
 				<div class="col-12 col-sm-4">
-					<div class="top-social-area">
+					<div class="top-social-area header-div-top-flag">
 						<a href="/member/login.do" data-toggle="tooltip" data-placement="bottom"
 							title="login"><span>로그인</span>
 						</a>
@@ -148,8 +148,6 @@
     	$(function(){
     		
     		$("#abce").click(function(){
-    			$(".subscribe-newsletter-area").css("left", x);
-    			$(".subscribe-newsletter-area").css("top", y);
 	    		$("#cutton").fadeIn();
 	    		$(".modal-my-content").fadeIn();
     		});

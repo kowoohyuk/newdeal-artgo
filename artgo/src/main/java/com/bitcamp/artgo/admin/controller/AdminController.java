@@ -1,8 +1,18 @@
 package com.bitcamp.artgo.admin.controller;
 
+import java.util.List;
+import java.util.Map;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
+import com.bitcamp.artgo.common.service.CommonService;
+import com.bitcamp.artgo.member.model.MemberDto;
+import com.bitcamp.artgo.member.service.MemberService;
+import com.bitcamp.artgo.util.PageNavigation;
 
 /**
 * 파일명: AdminController.java
@@ -12,29 +22,47 @@ import org.springframework.web.bind.annotation.RequestMethod;
 */
 
 @Controller
+@RequestMapping("/admin")
 public class AdminController {
+  
+  @Autowired
+  MemberService memberService;
+  
+  @Autowired
+  CommonService commonService;
 
-  @RequestMapping(value = "/admin/main.do", method = RequestMethod.GET)
+  @RequestMapping(value = "/main.do", method = RequestMethod.GET)
   public String adminMain() {
     return "admin/main.ad";
   }
   
-  @RequestMapping(value = "/admin/reviewList.do", method = RequestMethod.GET)
+  @RequestMapping(value = "/member/list.do", method = RequestMethod.GET)
+  public ModelAndView adminMemberList(@RequestParam Map<String, String> param, Model model) {
+      ModelAndView modelAndView = new ModelAndView();
+      List<MemberDto> list = memberService.selectMemberList(param);
+      for(MemberDto m : list) {
+        System.out.println(m);
+      }
+      PageNavigation navigation = commonService.makePageNavigation(param);
+      navigation.setRoot("/admin");
+      navigation.makeNavigator();
+      modelAndView.addObject("articlelist", list);
+      modelAndView.addObject("navigator", navigation);
+      modelAndView.setViewName("admin/member-list.ad");
+      return modelAndView;
+  }
+  
+  @RequestMapping(value = "/reviewList.do", method = RequestMethod.GET)
   public String adminReviewList() {
     return "admin/reviewList.page";
   }
-  
-  @RequestMapping(value = "/admin/memberList.do", method = RequestMethod.GET)
-  public String adminMemberList() {
-    return "admin/memberList.page";
-  }
 
-  @RequestMapping(value = "/admin/questionList.do", method = RequestMethod.GET)
+  @RequestMapping(value = "/questionList.do", method = RequestMethod.GET)
   public String adminQuestionList() {
     return "admin/questionList.page";
   }
 
-  @RequestMapping(value = "/admin/chart.do", method = RequestMethod.GET)
+  @RequestMapping(value = "/chart.do", method = RequestMethod.GET)
   public String adminChart() {
     return "admin/chart.page";
   }

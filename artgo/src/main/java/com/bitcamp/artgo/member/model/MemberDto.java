@@ -16,110 +16,107 @@ public class MemberDto {
   private String tell;
   private int status;
   private int confirm;
-  private int grade;
+  private String grade;
+  private String role;
   private String joinDate;
   private String finalDate;
   private String birth;
-  
+
   public int getMno() {
     return mno;
   }
 
-  
   public void setMno(int mno) {
     this.mno = mno;
   }
-
 
   public String getId() {
     return id;
   }
 
-
   public void setId(String id) {
     this.id = id;
   }
-
 
   public String getPwd() {
     return pwd;
   }
 
-
   public void setPwd(String pwd) {
     this.pwd = pwd;
   }
 
+  public String getType() {
+    return type;
+  }
+
+  public void setType(String type) {
+    this.type = type;
+  }
 
   public String getName() {
     return name;
   }
 
-
   public void setName(String name) {
     this.name = name;
   }
-
 
   public String getTell() {
     return tell;
   }
 
-
   public void setTell(String tell) {
     this.tell = tell;
   }
-
 
   public int getStatus() {
     return status;
   }
 
-
   public void setStatus(int status) {
     this.status = status;
   }
-
 
   public int getConfirm() {
     return confirm;
   }
 
-
   public void setConfirm(int confirm) {
     this.confirm = confirm;
   }
 
-
-  public int getGrade() {
+  public String getGrade() {
     return grade;
   }
 
-
-  public void setGrade(int grade) {
+  public void setGrade(String grade) {
     this.grade = grade;
   }
 
+  public String getRole() {
+    return role;
+  }
+
+  public void setRole(String role) {
+    this.role = role;
+  }
 
   public String getJoinDate() {
     return joinDate;
   }
 
-
   public void setJoinDate(String joinDate) {
     this.joinDate = joinDate;
   }
-
 
   public String getFinalDate() {
     return finalDate;
   }
 
-
   public void setFinalDate(String finalDate) {
     this.finalDate = finalDate;
   }
-
 
   public String getBirth() {
     return birth;
@@ -127,14 +124,6 @@ public class MemberDto {
 
   public void setBirth(String birth) {
     this.birth = birth;
-  }
-  
-  public String getType() {
-    return type;
-  }
-
-  public void setType(String type) {
-    this.type = type;
   }
 
   @Override

@@ -1,12 +1,14 @@
 package com.bitcamp.artgo.member.service;
 
 import java.util.List;
+import java.util.Map;
 import org.apache.commons.codec.net.URLCodec;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.bitcamp.artgo.member.dao.MemberDao;
 import com.bitcamp.artgo.member.model.MemberDto;
+import com.bitcamp.artgo.util.ListConstance;
 
 @Service
 public class MemberServiceImpl implements MemberService {
@@ -26,9 +28,13 @@ public class MemberServiceImpl implements MemberService {
     }
 
     @Override
-    public List<MemberDto> selectMemberList() {
-        //페이징 x
-        return sqlSession.getMapper(MemberDao.class).selectMemberList();
+    public List<MemberDto> selectMemberList(Map<String, String> param) {
+      int pg = Integer.parseInt(param.get("pg"));
+      int end = pg*ListConstance.LIST_COUNT;
+      int start = end-ListConstance.LIST_COUNT;
+      param.put("start", start+"");
+      param.put("end", end+"");
+      return sqlSession.getMapper(MemberDao.class).selectMemberList(param);
     }
 
     @Override
@@ -39,7 +45,7 @@ public class MemberServiceImpl implements MemberService {
     @Override
     public MemberDto checkMember(MemberDto memberDto) {
         memberDto.setPwd(enc(memberDto.getPwd()));
-        System.out.println("여기는 들어와");
+        System.out.println(memberDto.getPwd());
         return sqlSession.getMapper(MemberDao.class).checkMember(memberDto);
     }
 

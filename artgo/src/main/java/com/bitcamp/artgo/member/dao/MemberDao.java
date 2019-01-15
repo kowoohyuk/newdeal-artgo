@@ -15,12 +15,13 @@ public interface MemberDao {
   int addMember(MemberDto memberDto);
   MemberDto selectMember(String id);
   MemberDto selectMemberByTell(String tell);
-  List<MemberDto> selectMemberList();
+  List<MemberDto> selectMemberList(Map<String,String> param);
   MemberDto checkMember(MemberDto memberDto);
   int updateMember(MemberDto memberDto);
   int deleteMember(MemberDto memberDto);
   int updateVisitMember(MemberDto memberDto);
   int updateGradeMember(MemberDto memberDto);
+  int updateRoleMember(MemberDto memberDto);
   int updateConfirmMember(MemberDto memberDto);
 }
 

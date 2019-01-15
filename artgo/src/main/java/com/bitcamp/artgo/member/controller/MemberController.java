@@ -88,9 +88,10 @@ public class MemberController {
      * @return : 1) 로그인 성공 시 메인 화면 이동 2) 실패 시 현재 페이지 내 경고창 출력
      **/
     MemberDto user = memberService.checkMember(memberDto);
+    System.out.println(user);
     if (user != null) {
       if (user.getConfirm() == 0) {
-        return "member/emailPush.part";
+        //return "member/emailPush.part";
       }
         MemberDto tmp = new MemberDto();
         tmp.setId(user.getId());
@@ -129,12 +130,9 @@ public class MemberController {
     System.out.println("로그인 회원 정보 :" + tmp);
     return result.toString();
   }
-  
   @RequestMapping(value="member/checkId.do", method=RequestMethod.POST)
   public @ResponseBody Map<String, String> checkId(@RequestParam String id) {
       Map<String, String> map = new HashMap<String, String>();
-      System.out.println("여기 와요!");
-      System.out.println(id);
       if(memberService.selectMember(id)!=null) {
           map.put("result", "1");
       }else {

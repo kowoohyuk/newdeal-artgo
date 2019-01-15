@@ -23,7 +23,7 @@ public interface AdminService {
   int deleteExhibition(int boardNo);
   int deleteReview(int reviewNo);
   List<NoticeDto> getNoticeList(Map<String, String> param);
-  List<MemberDto> getMemberList(Map<String, String> param);
+  String getMemberList(Map<String, String> param);
   List<ReviewDto> getReviewList(Map<String, String> param);
   int updateMember(MemberDto memberDto);
 }

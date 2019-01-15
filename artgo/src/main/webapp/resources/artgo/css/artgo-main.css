@@ -1,5 +1,10 @@
 @charset "UTF-8";
-
+.header-div-top-flag{
+	padding-bottom: 0px;
+}
+.header-div-top{
+	margin-top : 10px;
+}
 .modal-backdrop {
 	display: none !important;
 }

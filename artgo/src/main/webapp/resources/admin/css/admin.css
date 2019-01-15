@@ -1,14 +1,80 @@
 @charset "UTF-8";
 .admin-btn{
-	background-color : darkgray !important;
+	background-color : darkred !important;
 	border: 1px solid white;
 	border-radius: 0.5em;
+}
+h3{
+	margin-bottom: 5px;
 }
 /* 이거 수정 시 사라질 수도 있음.  js에서 처리하면 끝이라서 */
 .admin-btn:hover{
 	background-color: red !important;
 	border: 1px solid red;
 	outline: red;
+}
+.member-min-td {
+	width : 15%;
+}
+.member-detail{
+	display: none;
+}
+.member-max-td {
+	width : 35%;
+}
+.paging-div{
+	text-align: center;
+}
+.paging-div ul{
+	list-style: none;
+	display: inline-block;
+	margin-bottom: 0px;
+}
+.paging-div ul li{
+	list-style: none;
+	float : left;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+.paging-div ul li a{
+	color: darkgray;
+	font-weight: 600;
+	cursor: pointer;
+	font-size: 13px;
+}
+.paging-div ul li label{
+	font-size: 13px;
+	cursor: pointer;
+}
+.paging-div ul li:hover{
+	color: red;
+}
+.paging-active{
+	color: red;
+}
+@media (max-width: 940px) {
+	.paging-div ul li{
+		margin-right: 5px;
+		margin-left: 5px;	
+	}
+}
+.search-div{
+	display: flex;
+	-webkit-justify-content: center;
+	padding-bottom: 15px;
+}
+.search-div input[type=text]{
+	border: 1px solid black !important;
+	width: 12em !important;
+		margin: 0;
+}
+.search-bar{
+	border: 1px solid black !important;
+	width: 7em !important;
+	margin-right: 3px;
+}
+.select-bar{
+	font-size : 12px;
 }
 .btn-active{
 	background-color : red !important;

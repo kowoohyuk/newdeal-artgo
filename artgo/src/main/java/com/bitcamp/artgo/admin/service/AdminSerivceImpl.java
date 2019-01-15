@@ -3,6 +3,8 @@ package com.bitcamp.artgo.admin.service;
 import java.util.List;
 import java.util.Map;
 import org.apache.ibatis.session.SqlSession;
+import org.json.JSONArray;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -75,8 +77,28 @@ public class AdminSerivceImpl implements AdminService {
   }
   
   @Override
-  public List<MemberDto> getMemberList(Map<String, String> param) {
-    return sqlSession.getMapper(MemberDao.class).selectMemberList();
+  public String getMemberList(Map<String, String> param) {
+    List<MemberDto> list = sqlSession.getMapper(MemberDao.class).selectMemberList(param);
+    JSONObject json = new JSONObject();
+    JSONArray jsonArr = new JSONArray();
+    
+    for(MemberDto memberDto: list) {
+        JSONObject member = new JSONObject();
+        member.put("mno", memberDto.getMno());
+        member.put("id", memberDto.getId());
+        member.put("name", memberDto.getName());
+        member.put("birth", memberDto.getBirth());
+        member.put("type", memberDto.getType());
+        member.put("status", memberDto.getStatus());
+        member.put("tell", memberDto.getTell());
+        member.put("confirm", memberDto.getConfirm());
+        member.put("role", memberDto.getRole());
+        member.put("joindate", memberDto.getJoinDate());
+        member.put("finaldate", memberDto.getFinalDate());
+        jsonArr.put(member);
+    }
+    json.put("memberlist", jsonArr);
+    return json.toString();
   }
 
   @Override

@@ -1,22 +1,11 @@
 package com.bitcamp.artgo.common.dao;
 
-/**
-* 파일명: CommonDao.java
-* 설 명: 설명내용
-* 작성일: 2019. 1. 11.
-* 작성자: 고 우 혁
-*/
+import java.util.Map;
 
-public class CommonDao {
-
+public interface CommonDao {
+	
+	int getNextSeq();
+	void updateHit(int seq);
+	int getTotalMemberCount(Map<String, String> param);
+	
 }
-
-
-/**
-* @함수명 : cardInsert(CardDTO card)
-* @작성일 : 2019. 1. 11.
-* @작성자 : 고 우 혁
-* @설명 : 카드를 생성한다.
-* @param CardDTO - projectNum, cardName
-* @return int 성공한 갯수
-**/

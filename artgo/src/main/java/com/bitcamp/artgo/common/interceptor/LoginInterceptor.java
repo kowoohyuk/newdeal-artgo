@@ -10,6 +10,12 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
+	    int i = 0;
+	    if(i==0) {
+	      //임시
+	      return true;
+	    }
+	  
 		HttpSession session = request.getSession();
 		String url = request.getRequestURI();
 		System.out.println(url);
