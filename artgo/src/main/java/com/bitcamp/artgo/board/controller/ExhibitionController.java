@@ -1,5 +1,6 @@
 package com.bitcamp.artgo.board.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -13,18 +14,46 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class ExhibitionController {
 
-  @RequestMapping(value = "/ticketList.do", method = RequestMethod.GET)
+  @Autowired
+/*  private ExhibitionService exhibitionService;*/
+  
+  @RequestMapping(value = "ticket/ticketList.do", method = RequestMethod.GET)
   public String ticketList() {
-    
+
     return "ticket/list.page";
   }
 
-  @RequestMapping(value = "/ticketView.do", method = RequestMethod.GET)
+  @RequestMapping(value = "ticket/ticketView.do", method = RequestMethod.GET)
   public String ticketView() {
     
     return "ticket/view.page";
   }
+  
+  @RequestMapping(value = "ticket/ticketWrite.do", method = RequestMethod.GET)
+  public String ticketWriter() {
+    
+      
+      
+      
+    return "ticket/write.page";
+  }
+  
+  @RequestMapping(value = "ticket/ticketWrite.do", method = RequestMethod.POST)
+  public String ticketWriterPost() {
+      
+      
+      
+      
+      return "redirect:main.do";
+  }
+  
+  @RequestMapping(value = "ticket/ticketUpdate.do", method = RequestMethod.GET)
+  public String ticketUpdate() {
+      
+      return "ticket/update.page";
+  }
 }
+
 
 /**
 * @함수명 : cardInsert(CardDTO card)

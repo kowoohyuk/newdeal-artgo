@@ -4,14 +4,14 @@
 	<!-- Top Header Area -->
 	<div class="top-header">
 		<div class="container h-100">
-			<div class="row h-100 align-items-center">
+			<div class="row h-100 align-items-center header-div-top">
 				<!-- Breaking News Area -->
 				<div class="col-12 col-sm-8">
 					<div class="breaking-news-area"></div>
 				</div>
 				<!-- Top Social Area -->
 				<div class="col-12 col-sm-4">
-					<div class="top-social-area">
+					<div class="top-social-area header-div-top-flag">
 						<a href="/member/login.do" data-toggle="tooltip" data-placement="bottom"
 							title="login"><span>로그인</span>
 						</a>
@@ -20,6 +20,9 @@
 						</a>
 					 	<a href="/member/main.do"
 							data-toggle="tooltip" data-placement="bottom" title="mypage"><span>마이 페이지</span>
+						</a>
+						<a href="/admin/main.do"
+							data-toggle="tooltip" data-placement="bottom" title="mypage"><span>관리 페이지</span>
 						</a>
 					</div>
 				</div>
@@ -49,8 +52,7 @@
 
 					<!-- Subscribe btn -->
 					<div class="subscribe-btn">
-						<a href="#" class="btn subscribe-btn" data-toggle="modal"
-							data-target="#subsModal">사이트 정보 확인</a>
+						<a href="#" class="btn btn-my-modal">내 정보</a>
 					</div>
 
 					<!-- Navbar Toggler -->
@@ -67,21 +69,23 @@
 							</div>
 						</div>
 
-						<!-- Nav Start -->
-						<div class="classynav">
-							<ul>
-								<li><a href="main.do">홈</a></li>
-								<li><a href="#">전시</a>
-									<ul class="dropdown">
-										<li><a href="ticketList.do">전시 상황</a></li>
+            <!-- Nav Start -->
+            <div class="classynav">
+              <ul>
+                <li><a href="/main.do">홈</a></li>
+                <li><a href="/ticket/ticketList.do">전시</a>
+                  <ul class="dropdown">
+                    <li><a href="/ticket/ticketList.do">전시 상황</a></li>
+                    <li><a href="/ticket/ticketWrite.do">글 작성 테스트 링크</a></li>
+                    <li><a href="/ticket/ticketUpdate.do">글 수성 테스트 링크</a></li>
 
-									</ul></li>
-								<li><a href="#">지역</a>
-								</li>
-								<li><a href="about-us.html">즐겨찾기</a></li>
-								<li><a href="#">마이 티켓</a>
-								</li>
-							</ul>
+                  </ul></li>
+                <li><a href="#">지역</a>
+                </li>
+                <li><a href="about-us.html">즐겨찾기</a></li>
+                <li><a href="#">마이 티켓</a>
+                </li>
+              </ul>
 
 							<!-- Search Form  -->
 							<div id="search-wrapper">
@@ -99,4 +103,63 @@
 			</div>
 		</div>
 	</div>
+	
+	<div class="subscribe-newsletter-area">
+        <div class="modal fade" id="subsModal" tabindex="-1" role="dialog" aria-labelledby="subsModal" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                    <div class="modal-body">
+                        <h5 class="title">Subscribe to my newsletter</h5>
+                        <form action="#" class="newsletterForm" method="post">
+                            <input type="email" name="email" id="subscribesForm2" placeholder="Your e-mail here">
+                            <button type="submit" class="btn original-btn">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+	<!-- Subscribe btn -->
+	<div class="bbbbbbbbbbbb">
+		<a href="#" class="btn" id="abce">버트은</a>
+	</div>
+    
+    
+    <div class="modal-cutton" id="cutton">
+    
+    </div>
+    
+    <div class="subscribe-newsletter-area">
+        <div class="modal-my-content">
+            <div class="modal-my-body">
+            <button type="button" class="close" id="modal-close"><span aria-hidden="true">×</span></button>
+                <h5 class="title">Subscribe to my newsletter</h5>
+                <form action="#" class="newsletterForm" method="post">
+                    <input type="email" name="email" id="subscribesForm2" placeholder="Your e-mail here">
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <script type="text/javascript">
+    	$(function(){
+    		
+    		$("#abce").click(function(){
+	    		$("#cutton").fadeIn();
+	    		$(".modal-my-content").fadeIn();
+    		});
+    		$("#modal-close").click(function(){
+	    		$("#cutton").fadeOut();
+	    		$(".modal-my-content").fadeOut();
+    		});
+    		$(".modal-cutton").click(function(){
+	    		$("#cutton").fadeOut();
+	    		$(".modal-my-content").fadeOut();
+    		});
+    	});
+    
+    </script>
+
 </header>

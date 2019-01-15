@@ -8,17 +8,19 @@ package com.bitcamp.artgo.board.model;
 */
 
 public class ExhibitionDto extends BoardDto {
-  private int exhibitionNo;
+
+  private int exno;
   private int teenPrice;
   private int normalPrice;
   private String startDate;
+  private String address;
   private String endDate;
   
-  public int getExhibitionNo() {
-    return exhibitionNo;
+  public int getExno() {
+    return exno;
   }
-  public void setExhibitionNo(int exhibitionNo) {
-    this.exhibitionNo = exhibitionNo;
+  public void setExno(int exno) {
+    this.exno = exno;
   }
   public int getTeenPrice() {
     return teenPrice;
@@ -44,6 +46,11 @@ public class ExhibitionDto extends BoardDto {
   public void setEndDate(String endDate) {
     this.endDate = endDate;
   }
-
+  public String getAddress() {
+    return address;
+  }
+  public void setAddress(String address) {
+    this.address = address;
+  }
   
 }

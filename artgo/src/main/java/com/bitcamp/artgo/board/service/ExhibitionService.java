@@ -12,6 +12,10 @@ import com.bitcamp.artgo.board.model.ExhibitionDto;
 */
 
 public interface ExhibitionService {
+
   ExhibitionDto getExhibition(int boardNo);
   List<ExhibitionDto> getExhibitionList(Map<String, String> param);
+  int writeExhibition(ExhibitionDto exhibitionDto);
+  
+  
 }

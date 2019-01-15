@@ -52,16 +52,25 @@
 <link rel="stylesheet" type="text/css" href="/resources/base/css/header.css">
 <link rel="stylesheet" type="text/css" href="/resources/base/css/footer.css">
 
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/resources/artgo/css/artgo-main.css">
+
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<!-- summernote css -->
+<!-- include libraries(jQuery, bootstrap) -->
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css" rel="stylesheet">
+        <script src="/resources/base/js/jquery/jquery-2.0.0.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script> 
+
+<!-- include summernote css/js -->
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote.css" rel="stylesheet">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote.js"></script>
 
 <link
 	href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"
 	rel="stylesheet" id="bootstrap-css">
 <script
 	src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
 </head>
 <body>
@@ -70,7 +79,7 @@
     <div id="main"><tiles:insertAttribute name="body" /></div>    
     <div id="footer"><tiles:insertAttribute name="footer" /></div>
     </div>
-		<script src="/resources/base/js/jquery/jquery-2.2.4.min.js"></script>
+    
 		<!-- Popper js -->
 		<script src="/resources/base/js/popper.min.js"></script>
 		<!-- Bootstrap js -->

@@ -49,7 +49,7 @@
               </tbody>
                 <tr> 
                   <td class="img_box">
-	                  <a class="detail_link" href="ticketView.do">
+	                  <a class="detail_link" href="/ticket/ticketView.do">
 	                   <img src="#" width="100px" height="122px" alt="공연 포스터">
 	                  </a>
                   </td>
@@ -62,35 +62,6 @@
                   <td class="tl ff_tahoma">2019.03.30 ~ 2019.03.30</td>
                   <td class="tl desc_vt">울산동천체육관</td>
                  <td>
-                    <div style="display: block;" class="btn_ticketing_type">
-                      <div class="btn_table">
-                        <div class="box_txt" id="box_tkt_txt"></div>
-                        <div class="box_btn">
-                          <button class="button btColorGreen"
-                            onclick="javascript:simpleReservation('202895','PT0002')">
-                            <span class="btSizeL">예매하기</span>
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  
-                  <td class="img_box">
-	                  <a class="detail_link" href="javascript:;">
-	                   <img src="#" width="100px" height="122px" alt="공연 포스터">
-	                  </a>
-                  </td>
-                      
-                  <td class="tl tx">
-                  <a class="detail_link" href="javascript:;">김건모 25th Anniversary Tour-울산</a></td>
-                  <td>
-                  <!-- 범위 잡기 위한 td -->       
-                  </td>
-                  <td class="tl ff_tahoma">2019.03.30 ~ 2019.03.30</td>
-                  <td class="tl desc_vt">울산동천체육관</td>
-                  <td>
                     <div style="display: block;" class="btn_ticketing_type">
                       <div class="btn_table">
                         <div class="box_txt" id="box_tkt_txt"></div>

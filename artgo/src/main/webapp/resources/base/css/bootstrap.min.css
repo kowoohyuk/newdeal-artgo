@@ -576,7 +576,8 @@ pre code {
 	-ms-flex-wrap: wrap;
 	flex-wrap: wrap;
 	margin-right: -15px;
-	margin-left: -15px
+	margin-left: -15px;
+	padding-bottom: 30px;
 }
 
 .no-gutters {
@@ -4468,7 +4469,6 @@ tbody.collapse.show {
 .card-header {
 	padding: .75rem 1.25rem;
 	margin-bottom: 0;
-	background-color: rgba(0, 0, 0, .03);
 	border-bottom: 1px solid rgba(0, 0, 0, .125)
 }
 
