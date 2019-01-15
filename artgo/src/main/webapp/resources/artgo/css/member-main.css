@@ -2,8 +2,12 @@
 #conts {
 	padding-right: 0px;
 	padding-left: 0px;
-    
-	
+   
+}
+.member-main-title{
+	font-weight: bold;
+    padding-top: 10px;
+    margin-bottom: 0px;
 }
 .member-main-info{
     font-size: 15px;
@@ -55,3 +59,11 @@ div.favorite {
 	border : 1px solid lightgray;
 	margin : 10px;
 }
+
+.modal-backdrop fade show{
+z-index:1;}
+
+.member-main-text{
+	font-weight: bold;
+}
+

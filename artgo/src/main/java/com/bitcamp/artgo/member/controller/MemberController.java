@@ -90,7 +90,7 @@ public class MemberController {
     MemberDto user = memberService.checkMember(memberDto);
     if (user != null) {
       if (user.getConfirm() == 0) {
-        return "member/emailPush.part";
+        //return "member/emailPush.part";
       }
         MemberDto tmp = new MemberDto();
         tmp.setId(user.getId());
@@ -108,17 +108,18 @@ public class MemberController {
     MemberDto memberDto = new MemberDto();
     String id = "kakao" + param.get("id");
     memberDto.setId(id);
-    memberDto.setPwd(param.get("id"));
-    memberDto.setName(param.get("nickname"));
-    memberDto.setType("kakao");
-    memberDto.setConfirm(1);
     
     JSONObject result = new JSONObject();
     MemberDto tmp = memberService.checkMember(memberDto);
+    System.out.println(tmp);
     if(tmp != null) {
       session.setAttribute("userInfo", tmp);
       result.put("result", "success");
     }else {
+      memberDto.setName(param.get("nickname"));
+      memberDto.setType("kakao");
+      memberDto.setRole("ROLE_USER");
+      memberDto.setConfirm(1);
       if(memberService.addMember(memberDto)>0) {
         session.setAttribute("userInfo", tmp);
         result.put("result", "success");

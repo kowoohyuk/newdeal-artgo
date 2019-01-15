@@ -83,7 +83,7 @@
 									</ul></li>
 								<li><a href="#">지역</a>
 								</li>
-								<li><a href="about-us.html" id="a-favorite">즐겨찾기</a></li>
+								<li><a href="" data-toggle="modal" data-target="#myModal">즐겨찾기</a></li>
 								<li><a href="#">마이 티켓</a>
 								</li>
 							</ul>
@@ -104,7 +104,10 @@
 			</div>
 		</div>
 	</div>
-	
+	<!-- The Modal -->
+
+
+	<!-- 
 	<div class="subscribe-newsletter-area">
         <div class="modal fade" id="subsModal" tabindex="-1" role="dialog" aria-labelledby="subsModal" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
@@ -122,17 +125,16 @@
         </div>
     </div>
     
-	<!-- Subscribe btn -->
 	<div class="bbbbbbbbbbbb">
-		<a href="#" class="btn" id="abce">버트은</a>
+		<a href="#">버트은</a>
 	</div>
     
     
     <div class="modal-cutton" id="cutton">
     
     </div>
-    
-    <div class="subscribe-newsletter-area">
+   
+   <div class="subscribe-newsletter-area">
         <div class="modal-my-content">
             <div class="modal-my-body">
             <button type="button" class="close" id="modal-close"><span aria-hidden="true">×</span></button>
@@ -142,14 +144,12 @@
                 </form>
             </div>
         </div>
-    </div>
+    </div> 
     
     <script type="text/javascript">
     	$(function(){
     		
     		$("#abce").click(function(){
-    			$(".subscribe-newsletter-area").css("left", x);
-    			$(".subscribe-newsletter-area").css("top", y);
 	    		$("#cutton").fadeIn();
 	    		$(".modal-my-content").fadeIn();
     		});
@@ -163,6 +163,6 @@
     		});
     	});
     
-    </script>
+    </script> -->
 
 </header>
