@@ -104,7 +104,7 @@
 	<!-- The Modal -->
 
 
-	<!-- 
+
 	<div class="subscribe-newsletter-area">
         <div class="modal fade" id="subsModal" tabindex="-1" role="dialog" aria-labelledby="subsModal" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
@@ -131,17 +131,6 @@
     
     </div>
    
-   <div class="subscribe-newsletter-area">
-        <div class="modal-my-content">
-            <div class="modal-my-body">
-            <button type="button" class="close" id="modal-close"><span aria-hidden="true">×</span></button>
-                <h5 class="title">Subscribe to my newsletter</h5>
-                <form action="#" class="newsletterForm" method="post">
-                    <input type="email" name="email" id="subscribesForm2" placeholder="Your e-mail here">
-                </form>
-            </div>
-        </div>
-    </div> 
     
     <script type="text/javascript">
     	$(function(){
@@ -160,6 +149,6 @@
     		});
     	});
     
-    </script> -->
+    </script>
 
 </header>

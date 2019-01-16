@@ -6,6 +6,7 @@ import javax.servlet.http.HttpSession;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -87,6 +88,7 @@ public class MemberController {
      * @param : MemberDto, HttpSession, Model
      * @return : 1) 로그인 성공 시 메인 화면 이동 2) 실패 시 현재 페이지 내 경고창 출력
      **/
+    
     MemberDto user = memberService.checkMember(memberDto);
     System.out.println(user);
     if (user != null) {
@@ -108,12 +110,9 @@ public class MemberController {
   public @ResponseBody String memberJoin(@RequestBody Map<String, String> param, HttpSession session) {
     MemberDto memberDto = new MemberDto();
     String id = "kakao" + param.get("id");
-    memberDto.setId(id);
-    memberDto.setPwd(param.get("id"));
     JSONObject result = new JSONObject();
     
-    MemberDto tmp = memberService.checkMember(memberDto);
-    System.out.println(tmp);
+    MemberDto tmp = memberService.selectMember(id);
     if(tmp != null) {
       session.setAttribute("userInfo", tmp);
       result.put("result", "success");
@@ -144,23 +143,31 @@ public class MemberController {
       return map;
   }
 
+  @Transactional
   @RequestMapping(value = "member/join.do", method = RequestMethod.POST)
-  public String memberJoin(MemberDto memberDto) {
-    System.out.println(memberDto);
+  public String memberJoin(MemberDto memberDto, Model model) {
     memberDto.setType("normal");
     memberDto.setConfirm(0);
     memberService.addMember(memberDto);
-    authService.create(memberDto.getId());
     
-    return "member/join.part";
+    if(authService.create(memberDto.getId()) > 0){
+      model.addAttribute("type", "1");
+    }else {
+      model.addAttribute("type", "2");
+    }
+    
+    return "common/result.part";
   }
   
 
   @RequestMapping(value = "member/confirm.do", method = RequestMethod.GET)
-  public String memberConfirm(String userEmail, Model model){ // 이메일인증
-      authService.userAuth(userEmail);
-      model.addAttribute("userEmail", userEmail);
-      return "/main.do";
+  public String memberConfirm(String userEmail, String authKey, Model model){ // 이메일인증
+    if(authService.userAuth(userEmail, authKey)>0) {
+      model.addAttribute("type", "3");
+    }else {
+      model.addAttribute("type", "4");
+    }
+    return "common/result.part";
   }
 
   // @RequestMapping("member/ticket/list")

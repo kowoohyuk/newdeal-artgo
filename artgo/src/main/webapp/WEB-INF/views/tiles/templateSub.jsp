@@ -14,11 +14,12 @@
     <link rel="stylesheet" href="/resources/artgo/css/header-sub.css" type="text/css">
     <link rel="icon" href="/resources/base/img/core-img/favicon.ico">
     <link href="/resources/base/css/bootstrap.min.css" rel="stylesheet">
+
 </head>
 <body>
     <div style="width:100%; height:100%;" >
     <div id="header"><tiles:insertAttribute name="header" /></div>
-    <div id="main"><tiles:insertAttribute name="body" /></div>    
+    <div id="main"><tiles:insertAttribute name="body" /></div>
     <!-- <div id="footer"><tiles:insertAttribute name="footer" /></div> -->
     </div>
 </body>

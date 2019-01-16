@@ -54,7 +54,6 @@ public class MemberServiceImpl implements MemberService {
         tmp.setId(id);
         tmp.setPwd(enc(pwd));
         
-        
         //이렇게 안해도 db에 접근했을 때 id와 pwd를 받게 하면 처리가 가능하긴 한데 그냥 해봄!
         if(sqlSession.getMapper(MemberDao.class).checkMember(tmp)!=null) {
             return sqlSession.getMapper(MemberDao.class).deleteMember(tmp);

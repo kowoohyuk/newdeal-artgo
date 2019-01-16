@@ -16,5 +16,9 @@ public class AuthDto {
   public void setAuthKey(String authKey) {
     this.authKey = authKey;
   }
+  @Override
+  public String toString() {
+    return "AuthDto [id=" + id + ", authKey=" + authKey + "]";
+  }
   
 }

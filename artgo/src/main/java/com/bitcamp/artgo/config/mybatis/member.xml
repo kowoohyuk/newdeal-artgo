@@ -8,7 +8,7 @@
 		VALUES (#{id}, #{pwd}, #{type}, #{name}, #{tell}, 1, #{confirm}, '일반', 'ROLE_USER', now(), now())
 	</insert>
 	
-	<select id="selectMember" parameterType="Map" resultType="memberDto">
+	<select id="selectMember" parameterType="String" resultType="memberDto">
 		SELECT mno, id, name, type, birth, tell, status, confirm, grade, role, joindate, finaldate
 		FROM member
 		WHERE id = #{id}

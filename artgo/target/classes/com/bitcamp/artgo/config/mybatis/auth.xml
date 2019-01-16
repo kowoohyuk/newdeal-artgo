@@ -2,19 +2,26 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.bitcamp.artgo.mail.AuthDao">
+<mapper namespace="com.bitcamp.artgo.mail.dao.AuthDao">
 	<insert id="createAuthKey" parameterType="authDto">
-		insert into
-		userAuth
+		insert into auth (id, authKey)
 		values (#{id}, #{authKey})
 	</insert>
 	
-	<update id="userAuth" parameterType="String">
+	<update id="userAuth" parameterType="authDto">
+	<!-- auth 테이블 수정, 번호 추가. -->
 		update member
 		   set confirm = 1
 		 where id = #{id}
 		   and (select count(*)
-			   from userAuth
-			   where userEmail = #{id}) > 0
+			   from auth
+			   where id = #{id}
+			   and authKey = #{authKey}
+			   ) > 0
 	</update>
+	
+	<delete id="deleteAuth" parameterType="String">
+		delete from auth
+		where id = #{id} 
+	</delete>
 </mapper>

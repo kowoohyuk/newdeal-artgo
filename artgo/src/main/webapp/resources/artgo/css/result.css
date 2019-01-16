@@ -1,0 +1,36 @@
+@charset "UTF-8";
+.div-result-content{
+	padding : 30px;
+	width : 320px;
+	margin : 0 auto;
+}
+#result-content{
+	text-align: left;
+}
+.result-center{
+	text-align : center;
+}
+.div-liner{
+	border : 1px solid darkgray;
+	margin : 0 auto;
+	width : 300px;
+}
+.result-title{
+	margin-top: 30px;
+	font-weight: 700;	
+}
+.btn-red-mini{
+	width: 120px !important;
+}
+
+.btn-red, .btn-red-mini{
+	border: none;
+	font-size: 1em;
+	background-color: black !important;
+	cursor: pointer !important;
+	color: white !important;
+}
+.btn-red:hover, .btn-red:active, .btn-red:focus, .btn-red-mini:hover, .btn-red-mini:active, .btn-red-mini:focus{
+	border-color: crimson !important;
+	background-color: crimson !important;
+}
