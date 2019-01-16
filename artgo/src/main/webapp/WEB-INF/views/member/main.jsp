@@ -7,6 +7,7 @@
 <link href="/resources/base/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="/resources/artgo/css/ticket-list.css"
 	type="text/css">
+
 <div class="container member-main-div-container">
 	<!-- contents -->
 	<div id="conts" class="clear_g">

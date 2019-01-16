@@ -1,6 +1,7 @@
 package com.bitcamp.artgo.member.controller;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import javax.servlet.http.HttpSession;
 import org.json.JSONObject;
@@ -8,21 +9,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
 import com.bitcamp.artgo.mail.service.AuthService;
 import com.bitcamp.artgo.member.model.MemberDto;
 import com.bitcamp.artgo.member.service.MemberService;
 
 /**
- * 파일명: MemberConrtoller.java
- * 설 명: 회원 관련 페이지, 기능
- * 작성일: 2019. 1. 11.
- * 작성자: 고 우 혁
+ * 파일명: MemberConrtoller.java 설 명: 회원 관련 페이지, 기능 작성일: 2019. 1. 11. 작성자: 고 우 혁
  */
 
 @Controller
@@ -143,9 +143,10 @@ public class MemberController {
       return map;
   }
 
-  @Transactional
   @RequestMapping(value = "member/join.do", method = RequestMethod.POST)
   public String memberJoin(MemberDto memberDto, Model model) {
+    
+    //트랜잭셔널 확인
     memberDto.setType("normal");
     memberDto.setConfirm(0);
     memberService.addMember(memberDto);
@@ -159,6 +160,21 @@ public class MemberController {
     return "common/result.part";
   }
   
+  @RequestMapping(value = "member/{id}", method = RequestMethod.POST)
+  public String modify(@PathVariable(value = "id") String id, HttpSession session, Model model) {
+      if (id.equals((String) session.getAttribute("id"))) {
+          model.addAttribute("member", memberService.selectMember(id));
+      }
+      return "member/modify";
+  }
+
+  @RequestMapping(value = "member/modify.do", method = RequestMethod.POST, headers = { "Content-type=application/json" })
+  public @ResponseBody Map<String, String> modify(@RequestBody MemberDto memberDto, HttpSession session) {
+      memberService.updateMember(memberDto);
+      Map<String, String> map = new HashMap<String, String>();
+      map.put("result", "정보가 수정되었습니다.");
+      return map;
+  }
 
   @RequestMapping(value = "member/confirm.do", method = RequestMethod.GET)
   public String memberConfirm(String userEmail, String authKey, Model model){ // 이메일인증

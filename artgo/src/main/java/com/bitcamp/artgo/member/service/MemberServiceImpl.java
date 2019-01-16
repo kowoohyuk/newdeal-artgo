@@ -39,12 +39,15 @@ public class MemberServiceImpl implements MemberService {
 
     @Override
     public int updateMember(MemberDto memberDto) {
+    	
         return sqlSession.getMapper(MemberDao.class).updateMember(memberDto);
     }
 
     @Override
     public MemberDto checkMember(MemberDto memberDto) {
+    	System.out.println(memberDto.getPwd());
         memberDto.setPwd(enc(memberDto.getPwd()));
+        System.out.println(memberDto.getPwd());
         return sqlSession.getMapper(MemberDao.class).checkMember(memberDto);
     }
 

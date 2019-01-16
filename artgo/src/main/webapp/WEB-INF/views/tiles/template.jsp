@@ -84,7 +84,7 @@
     <div id="main"><tiles:insertAttribute name="body" /></div>    
     <div id="footer"><tiles:insertAttribute name="footer" /></div>
     </div>
-    
+    	<script src="/resources/base/js/jquery/jquery-2.2.4.min.js"></script>
 		<!-- Popper js -->
 		<script src="/resources/base/js/popper.min.js"></script>
 		<!-- Bootstrap js -->

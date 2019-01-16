@@ -121,34 +121,4 @@
             </div>
         </div>
     </div>
-    
-	<div class="bbbbbbbbbbbb">
-		<a href="#">버트은</a>
-	</div>
-    
-    
-    <div class="modal-cutton" id="cutton">
-    
-    </div>
-   
-    
-    <script type="text/javascript">
-    	$(function(){
-    		
-    		$("#abce").click(function(){
-	    		$("#cutton").fadeIn();
-	    		$(".modal-my-content").fadeIn();
-    		});
-    		$("#modal-close").click(function(){
-	    		$("#cutton").fadeOut();
-	    		$(".modal-my-content").fadeOut();
-    		});
-    		$(".modal-cutton").click(function(){
-	    		$("#cutton").fadeOut();
-	    		$(".modal-my-content").fadeOut();
-    		});
-    	});
-    
-    </script>
-
 </header>

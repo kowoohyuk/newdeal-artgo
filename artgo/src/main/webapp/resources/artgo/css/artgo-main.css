@@ -1,12 +1,8 @@
 @charset "UTF-8";
-.header-div-top-flag{
-	padding-bottom: 0px;
-}
-.header-div-top{
-	margin-top : 10px;
-}
+
 .modal-backdrop {
 	display: none !important;
+	z-index:200 !important;
 }
 /* .modal-content, .modal-body, .close { */
 /* 	z-index: 150 !important; */
