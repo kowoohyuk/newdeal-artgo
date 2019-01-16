@@ -52,8 +52,7 @@
 		SET name = #{name},
 			tell = #{tell},
 			birth = #{birth},
-			status = #{status},
-			grade = #{grade},
+			grade = #{grade}
 		WHERE id = #{id}
 	</update>
 	

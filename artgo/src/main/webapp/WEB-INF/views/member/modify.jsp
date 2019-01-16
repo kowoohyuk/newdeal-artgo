@@ -7,7 +7,7 @@
 <link href="/resources/artgo/css/member-modify.css" rel="stylesheet">
 
 <div class="container">
-	<form name="modify" class="member-join-form" action="#"
+	<form name="modify" class="member-join-form" action="/member/modify"
 		id="modify-form" method="post" onsubmit="return check();">
 		<div align="center" class="member-modify-div member-modify-div-center">
 			<ul class="list-group member-join-ul">
@@ -16,7 +16,7 @@
 					<div class="form-group member-modify-div">
 						<input type="text" class="form-control member-join-input-text"
 							placeholder="아이디(이메일)" id="id" name="id"
-							value="doyoun@naver.com" readonly> <label
+							value="${userInfo.id}" readonly> <label
 							class="hidden-label member-modify-label"></label>
 					</div>
 				</li>
