@@ -1,11 +1,11 @@
 package com.bitcamp.artgo.member.model;
 
 /**
-* 파일명: MemberDto.java
-* 설 명: 멤버 객체 정의
-* 작성일: 2019. 1. 10.
-* 작성자: 고 우 혁
-*/
+ * 파일명: MemberDto.java
+ * 설 명: 멤버 객체 정의 
+ * 작성일: 2019. 1. 10. 
+ * 작성자: 고 우 혁
+ */
 
 public class MemberDto {
   private int mno;
@@ -125,12 +125,11 @@ public class MemberDto {
   public void setBirth(String birth) {
     this.birth = birth;
   }
-
   @Override
   public String toString() {
-    return "MemberDto [mno=" + mno + ", id=" + id + ", type=" + type +", pwd=" + pwd + ", name=" + name + ", tell="
-        + tell + ", status=" + status + ", confirm=" + confirm + ", grade=" + grade + ", joinDate="
-        + joinDate + ", finalDate=" + finalDate + ", birth=" + birth + "]";
+      return "MemberDto [mno=" + mno + ", id=" + id + ", pwd=" + pwd + ", type=" + type + ", name=" + name + ", tell="
+              + tell + ", status=" + status + ", confirm=" + confirm + ", grade=" + grade + ", role=" + role
+              + ", joinDate=" + joinDate + ", finalDate=" + finalDate + ", birth=" + birth + "]";
   }
-  
+
 }

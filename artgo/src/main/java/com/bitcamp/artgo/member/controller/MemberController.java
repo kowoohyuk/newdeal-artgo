@@ -113,6 +113,7 @@ public class MemberController {
     JSONObject result = new JSONObject();
     
     MemberDto tmp = memberService.checkMember(memberDto);
+    System.out.println(tmp);
     if(tmp != null) {
       session.setAttribute("userInfo", tmp);
       result.put("result", "success");
@@ -120,6 +121,8 @@ public class MemberController {
       memberDto.setName(param.get("nickname"));
       memberDto.setType("kakao");
       memberDto.setConfirm(1);      
+      memberDto.setRole("ROLE_USER");
+      memberDto.setConfirm(1);
       if(memberService.addMember(memberDto)>0) {
         session.setAttribute("userInfo", tmp);
         result.put("result", "success");

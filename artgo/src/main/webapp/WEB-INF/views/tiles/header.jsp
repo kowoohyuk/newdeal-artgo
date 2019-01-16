@@ -68,23 +68,22 @@
 								<span class="top"></span><span class="bottom"></span>
 							</div>
 						</div>
-            <!-- Nav Start -->
-            <div class="classynav">
-              <ul>
-                <li><a href="/main.do">홈</a></li>
-                <li><a href="/ticket/ticketList.do">전시</a>
-                  <ul class="dropdown">
-                    <li><a href="/ticket/ticketList.do">전시 상황</a></li>
-                    <li><a href="/ticket/ticketWrite.do">글 작성 테스트 링크</a></li>
-                    <li><a href="/ticket/ticketUpdate.do">글 수성 테스트 링크</a></li>
-
-                  </ul></li>
-                <li><a href="#">지역</a>
-                </li>
-                <li><a href="about-us.html">즐겨찾기</a></li>
-                <li><a href="#">마이 티켓</a>
-                </li>
-              </ul>
+            		<!-- Nav Start -->
+		            <div class="classynav">
+		              <ul>
+		                <li><a href="/main.do">홈</a></li>
+		                <li><a href="/ticket/ticketList.do">전시</a>
+		                  <ul class="dropdown">
+		                    <li><a href="/ticket/ticketList.do">전시 상황</a></li>
+		                    <li><a href="/ticket/ticketWrite.do">글 작성 테스트 링크</a></li>
+		                    <li><a href="/ticket/ticketUpdate.do">글 수성 테스트 링크</a></li>
+							</ul></li>
+						<li><a href="#">지역</a>
+						</li>
+						<li><a href="" data-toggle="modal" data-target="#myModal">즐겨찾기</a></li>
+						<li><a href="#">마이 티켓</a>
+						</li>
+					</ul>
 
 							<!-- Search Form  -->
 							<div id="search-wrapper">
@@ -102,7 +101,10 @@
 			</div>
 		</div>
 	</div>
-	
+	<!-- The Modal -->
+
+
+	<!-- 
 	<div class="subscribe-newsletter-area">
         <div class="modal fade" id="subsModal" tabindex="-1" role="dialog" aria-labelledby="subsModal" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
@@ -120,17 +122,16 @@
         </div>
     </div>
     
-	<!-- Subscribe btn -->
 	<div class="bbbbbbbbbbbb">
-		<a href="#" class="btn" id="abce">버트은</a>
+		<a href="#">버트은</a>
 	</div>
     
     
     <div class="modal-cutton" id="cutton">
     
     </div>
-    
-    <div class="subscribe-newsletter-area">
+   
+   <div class="subscribe-newsletter-area">
         <div class="modal-my-content">
             <div class="modal-my-body">
             <button type="button" class="close" id="modal-close"><span aria-hidden="true">×</span></button>
@@ -140,7 +141,7 @@
                 </form>
             </div>
         </div>
-    </div>
+    </div> 
     
     <script type="text/javascript">
     	$(function(){
@@ -159,6 +160,6 @@
     		});
     	});
     
-    </script>
+    </script> -->
 
 </header>
