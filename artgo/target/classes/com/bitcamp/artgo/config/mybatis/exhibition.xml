@@ -2,5 +2,30 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--
+
+e_no			- 전시 번호
+e_teen_price	- 청소년 가격
+e_nor_price		- 성인 가격
+e_startdate		- 시작일
+e_enddate		- 종료일
+e_address		- 장소
+b_no 			- 게시판 번호
+
+-->
+
 <mapper namespace="com.bitcamp.artgo.board.dao.ExhibitionDao">
+
+<insert id="writeExhibition" parameterType="exhibitionDto" >
+
+insert into board_exhibition teenPrice, statDate, endDate, address, bno
+values (#{teenPrice}, #{startDate}, #{endDate}, #{address}, #{bno});
+
+</insert>
+
+
+
 </mapper>
+
+

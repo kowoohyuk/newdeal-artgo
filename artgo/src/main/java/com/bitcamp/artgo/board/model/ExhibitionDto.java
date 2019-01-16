@@ -12,7 +12,9 @@ public class ExhibitionDto extends BoardDto {
   private int teenPrice;
   private int normalPrice;
   private String startDate;
+  private String address;
   private String endDate;
+  
   public int getExno() {
     return exno;
   }
@@ -42,6 +44,12 @@ public class ExhibitionDto extends BoardDto {
   }
   public void setEndDate(String endDate) {
     this.endDate = endDate;
+  }
+  public String getAddress() {
+    return address;
+  }
+  public void setAddress(String address) {
+    this.address = address;
   }
   
 }

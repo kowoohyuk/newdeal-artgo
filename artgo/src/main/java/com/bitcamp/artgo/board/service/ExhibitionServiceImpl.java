@@ -5,6 +5,7 @@ import java.util.Map;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import com.bitcamp.artgo.board.dao.ExhibitionDao;
 import com.bitcamp.artgo.board.model.ExhibitionDto;
 
@@ -18,18 +19,24 @@ import com.bitcamp.artgo.board.model.ExhibitionDto;
 @Service
 public class ExhibitionServiceImpl implements ExhibitionService {
 
-  @Autowired
-  private SqlSession sqlSession;
-  
-  @Override
-  public ExhibitionDto getExhibition(int boardNo) {
-    return sqlSession.getMapper(ExhibitionDao.class).getExhibition(boardNo);
-  }
+    @Autowired
+    private SqlSession sqlSession;
 
-  @Override
-  public List<ExhibitionDto> getExhibitionList(Map<String, String> param) {
-    return sqlSession.getMapper(ExhibitionDao.class).getExhibitionList(param);
-  }
+    @Override
+    public ExhibitionDto getExhibition(int boardNo) {
+        return sqlSession.getMapper(ExhibitionDao.class).getExhibition(boardNo);
+    }
+
+    @Override
+    public List<ExhibitionDto> getExhibitionList(Map<String, String> param) {
+        return sqlSession.getMapper(ExhibitionDao.class).getExhibitionList(param);
+    }
+
+    @Override
+    @Transactional
+    public int writeExhibition(ExhibitionDto exhibitionDto) {
+        return sqlSession.getMapper(ExhibitionDao.class).writeExhibition(exhibitionDto);
+    }
 
 }
 

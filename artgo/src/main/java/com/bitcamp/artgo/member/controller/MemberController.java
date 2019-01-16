@@ -110,16 +110,16 @@ public class MemberController {
     String id = "kakao" + param.get("id");
     memberDto.setId(id);
     memberDto.setPwd(param.get("id"));
-    memberDto.setName(param.get("nickname"));
-    memberDto.setType("kakao");
-    memberDto.setConfirm(1);
-    
     JSONObject result = new JSONObject();
+    
     MemberDto tmp = memberService.checkMember(memberDto);
     if(tmp != null) {
       session.setAttribute("userInfo", tmp);
       result.put("result", "success");
     }else {
+      memberDto.setName(param.get("nickname"));
+      memberDto.setType("kakao");
+      memberDto.setConfirm(1);      
       if(memberService.addMember(memberDto)>0) {
         session.setAttribute("userInfo", tmp);
         result.put("result", "success");

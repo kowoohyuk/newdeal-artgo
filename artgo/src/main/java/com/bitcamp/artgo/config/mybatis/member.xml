@@ -21,7 +21,8 @@
 	</select>
 	
 	<select id="checkMember" parameterType="memberDto" resultType="memberDto">
-		SELECT mno, id, name, type, birth, tell, status, confirm, grade, role, joindate, finaldate FROM member
+		SELECT mno, id, name, type, birth, tell, status, confirm, grade, role, joindate, finaldate
+		FROM member
 		WHERE id = #{id}
 		AND pwd = #{pwd}
 	</select>

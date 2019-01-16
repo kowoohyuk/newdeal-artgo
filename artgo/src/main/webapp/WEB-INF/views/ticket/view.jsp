@@ -38,20 +38,10 @@
               <div class="bx_dummy">
                 <em class="info_tit">기간</em> <span class="txt">2018.12.21~2019.03.17</span>
               </div>
-              <div class="bx_dummy border_type">
-                <em class="info_tit">관람등급</em> <span class="txt">청소년관람가</span>
-              </div>
+   
 
               <div class="bx_dummy include_layer border_type">
-                <em class="info_tit">할인</em>
-                <div class="txt ui-dialog  price-dialog">
-                  <ul class="lst_dsc">
-                    <li>예매할인(성인) - <span class="color_green fbold">16,200</span>원
-                    </li>
-                    <li>예매할인(청소년) - <span class="color_green fbold">13,500</span>원
-                    </li>
-                  </ul>
-                </div>
+
               </div>
             </div>
           </div>

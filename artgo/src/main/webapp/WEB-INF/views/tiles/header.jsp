@@ -68,25 +68,23 @@
 								<span class="top"></span><span class="bottom"></span>
 							</div>
 						</div>
+            <!-- Nav Start -->
+            <div class="classynav">
+              <ul>
+                <li><a href="/main.do">홈</a></li>
+                <li><a href="/ticket/ticketList.do">전시</a>
+                  <ul class="dropdown">
+                    <li><a href="/ticket/ticketList.do">전시 상황</a></li>
+                    <li><a href="/ticket/ticketWrite.do">글 작성 테스트 링크</a></li>
+                    <li><a href="/ticket/ticketUpdate.do">글 수성 테스트 링크</a></li>
 
-						<!-- Nav Start -->
-						<div class="classynav">
-							<ul>
-								<li><a href="index.html">홈</a></li>
-								<li><a href="#">전시</a>
-									<ul class="dropdown">
-										<li><a href="index.html">전체</a></li>
-										<li><a href="about-us.html">장르1</a></li>
-										<li><a href="single-post.html">장르2</a></li>
-										<li><a href="contact.html">장르3</a></li>
-										<li><a href="coming-soon.html">장르4</a></li>
-									</ul></li>
-								<li><a href="#">지역</a>
-								</li>
-								<li><a href="about-us.html" id="a-favorite">즐겨찾기</a></li>
-								<li><a href="#">마이 티켓</a>
-								</li>
-							</ul>
+                  </ul></li>
+                <li><a href="#">지역</a>
+                </li>
+                <li><a href="about-us.html">즐겨찾기</a></li>
+                <li><a href="#">마이 티켓</a>
+                </li>
+              </ul>
 
 							<!-- Search Form  -->
 							<div id="search-wrapper">

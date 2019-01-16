@@ -6,20 +6,6 @@
 <link rel="stylesheet" href="/resources/artgo/css/ticket-list.css"
 	type="text/css">
 
-	
-<c:if test="${userInfo.grade==1}">
-	<c:set var = "grade" value = "관리자"/>
-</c:if>
-<c:if test="${userInfo.grade==1}">
-	<c:set var = "grade" value = "일반"/>
-</c:if>
-<c:if test="${userInfo.grade==2}">
-	<c:set var = "grade" value = "골드"/>
-</c:if>
-<c:if test="${userInfo.grade==3}">
-	<c:set var = "grade" value = "VIP"/>
-</c:if>
-
 <div class="container member-main-div-container">
 	<!-- contents -->
 	<div id="conts" class="clear_g">
