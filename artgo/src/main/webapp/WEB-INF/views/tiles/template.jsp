@@ -74,6 +74,11 @@
 
 </head>
 <body>
+    <div id="preloader">
+       <div class="preload-content">
+           <div id="original-load"></div>
+       </div>
+   	</div>
     <div style="width:100%; height:100%;">
     <div id="header"><tiles:insertAttribute name="header" /></div>
     <div id="main"><tiles:insertAttribute name="body" /></div>    
