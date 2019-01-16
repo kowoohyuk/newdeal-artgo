@@ -14,3 +14,4 @@ security.properties
 
 target/
 !build.gradle
+/.metadata/
