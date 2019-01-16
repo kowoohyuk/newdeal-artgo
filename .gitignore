@@ -12,5 +12,5 @@ temp/
 node_modules/
 security.properties
 
+target/
 !build.gradle
-/.metadata/
