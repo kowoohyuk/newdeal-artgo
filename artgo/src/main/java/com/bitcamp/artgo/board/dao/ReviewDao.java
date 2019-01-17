@@ -14,7 +14,7 @@ import com.bitcamp.artgo.board.model.ReviewDto;
 public interface ReviewDao {
   int writeReview(ReviewDto reviewDto);
   int modifyReview(ReviewDto reviewDto);
-  int deleteReview(int reviewNo);
-  ReviewDto getReview(int reviewNo);
+  int deleteReview(int rno);
+  //ReviewDto getReview(int rno);
   List<ReviewDto> getReviewList(Map<String, String> param);
 }

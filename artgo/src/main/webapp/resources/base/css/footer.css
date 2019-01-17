@@ -61,15 +61,7 @@ caption{visibility:hidden;overflow:hidden;width:0;height:0;font-size:0;line-heig
 	font-size: 0;
 }
 
-#footer {
-	background: #333;
-	height: 153px;
-	padding-top: 50px;
-	position: relative;
-	margin: 0 auto;
-	text-align: center; 
-	font-size: 10px;
-}
+
 
 .inner {
     width: 990px;
@@ -212,7 +204,7 @@ caption{visibility:hidden;overflow:hidden;width:0;height:0;font-size:0;line-heig
 }
 
 #member_footer .footer_policy li a:hover {
-    text-decoration: underline
+
 }
 
 #member_footer.ticket {
@@ -282,34 +274,34 @@ caption{visibility:hidden;overflow:hidden;width:0;height:0;font-size:0;line-heig
 }
 
 #member_footer .footer_menu li.menu01 a:hover span {
-    background-position: -95px 0
+
 }
 
 #member_footer .footer_menu li.menu02 a span {
     width: 69px;
-    background-position: 0 -18px
+  
 }
 
 #member_footer .footer_menu li.menu02 a:hover span {
-    background-position: -95px -18px
+
 }
 
 #member_footer .footer_menu li.menu03 a span {
     width: 65px;
-    background-position: 0 -35px
+
 }
 
 #member_footer .footer_menu li.menu03 a:hover span {
-    background-position: -95px -35px
+
 }
 
 #member_footer .footer_menu li.menu04 a span {
     width: 45px;
-    background-position: 0 -52px
+
 }
 
 #member_footer .footer_menu li.menu04 a:hover span {
-    background-position: -95px -52px
+
 }
 
 #member_footer .footer_menu li.menu05 a {
@@ -318,11 +310,11 @@ caption{visibility:hidden;overflow:hidden;width:0;height:0;font-size:0;line-heig
 
 #member_footer .footer_menu li.menu05 a span {
     width: 47px;
-    background-position: 0 -70px
+
 }
 
 #member_footer .footer_menu li.menu05 a:hover span {
-    background-position: -95px -70px
+  
 }
 
 #member_footer .footer_menu li.txt {
@@ -348,3 +340,42 @@ caption{visibility:hidden;overflow:hidden;width:0;height:0;font-size:0;line-heig
 #member_footer p a {
     color: #969696
 }
+
+.main-footer-background{
+	background-color: #24292E;
+	color: white;
+    padding-top: 30px;
+    text-align: center;
+
+}
+
+.artgo-member{
+	color: white;
+	margin-left: 3px;
+}
+.git-link{
+	margin-bottom: 7px;
+	
+}
+.footer-copyright{
+	margin-top: 3px;
+	padding-bottom: 30px;
+}
+.footer-artgo{
+	color: gray;
+	margin-bottom: 0px;
+}
+.footer-info{
+    margin-bottom: 30px;
+	
+}
+.footer-none-hover{
+	font-size:12px;
+}
+
+a:link{text-decoration: none; borer: 0; color: #000000;}
+a:hover{text-decoration: none; borer: 0; color: #000000; font-size:12px;}
+a:focus{text-decoration: none; borer: 0; color: #000000;}
+a:active{text-decoration: none; borer: 0; color: #000000;}
+
+
