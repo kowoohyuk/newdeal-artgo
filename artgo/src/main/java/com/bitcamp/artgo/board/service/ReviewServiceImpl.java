@@ -36,10 +36,10 @@ public class ReviewServiceImpl implements ReviewService {
     return sqlSession.getMapper(ReviewDao.class).deleteReview(reviewNo);
   }
 
-  @Override
-  public ReviewDto getReview(int reviewNo) {
-    return sqlSession.getMapper(ReviewDao.class).getReview(reviewNo);
-  }
+//  @Override
+//  public ReviewDto getReview(int reviewNo) {
+//    return sqlSession.getMapper(ReviewDao.class).getReview(reviewNo);
+//  }
 
   @Override
   public List<ReviewDto> getReviewList(Map<String, String> param) {
