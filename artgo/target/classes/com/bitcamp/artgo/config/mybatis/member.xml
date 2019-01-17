@@ -43,7 +43,7 @@
 	
 	<select id="selectMemberList" parameterType="Map" resultType="memberDto">
 		SELECT m.* 
-			FROM (SELECT @rownum:=@rownum+1 AS rnum, tmp.* FROM MEMBERLISTVIEW AS tmp,
+			FROM (SELECT @rownum:=@rownum+1 AS rnum, tmp.* FROM memberlistview AS tmp,
                  (SELECT @rownum:=0) as r
 			<if test="word != null and word != ''">
 				<choose>

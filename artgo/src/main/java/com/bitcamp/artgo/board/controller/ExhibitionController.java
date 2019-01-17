@@ -41,10 +41,10 @@ public class ExhibitionController {
       return "redirect:main.do";
   }
   
-  @RequestMapping(value = "exhibit/update.do", method = RequestMethod.GET)
+  @RequestMapping(value = "exhibit/modify.do", method = RequestMethod.GET)
   public String ticketUpdate() {
       
-      return "exhibit/update.page";
+      return "exhibit/modify.page";
   }
 }
 

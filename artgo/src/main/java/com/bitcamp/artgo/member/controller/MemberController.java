@@ -120,16 +120,19 @@ public class MemberController {
       headers = {"Content-type=application/json"})
   public @ResponseBody String memberJoin(@RequestBody Map<String, String> param,
       HttpSession session) {
-    MemberDto memberDto = new MemberDto();
     String id = "kakao" + param.get("id");
+    String pwd = param.get("id");
     JSONObject result = new JSONObject();
+    MemberDto memberDto = new MemberDto();
 
     MemberDto tmp = memberService.selectMember(id);
     if (tmp != null) {
       session.setAttribute("userInfo", tmp);
       result.put("result", "success");
     } else {
+      memberDto.setId(id);
       memberDto.setName(param.get("nickname"));
+      memberDto.setPwd(param.get("id"));
       memberDto.setType("kakao");
       memberDto.setConfirm(1);
       memberDto.setRole("ROLE_USER");

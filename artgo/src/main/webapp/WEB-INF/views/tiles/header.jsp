@@ -64,7 +64,7 @@
 		                  <ul class="dropdown">
 		                    <li><a href="/exhibit/list.do">전시 상황</a></li>
 		                    <li><a href="/exhibit/write.do">글 작성 테스트 링크</a></li>
-		                    <li><a href="/exhibit/update.do">글 수성 테스트 링크</a></li>
+		                    <li><a href="/exhibit/modify.do">글 수성 테스트 링크</a></li>
 							</ul></li>
 						<li><a href="#">지역</a>
 						</li>
