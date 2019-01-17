@@ -54,6 +54,17 @@ div.favorite {
     padding-bottom: 0px;
 	
 }
+.btn-delete-mini {
+	width: 120px !important;
+    background-color: black !important;
+    opacity: 0.7 !important;
+    font-size: 12px;
+    color: white;
+}
+.btn-delete-mini:hover {
+	background-color: red !important;
+	color: white;
+}
 
 .member-main-div{
 	border : 1px solid lightgray;
@@ -62,5 +73,9 @@ div.favorite {
 
 .member-main-text{
 	font-weight: bold;
+}
+.btn-mypage-btn{
+	font-size : 16px;
+	font-weight : 700;	
 }
 

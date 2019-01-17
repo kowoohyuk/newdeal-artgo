@@ -3,11 +3,13 @@
 
     <div class="inner" >
         <div class="f_menu" >
-            <a href="#" onclick="">회사소개</a><span>|</span>
-            <a href="#" class="personal">개인정보 처리방침</a><span>|</span>
-            <a href="#">이용약관</a><span>|</span>
+            <a href="https://github.com/kowoohyuk/bitcamp-artGo">
+            <img src="/resources/artgo/img/git-cat.png" data-toggle="tooltip" title="깃허브"></img>
+            </a><span>|</span>
+            <a href="#" onclick="">고우혁</a><span>|</span>
+            <a href="#" class="personal">한범석</a><span>|</span>
+            <a href="#">정도윤</a><span>|</span>
             <!-- <a href="#">고객센터</a><span>|</span> -->
-            <a href="#">티켓판매안내</a><span>|</span>
             <!-- <a href="#">광고안내</a> -->
         </div>
         <address>주소 : <em class="lspacing0">12345</em> 서울시 서초구 서초동 1327-15 비트아카데미빌딩<span>|</span> 대표이사 : 프로그래머 <span>|</span> 사업자등록번호 :

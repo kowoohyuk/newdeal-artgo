@@ -175,7 +175,7 @@
 				<%@ include file="/WEB-INF/views/member/modify.jsp" %>
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-default btn-mypage-btn" data-dismiss="modal">닫기</button>
 			</div>
 		</div>
 	</div>
@@ -195,8 +195,8 @@
 				<%@ include file="/WEB-INF/views/member/delete.jsp" %>
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal" id="member-delete-btn">탈퇴</button>
-				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-delete-mini" data-dismiss="modal" id="member-delete-btn">탈퇴하기</button>
+				<button type="button" class="btn btn-delete-mini" data-dismiss="modal">닫기</button>
 			</div>
 		</div>
 	</div>
@@ -223,7 +223,7 @@
 	</div>
 </div>
 -->
-
+<script src="/resources/artgo/js/member-main.js"></script>
 <script src="/resources/artgo/js/member-delete.js"></script>
 <script src="/resources/artgo/js/member-modify.js"></script>
 <script src="/resources/base/js/ticket-list.js"></script>

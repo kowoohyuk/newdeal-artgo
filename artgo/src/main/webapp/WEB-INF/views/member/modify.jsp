@@ -7,7 +7,7 @@
 <link href="/resources/artgo/css/member-modify.css" rel="stylesheet">
 
 <div class="container">
-	<form name="modify" class="member-join-form" action="/member/modify"
+	<form name="modify" class="member-join-form" action="/member/modify.do"
 		id="modify-form" method="post" onsubmit="return check();">
 		<div align="center" class="member-modify-div member-modify-div-center">
 			<ul class="list-group member-join-ul">
@@ -24,7 +24,7 @@
 					class="list-group-item d-flex justify-content-between align-items-center member-join-li">
 					<div class="form-group member-modify-div">
 						<input type="password" class="form-control member-join-input-pwd"
-							placeholder="변경할 비밀번호" id="pwd" name="pwd">
+							placeholder="비밀번호" id="pwd" name="pwd">
 						<label class="hidden-label member-modify-label"></label>
 					</div>
 				</li>
@@ -32,7 +32,15 @@
 					class="list-group-item d-flex justify-content-between align-items-center member-join-li">
 					<div class="form-group member-modify-div">
 						<input type="password" class="form-control member-join-input-pwd"
-							placeholder="변경할 비밀번호 확인" placeholder="비밀번호 확인" id="pwd2"> 
+							placeholder="변경할 비밀번호" id="pwd2" name="modifyPwd"> 
+							<label class="hidden-label member-modify-label"></label>
+					</div>
+				</li>
+				<li id="padding"
+					class="list-group-item d-flex justify-content-between align-items-center member-join-li">
+					<div class="form-group member-modify-div">
+						<input type="password" class="form-control member-join-input-pwd"
+							placeholder="변경할 비밀번호 확인" id="pwd3">
 							<label class="hidden-label member-modify-label"></label>
 					</div>
 				</li>
@@ -62,8 +70,7 @@
 				</li>
 			</ul>
 			<div class="member-modify-div" align="center">
-				<button id="member-modify-ok" type="submit"
-					class="btn btn-primary btn-sm member-join-btn-sub btn-red">수정</button>
+				<button id="member-modify-ok" type="submit" class="btn btn-red btn-mypage-btn">수정하기</button>
 			</div>
 		</div>
 	</form>

@@ -2,30 +2,6 @@
 
 $(document).ready(function() {
 
-	$('#member-modify-ok').on('click', function(e) {
-		e.preventDefault();
-		$.ajax({
-			url : '/member/modify.do',
-			type : 'PUT',
-			dataType : 'json',
-			data : data,
-			contentType : 'application/json;charset=UTF-8',
-			mimeType : 'application/json',
-			success : function(response) {
-				$('#myModal1').modal('hide');
-				$(location).attr('href', '/common/main.page');
-			},
-			error : function(xhr, status, message) {
-				alert("status: " + status + "error : " + message);
-			}
-		});
-	});
-
-	$("#member-modify-ok").on('click', function() {
-		$("#modify-form").submit();
-		alert('수정되었습니다.');
-	});
-
 	$("input:text").on("focusout", function() {
 		var id = $(this).val();
 
@@ -61,8 +37,8 @@ $(document).ready(function() {
 		}
 	});
 
-	$("#pwd2").on("focusout", function() {
-		if ($("#pwd").val() != $("#pwd2").val()) {
+	$("#pwd3").on("focusout", function() {
+		if ($("#pwd2").val() != $("#pwd3").val()) {
 			$(this).next().text("비밀번호가 일치하지 않습니다.");
 			$(this).next().css("display", "inline-block");
 		} else {
@@ -79,6 +55,7 @@ function check() {
 	var id = $("#id").val();
 	var pwd = $("#pwd").val();
 	var pwd2 = $("#pwd2").val();
+	var pwd3 = $("#pwd3").val();
 	var name = $("#name").val();
 	var birth = $("#birth").val();
 	var tell = $("#tell").val();
@@ -108,8 +85,30 @@ function check() {
 		alert("전화번호를 확인해주세요.");
 		return false;
 	}
-	if (pwd == '' || pwd2 == '' || pwd != pwd2) {
+	if (pwd == ''){
+		alert("비밀번호를 입력해주세요");
+	}
+	if (pwd2 != '' && pwd2 != pwd3) {
 		alert("비밀번호를 확인해주세요.");
 		return false;
 	}
 }
+
+//$('#member-modify-ok').on('click', function(e) {
+//e.preventDefault();
+//$.ajax({
+//	url : '/member/modify.do',
+//	type : 'PUT',
+//	dataType : 'json',
+//	data : data,
+//	contentType : 'application/json;charset=UTF-8',
+//	mimeType : 'application/json',
+//	success : function(response) {
+//		$('#myModal1').modal('hide');
+//		$(location).attr('href', '/common/main.page');
+//	},
+//	error : function(xhr, status, message) {
+//		alert("status: " + status + "error : " + message);
+//	}
+//});
+//});
