@@ -49,13 +49,13 @@
               </tbody>
                 <tr> 
                   <td class="img_box">
-	                  <a class="detail_link" href="/ticket/ticketView.do">
+	                  <a class="detail_link" href="/exhibit/view.do">
 	                   <img src="#" width="100px" height="122px" alt="공연 포스터">
 	                  </a>
                   </td>
                       
                   <td class="tl tx">
-                  <a class="detail_link" href="ticketView.do">김건모 25th Anniversary Tour-울산</a></td>
+                  <a class="detail_link" href="/exhibit/view.do">김건모 25th Anniversary Tour-울산</a></td>
                   <td>
                   <!-- 범위 잡기 위한 td -->       
                   </td>

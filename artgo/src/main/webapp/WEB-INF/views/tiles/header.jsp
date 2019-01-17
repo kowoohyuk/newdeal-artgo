@@ -10,7 +10,7 @@
 					<div class="breaking-news-area"></div>
 				</div>
 				<!-- Top Social Area -->
-				<div class="col-12 col-sm-4">
+				<div class="header-div-top">
 					<div class="top-social-area header-div-top-flag" id="header-top">
 					</div>
 				</div>
@@ -25,7 +25,7 @@
 			<div class="row h-100 align-items-center">
 				<div class="col-12">
 					<a href="/main.do" class="original-logo"><img
-						src="/resources/artgo/img/logo.png" alt=""></a>
+						src="/resources/artgo/img/logo.png" alt="" class="img-logo"></a>
 				</div>
 			</div>
 		</div>
@@ -60,16 +60,16 @@
 		            <div class="classynav">
 		              <ul>
 		                <li><a href="/main.do">홈</a></li>
-		                <li><a href="/ticket/ticketList.do">전시</a>
+		                <li><a href="/exhibit/ticketList.do">전시</a>
 		                  <ul class="dropdown">
-		                    <li><a href="/ticket/ticketList.do">전시 상황</a></li>
-		                    <li><a href="/ticket/ticketWrite.do">글 작성 테스트 링크</a></li>
-		                    <li><a href="/ticket/ticketUpdate.do">글 수성 테스트 링크</a></li>
+		                    <li><a href="/exhibit/list.do">전시 상황</a></li>
+		                    <li><a href="/exhibit/write.do">글 작성 테스트 링크</a></li>
+		                    <li><a href="/exhibit/update.do">글 수성 테스트 링크</a></li>
 							</ul></li>
 						<li><a href="#">지역</a>
 						</li>
 						<li><a href="" data-toggle="modal" data-target="#myModal">즐겨찾기</a></li>
-						<li><a href="#">마이 티켓</a>
+						<li><a href="member/main.do">마이 티켓</a>
 						</li>
 					</ul>
 

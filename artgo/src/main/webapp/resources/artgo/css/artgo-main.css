@@ -23,6 +23,9 @@
 	pointer-events: auto;
 	z-index: 250;
 }
+.img-logo{
+	padding-top: 20px;
+}
 
 .modal-cutton {
 	position: fixed;
@@ -44,6 +47,13 @@
 	-webkit-box-flex: 1;
 	flex: 1 1 auto;
 	background-color: azure;
+}
+.header-div-top{
+	width: 100%;
+}
+.header-div-top-flag{
+	width: 100%;
+	text-align: right !important;
 }
 
 .top-social-area {

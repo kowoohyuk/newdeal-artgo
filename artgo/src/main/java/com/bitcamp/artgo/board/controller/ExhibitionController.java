@@ -17,40 +17,34 @@ public class ExhibitionController {
   @Autowired
 /*  private ExhibitionService exhibitionService;*/
   
-  @RequestMapping(value = "ticket/ticketList.do", method = RequestMethod.GET)
+  @RequestMapping(value = "exhibit/list.do", method = RequestMethod.GET)
   public String ticketList() {
 
-    return "ticket/list.page";
+    return "exhibit/list.page";
   }
 
-  @RequestMapping(value = "ticket/ticketView.do", method = RequestMethod.GET)
+  @RequestMapping(value = "exhibit/view.do", method = RequestMethod.GET)
   public String ticketView() {
     
-    return "ticket/view.page";
+    return "exhibit/view.page";
   }
   
-  @RequestMapping(value = "ticket/ticketWrite.do", method = RequestMethod.GET)
+  @RequestMapping(value = "exhibit/write.do", method = RequestMethod.GET)
   public String ticketWriter() {
     
-      
-      
-      
-    return "ticket/write.page";
+    return "exhibit/write.page";
   }
   
-  @RequestMapping(value = "ticket/ticketWrite.do", method = RequestMethod.POST)
+  @RequestMapping(value = "exhibit/write.do", method = RequestMethod.POST)
   public String ticketWriterPost() {
-      
-      
-      
       
       return "redirect:main.do";
   }
   
-  @RequestMapping(value = "ticket/ticketUpdate.do", method = RequestMethod.GET)
+  @RequestMapping(value = "exhibit/update.do", method = RequestMethod.GET)
   public String ticketUpdate() {
       
-      return "ticket/update.page";
+      return "exhibit/update.page";
   }
 }
 
