@@ -38,7 +38,7 @@
       </li>
       <li id="padding" class="list-group-item d-flex justify-content-between align-items-center member-join-li">
         <div class="form-group member-join-div">
-          <input type="text" class="form-control member-join-input-text" placeholder="휴대폰" id="phone" name="phone">
+          <input type="text" class="form-control member-join-input-text" placeholder="휴대폰" id="tell" name="tell">
           <label class="hidden-label member-join-label"></label>
         </div>
       </li>

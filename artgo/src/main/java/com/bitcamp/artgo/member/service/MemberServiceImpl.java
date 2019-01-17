@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 import org.apache.commons.codec.net.URLCodec;
 import org.apache.ibatis.session.SqlSession;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.bitcamp.artgo.member.dao.MemberDao;
@@ -39,15 +40,31 @@ public class MemberServiceImpl implements MemberService {
 
     @Override
     public int updateMember(MemberDto memberDto) {
-    	
         return sqlSession.getMapper(MemberDao.class).updateMember(memberDto);
+    }
+    
+    @Override
+    public String findId(Map<String, String> param) {
+      MemberDto member = sqlSession.getMapper(MemberDao.class).findId(param);
+      JSONObject json = new JSONObject();
+      if(member==null) {
+        json.put("result", "fail");
+      }else {
+        json.put("result", "ok");
+        json.put("id", member.getId());
+      }
+      return json.toString();
+    }
+    
+    @Override
+    public String findPwd(Map<String, String> param) {
+      //현재 미구현
+      return "";
     }
 
     @Override
     public MemberDto checkMember(MemberDto memberDto) {
-    	System.out.println(memberDto.getPwd());
         memberDto.setPwd(enc(memberDto.getPwd()));
-        System.out.println(memberDto.getPwd());
         return sqlSession.getMapper(MemberDao.class).checkMember(memberDto);
     }
 

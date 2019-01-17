@@ -56,7 +56,7 @@
 					class="list-group-item d-flex justify-content-between align-items-center member-join-li">
 					<div class="form-group member-modify-div">
 						<input type="text" class="form-control member-join-input-text"
-							placeholder="휴대폰" id="phone" name="phone"> 
+							placeholder="휴대폰" id="tell" name="tell"> 
 							<label class="hidden-label member-modify-label"></label>
 					</div>
 				</li>

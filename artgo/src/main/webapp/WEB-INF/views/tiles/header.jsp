@@ -11,19 +11,7 @@
 				</div>
 				<!-- Top Social Area -->
 				<div class="col-12 col-sm-4">
-					<div class="top-social-area header-div-top-flag">
-						<a href="/member/login.do" data-toggle="tooltip" data-placement="bottom"
-							title="login"><span>로그인</span>
-						</a>
-					 	<a href="/member/join.do"
-							data-toggle="tooltip" data-placement="bottom" title="join"><span>회원가입</span>
-						</a>
-					 	<a href="/member/main.do"
-							data-toggle="tooltip" data-placement="bottom" title="mypage"><span>마이 페이지</span>
-						</a>
-						<a href="/admin/main.do"
-							data-toggle="tooltip" data-placement="bottom" title="mypage"><span>관리 페이지</span>
-						</a>
+					<div class="top-social-area header-div-top-flag" id="header-top">
 					</div>
 				</div>
 			</div>
@@ -102,8 +90,6 @@
 		</div>
 	</div>
 	<!-- The Modal -->
-
-
 
 	<div class="subscribe-newsletter-area">
         <div class="modal fade" id="subsModal" tabindex="-1" role="dialog" aria-labelledby="subsModal" aria-hidden="true">

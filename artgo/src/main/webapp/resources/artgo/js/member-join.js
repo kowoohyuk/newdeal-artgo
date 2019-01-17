@@ -66,7 +66,7 @@ function check() {
 	var pwd2 = $("#pwd2").val();
 	var name = $("#name").val();
 	var birth = $("#birth").val();
-	var phone = $("#phone").val();
+	var tell = $("#tell").val();
 	
 	var idReg = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
 	var nameReg = /^[가-힣]{2,6}$/g;

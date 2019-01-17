@@ -22,6 +22,10 @@ public interface MemberService {
   MemberDto selectMember(String id);
   //로그인 시
   MemberDto checkMember(MemberDto memberDto);
+  //아이디 찾기
+  String findId(Map<String, String> param);
+  //비밀번호 찾기
+  String findPwd(Map<String, String> param);
   //관리자 페이지 회원 목록
   List<MemberDto> selectMemberList(Map<String, String> param);
   //회원 정보 수정

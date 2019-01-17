@@ -20,6 +20,20 @@
 		WHERE tell = #{tell}	
 	</select>
 	
+	<select id="findId" parameterType="memberDto" resultType="memberDto">
+		SELECT id
+		FROM member
+		WHERE name = #{name}
+		AND tell = #{tell}
+	</select>
+	
+	<select id="findPwd" parameterType="memberDto" resultType="memberDto">
+		SELECT id
+		FROM member
+		WHERE id = #{id}
+		AND tell = #{tell}
+	</select>
+	
 	<select id="checkMember" parameterType="memberDto" resultType="memberDto">
 		SELECT mno, id, name, type, birth, tell, status, confirm, grade, role, joindate, finaldate
 		FROM member
@@ -53,6 +67,12 @@
 			tell = #{tell},
 			birth = #{birth},
 			grade = #{grade}
+		WHERE id = #{id}
+	</update>
+	
+	<update id="updateMemberPwd" parameterType="memberDto">
+		UPDATE member
+		SET pwd = #{pwd}
 		WHERE id = #{id}
 	</update>
 	

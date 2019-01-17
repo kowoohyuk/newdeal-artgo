@@ -45,3 +45,13 @@
 	flex: 1 1 auto;
 	background-color: azure;
 }
+
+.top-social-area {
+	margin-top : 30px;
+}
+.header-member-label{
+	color: black;
+}
+.header-member-text{
+	font-weight: normal;
+}

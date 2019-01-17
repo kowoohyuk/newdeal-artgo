@@ -74,6 +74,10 @@
 
 </head>
 <body>
+<input type="hidden" id="userId" value="${userInfo.id}">
+<input type="hidden" id="userName" value="${userInfo.name}">
+<input type="hidden" id="userRole" value="${userInfo.role}">
+<input type="hidden" id="userType" value="${userInfo.type}">
     <div id="preloader">
        <div class="preload-content">
            <div id="original-load"></div>
@@ -84,6 +88,7 @@
     <div id="main"><tiles:insertAttribute name="body" /></div>    
     <div id="footer"><tiles:insertAttribute name="footer" /></div>
     </div>
+    	<script src="/resources/artgo/js/header.js"></script>
     	<script src="/resources/base/js/jquery/jquery-2.2.4.min.js"></script>
 		<!-- Popper js -->
 		<script src="/resources/base/js/popper.min.js"></script>

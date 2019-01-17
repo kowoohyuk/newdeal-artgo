@@ -1,13 +1,11 @@
 package com.bitcamp.artgo.member.controller;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import javax.servlet.http.HttpSession;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -16,13 +14,15 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
 import com.bitcamp.artgo.mail.service.AuthService;
 import com.bitcamp.artgo.member.model.MemberDto;
 import com.bitcamp.artgo.member.service.MemberService;
 
 /**
- * 파일명: MemberConrtoller.java 설 명: 회원 관련 페이지, 기능 작성일: 2019. 1. 11. 작성자: 고 우 혁
+ * 파일명: MemberConrtoller.java
+ * 설 명: 회원 관련 페이지
+ * 기능 작성일: 2019. 1. 11.
+ * 작성자: 고 우 혁
  */
 
 @Controller
@@ -56,15 +56,32 @@ public class MemberController {
   public String memberJoin() {
     return "member/join.part";
   }
+  
+  @RequestMapping(value = "member/logout.do", method = RequestMethod.GET)
+  public String memberLogout(HttpSession session) {
+    session.invalidate();
+    return "redirect:/main.do";
+  }
 
-  @RequestMapping("member/findId.do")
+  @RequestMapping(value = "member/findId.do", method = RequestMethod.GET)
   public String memberFindId() {
     return "member/findId.part";
   }
+  
+  @RequestMapping(value = "member/findId.do", method = RequestMethod.POST)
+  public @ResponseBody String memberFindId(@RequestParam Map<String, String> param, Model model) {
+    return memberService.findId(param);
+  }
 
-  @RequestMapping("member/findPwd.do")
-  public String memberFindPwdPart() {
+  @RequestMapping(value = "member/findPwd.do", method = RequestMethod.GET)
+  public String memberFindPwd() {
     return "member/findPwd.part";
+  }
+  
+  @RequestMapping(value = "member/findPwd.do", method = RequestMethod.POST)
+  public @ResponseBody String memberFindPwd(@RequestParam Map<String, String> param, Model model) {
+    System.out.println(param.get("id"));
+    return authService.createTmpPwd(param.get("id"));
   }
   
   @RequestMapping(value = "member/modify.do", method = RequestMethod.GET)
@@ -74,7 +91,6 @@ public class MemberController {
   
   @RequestMapping(value = "member/modify.do", method = RequestMethod.POST)
   public String memberModify(MemberDto memberDto) {
-    System.out.println(memberDto);
     return "member/modify.page";
   }
 
@@ -90,10 +106,11 @@ public class MemberController {
      **/
     
     MemberDto user = memberService.checkMember(memberDto);
-    System.out.println(user);
     if (user != null) {
       if (user.getConfirm() == 0) {
-        //return "member/emailPush.part";
+        model.addAttribute("type", "4");
+        model.addAttribute("id", memberDto.getId());
+        return "common/result.part";
       }
         MemberDto tmp = new MemberDto();
         tmp.setId(user.getId());
@@ -129,7 +146,6 @@ public class MemberController {
         result.put("result", "fail");
       }
     }
-    System.out.println("로그인 회원 정보 :" + tmp);
     return result.toString();
   }
   @RequestMapping(value="member/checkId.do", method=RequestMethod.POST)
@@ -145,7 +161,6 @@ public class MemberController {
 
   @RequestMapping(value = "member/join.do", method = RequestMethod.POST)
   public String memberJoin(MemberDto memberDto, Model model) {
-    
     //트랜잭셔널 확인
     memberDto.setType("normal");
     memberDto.setConfirm(0);
@@ -156,6 +171,15 @@ public class MemberController {
     }else {
       model.addAttribute("type", "2");
     }
+    return "common/result.part";
+  }
+  
+  @RequestMapping(value = "member/resend", method = RequestMethod.GET)
+  public String resend(String id, Model model) {
+    System.out.println(id);
+    authService.resendAuth(id);
+    model.addAttribute("type", "6");
+    model.addAttribute("id", id);
     
     return "common/result.part";
   }
@@ -178,10 +202,15 @@ public class MemberController {
 
   @RequestMapping(value = "member/confirm.do", method = RequestMethod.GET)
   public String memberConfirm(String userEmail, String authKey, Model model){ // 이메일인증
-    if(authService.userAuth(userEmail, authKey)>0) {
-      model.addAttribute("type", "3");
+    model.addAttribute("id",userEmail);
+    if(memberService.selectMember(userEmail).getConfirm() == 1) {
+      model.addAttribute("type","5");
     }else {
-      model.addAttribute("type", "4");
+      if(authService.userAuth(userEmail, authKey)>0) {
+        model.addAttribute("type", "3");
+      }else {
+        model.addAttribute("type", "4");
+      }
     }
     return "common/result.part";
   }
