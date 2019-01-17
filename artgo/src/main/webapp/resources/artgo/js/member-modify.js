@@ -25,6 +25,7 @@ $(document).ready(function() {
 		$("#modify-form").submit();
 		alert('수정되었습니다.');
 	});
+
 	$("input:text").on("focusout", function() {
 		var id = $(this).val();
 

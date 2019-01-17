@@ -57,8 +57,7 @@
 	</update>
 	
 	<delete id="deleteMember" parameterType="memberDto">
-		DELETE member
-		WHERE id = #{id}
+		UPDATE member SET status = 0 WHERE pwd = #{pwd}
 	</delete>
 	
 	<update id="updateVisitMember" parameterType="memberDto">
