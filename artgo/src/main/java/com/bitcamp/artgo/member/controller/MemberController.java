@@ -184,22 +184,52 @@ public class MemberController {
     return "common/result.part";
   }
   
-  @RequestMapping(value = "member/{id}", method = RequestMethod.POST)
-  public String modify(@PathVariable(value = "id") String id, HttpSession session, Model model) {
-      if (id.equals((String) session.getAttribute("id"))) {
-          model.addAttribute("member", memberService.selectMember(id));
-      }
-      return "member/modify";
-  }
+//  @RequestMapping(value = "member/{id}", method = RequestMethod.POST)
+//  public String modify(@PathVariable(value = "id") String id, HttpSession session, Model model) {
+//      if (id.equals((String) session.getAttribute("id"))) {
+//          model.addAttribute("member", memberService.selectMember(id));
+//      }
+//      return "member/modify";
+//  }
 
-  @RequestMapping(value = "member/modify.do", method = RequestMethod.POST, headers = { "Content-type=application/json" })
-  public @ResponseBody Map<String, String> modify(@RequestBody MemberDto memberDto, HttpSession session) {
-      memberService.updateMember(memberDto);
-      Map<String, String> map = new HashMap<String, String>();
-      map.put("result", "정보가 수정되었습니다.");
-      return map;
-  }
+  @RequestMapping(value = "member/modify.do",  method = RequestMethod.POST)
+	public String modify(MemberDto memberDto, HttpSession session, Model model) {
+		MemberDto tmp = (MemberDto) session.getAttribute("userInfo");
+		tmp.setBirth(memberDto.getBirth());
+		tmp.setPwd(memberDto.getPwd());
+		tmp.setTell(memberDto.getTell());
+		tmp.setName(memberDto.getName());
+		
+		System.out.println(tmp);
+		
+		memberService.updateMember(tmp);
+		
+		if(session.getAttribute("userInfo") != null) {
+			String id = (((MemberDto)session.getAttribute("userInfo")).getId());
+			model.addAttribute("member", memberService.selectMember(id));
+			System.out.println(model);
+			
+		}
+		return "redirect:main.page";
+	}	
 
+  @RequestMapping("member/delete.do")
+  public String deleteMember(String pwd, Model model, HttpSession session) {
+	  System.out.println(pwd);
+	  MemberDto memberDto = (MemberDto)session.getAttribute("userInfo");
+	  memberDto.setPwd(pwd);
+	  System.out.println(memberDto);
+	  if(memberService.deleteMember(memberDto)>0) {
+		  model.addAttribute("type", "7");
+		  session.invalidate();
+		  return "/common/result.do";
+	  }else {
+		  model.addAttribute("err", "회원탈퇴에 실패하셨습니다. 사유 : 비밀번호 불일치");
+		  return "/member/main.do";
+	  }
+  }
+  
+  
   @RequestMapping(value = "member/confirm.do", method = RequestMethod.GET)
   public String memberConfirm(String userEmail, String authKey, Model model){ // 이메일인증
     model.addAttribute("id",userEmail);
@@ -236,5 +266,28 @@ public class MemberController {
   // **/
   // return "ticket/list";
   // }
+  
+  
+//@RequestMapping(value="member/delete.do",  method = RequestMethod.POST)
+//	public String deleteMember(@RequestParam Map<String, String> param, Model model, HttpSession session, MemberDto memberDto) {
+//		String id = ((MemberDto)session.getAttribute("userInfo")).getId();
+//		int result = memberService.deleteMember(id, param.get("pwd"));
+//		System.out.println(memberDto);
+//		if(result>0) {
+//			model.addAttribute("title", "탈퇴");
+//			model.addAttribute("msg", "탈퇴되었습니다.");
+//			model.addAttribute("url", "common/main.page");
+//			model.addAttribute("move", "auto");
+//			return "member/delete.do";
+//		}else {
+//			model.addAttribute("title", "탈퇴 실패");
+//			model.addAttribute("msg", "다시 시도해주세요.");
+//			model.addAttribute("url", "member/main.page");
+//			model.addAttribute("move", "auto");
+//			return "member/delete.do";
+//		}
+//		
+//	}
+
 
 }

@@ -14,6 +14,8 @@
 		<!-- Trigger the modal with a button -->
 		<button type="button" class="btn btn-info btn-lg" data-toggle="modal"
 			data-target="#myModal1">내 정보 수정</button>
+		<button type="button" class="btn btn-info btn-lg" id="delBtn"  data-toggle="modal"
+			data-target="#myModal2">탈퇴</button>
 		<!-- 최근 예매/취소 -->
 		<!-- 최근 예매/취소 -->
 		<h2 class="tit_sub_float member-main-title">최근 예매/취소</h2>
@@ -178,7 +180,30 @@
 		</div>
 	</div>
 </div>
-<!-- 
+
+
+<div id="myModal2" class="modal fade" role="dialog" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+
+
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title member-main-text">ArtGo 회원 탈퇴</h4>
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+			</div>
+			<div class="modal-body">
+				<%@ include file="/WEB-INF/views/member/delete.jsp" %>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal" id="member-delete-btn">탈퇴</button>
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--
+
 <div id="myModal2" role="dialog" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal-dialog">
 
@@ -199,6 +224,6 @@
 </div>
 -->
 
-
+<script src="/resources/artgo/js/member-delete.js"></script>
 <script src="/resources/artgo/js/member-modify.js"></script>
 <script src="/resources/base/js/ticket-list.js"></script>
