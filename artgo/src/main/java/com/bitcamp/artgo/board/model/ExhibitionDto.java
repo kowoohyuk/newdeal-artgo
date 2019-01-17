@@ -13,6 +13,7 @@ public class ExhibitionDto extends BoardDto {
   private int normalPrice;
   private String startDate;
   private String address;
+  private String place;
   private String endDate;
   
   public int getExno() {
@@ -51,5 +52,16 @@ public class ExhibitionDto extends BoardDto {
   public void setAddress(String address) {
     this.address = address;
   }
-  
+  public String getPlace() {
+    return place;
+  }
+  public void setPlace(String place) {
+    this.place = place;
+  }
+  @Override
+  public String toString() {
+    return "ExhibitionDto [exno=" + exno + ", teenPrice=" + teenPrice + ", normalPrice="
+        + normalPrice + ", startDate=" + startDate + ", address=" + address + ", place=" + place
+        + ", endDate=" + endDate + "]";
+  }
 }

@@ -73,7 +73,7 @@ CREATE TABLE BOARD_EXHIBITION (
 	STARTDATE   DATE         NOT NULL COMMENT '시작일', -- 시작일
 	ENDDATE     DATE         NOT NULL COMMENT '종료일', -- 종료일
 	ADDRESS     VARCHAR(255) NOT NULL COMMENT '주소', -- 주소
-	AREA        VARCHAR(255) NOT NULL COMMENT '장소', -- 장소
+	PLACE       VARCHAR(255) NOT NULL COMMENT '장소', -- 장소
 	BNO         INTEGER      NOT NULL COMMENT '게시글 번호' -- 게시글 번호
 )
 COMMENT '전시회';
@@ -119,7 +119,7 @@ CREATE TABLE BOARD (
 	CONTENT TEXT         NOT NULL COMMENT '내용', -- 내용
 	HIT     INTEGER      NOT NULL COMMENT '조회수', -- 조회수
 	STATUS  INTEGER      NOT NULL COMMENT '상태', -- 상태
-	DATE    DATETIME     NOT NULL COMMENT '작성일', -- 작성일
+	DATE    TIMESTAMP    NOT NULL COMMENT '작성일', -- 작성일
 	MNO     INTEGER      NOT NULL COMMENT '회원 번호' -- 회원 번호
 )
 COMMENT '게시판';
@@ -136,13 +136,13 @@ ALTER TABLE BOARD
 
 -- 후기
 CREATE TABLE REVIEW (
-	RNO     INTEGER  NOT NULL COMMENT '후기 번호', -- 후기 번호
-	COMMENT INTEGER  NOT NULL COMMENT '평점', -- 평점
-	SCORE   TEXT     NOT NULL COMMENT '내용', -- 내용
-	STATUS  INTEGER  NOT NULL COMMENT '상태', -- 상태
-	DATE    DATETIME NOT NULL COMMENT '작성일', -- 작성일
-	EXNO    INTEGER  NOT NULL COMMENT '전시회 번호', -- 전시회 번호
-	MNO     INTEGER  NOT NULL COMMENT '회원 번호' -- 회원 번호
+	RNO     INTEGER   NOT NULL COMMENT '후기 번호', -- 후기 번호
+	COMMENT INTEGER   NOT NULL COMMENT '평점', -- 평점
+	SCORE   TEXT      NOT NULL COMMENT '내용', -- 내용
+	STATUS  INTEGER   NOT NULL COMMENT '상태', -- 상태
+	DATE    TIMESTAMP NOT NULL COMMENT '작성일', -- 작성일
+	EXNO    INTEGER   NOT NULL COMMENT '전시회 번호', -- 전시회 번호
+	MNO     INTEGER   NOT NULL COMMENT '회원 번호' -- 회원 번호
 )
 COMMENT '후기';
 

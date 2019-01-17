@@ -105,3 +105,27 @@ a-ex-flag:hover{
 	border-color: crimson !important;
 	background-color: crimson !important;
 }
+.img-pocket{
+	border: 2px dashed gray;
+	width : 300px;
+	height: 400px;
+	margin: 20px;
+	text-align: center;
+}
+.img-pocket:hover{
+	background-color: aliceblue;
+}
+
+.div-exhibit-text p{
+    margin-top: 10px;
+    font-size: 14px;
+    margin-left: 20px;
+}
+
+.p-normal{
+	font-weight: normal !important;
+}
+
+#fileForm{
+	display: none;	
+}

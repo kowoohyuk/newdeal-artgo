@@ -2,6 +2,7 @@ package com.bitcamp.artgo.admin.service;
 
 import java.util.List;
 import java.util.Map;
+import org.springframework.web.multipart.MultipartFile;
 import com.bitcamp.artgo.board.model.ExhibitionDto;
 import com.bitcamp.artgo.board.model.NoticeDto;
 import com.bitcamp.artgo.board.model.ReviewDto;
@@ -18,9 +19,9 @@ public interface AdminService {
   int writeNotice(NoticeDto noticeDto);
   int modifyNotice(NoticeDto noticeDto);
   int deleteNotice(int boardNo);
-  int writeExhibition(ExhibitionDto exhibitionDto);
-  int modifyExhibition(ExhibitionDto exhibitionDto);
-  int deleteExhibition(int boardNo);
+  int writeExhibit(ExhibitionDto exhibitionDto, MultipartFile multipartFile);
+  int modifyExhibit(ExhibitionDto exhibitionDto);
+  int deleteExhibit(int boardNo);
   int deleteReview(int reviewNo);
   List<NoticeDto> getNoticeList(Map<String, String> param);
   String getMemberList(Map<String, String> param);

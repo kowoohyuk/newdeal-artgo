@@ -24,5 +24,21 @@
 		</if>
 		
 	</select>
+	
+	<select id="getTotalExhibitCount" parameterType="Map" resultType="int">
+		select count(*)
+		from exhibitlistview
+		<if test="word != null and word != ''">
+			<choose>
+				<when test="key == 'id'">
+               		WHERE id LIKE CONCAT('%',#{word},'%')
+				</when>
+				<otherwise>
+					WHERE ${key} = CONCAT('%',#{word},'%')
+				</otherwise>
+			</choose>
+		</if>
+		
+	</select>
 
 </mapper>

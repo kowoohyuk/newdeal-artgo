@@ -223,6 +223,7 @@
 	</div>
 </div>
 -->
+<script src="/resources/base/js/jquery/jquery-2.2.4.min.js"></script>
 <script src="/resources/artgo/js/member-main.js"></script>
 <script src="/resources/artgo/js/member-delete.js"></script>
 <script src="/resources/artgo/js/member-modify.js"></script>

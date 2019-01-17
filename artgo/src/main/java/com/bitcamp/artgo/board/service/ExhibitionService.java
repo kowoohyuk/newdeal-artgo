@@ -2,6 +2,7 @@ package com.bitcamp.artgo.board.service;
 
 import java.util.List;
 import java.util.Map;
+import org.springframework.web.multipart.MultipartFile;
 import com.bitcamp.artgo.board.model.ExhibitionDto;
 
 /**
@@ -13,9 +14,7 @@ import com.bitcamp.artgo.board.model.ExhibitionDto;
 
 public interface ExhibitionService {
 
-  ExhibitionDto getExhibition(int boardNo);
-  List<ExhibitionDto> getExhibitionList(Map<String, String> param);
-  int writeExhibition(ExhibitionDto exhibitionDto);
-  
+  ExhibitionDto getExhibit(int boardNo);
+  List<ExhibitionDto> getExhibitList(Map<String, String> param);
   
 }

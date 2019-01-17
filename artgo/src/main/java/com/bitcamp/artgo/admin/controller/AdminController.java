@@ -40,9 +40,8 @@ public class AdminController {
   public ModelAndView adminMemberList(@RequestParam Map<String, String> param, Model model) {
       ModelAndView modelAndView = new ModelAndView();
       List<MemberDto> list = memberService.selectMemberList(param);
-      for(MemberDto m : list) {
-        System.out.println(m);
-      }
+      
+      param.put("page-type", "member"); // 페이지 네비게이션을 여러 곳에서 쓰기 위함.
       PageNavigation navigation = commonService.makePageNavigation(param);
       navigation.setRoot("/admin");
       navigation.makeNavigator();

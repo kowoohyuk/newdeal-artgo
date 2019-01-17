@@ -12,9 +12,9 @@ import com.bitcamp.artgo.board.model.ExhibitionDto;
 */
 
 public interface ExhibitionDao {
-  int writeExhibition(ExhibitionDto exhibitionDto);
-  int modifyExhibition(ExhibitionDto exhibitionDto);
-  int deleteExhibition(int boardNo);
-  ExhibitionDto getExhibition(int boardNo);
-  List<ExhibitionDto> getExhibitionList(Map<String, String> param);
+  int writeExhibit(ExhibitionDto exhibitionDto);
+  int modifyExhibit(ExhibitionDto exhibitionDto);
+  int deleteExhibit(int boardNo);
+  ExhibitionDto getExhibit(int boardNo);
+  List<ExhibitionDto> getExhibitList(Map<String, String> param);
 }

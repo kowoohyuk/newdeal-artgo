@@ -2,29 +2,33 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-
-<!--
-
-e_no			- 전시 번호
-e_teen_price	- 청소년 가격
-e_nor_price		- 성인 가격
-e_startdate		- 시작일
-e_enddate		- 종료일
-e_address		- 장소
-b_no 			- 게시판 번호
-
--->
-
 <mapper namespace="com.bitcamp.artgo.board.dao.ExhibitionDao">
 
-<insert id="writeExhibition" parameterType="exhibitionDto" >
-
-insert into board_exhibition teenPrice, statDate, endDate, address, bno
-values (#{teenPrice}, #{startDate}, #{endDate}, #{address}, #{bno});
-
+<insert id="writeExhibit" parameterType="exhibitionDto">
+	INSERT INTO board_exhibition 
+			(teenPrice, normalPrice, startDate, endDate, address, place, bno)
+	VALUES (#{teenPrice}, #{normalPrice}, #{startDate}, #{endDate}, #{address}, #{place}, #{bno});
 </insert>
 
-
+<select id="getExhibitList" parameterType="Map" resultType="exhibitionDto">
+	SELECT ex.* 
+	FROM (SELECT @rownum:=@rownum+1 AS rnum, tmp.* FROM exhibitlistview AS tmp,
+               (SELECT @rownum:=0) as r
+	<if test="word != null and word != ''">
+		<choose>
+			<when test="key == 'title'">
+              		WHERE tmp.title LIKE CONCAT('%',#{word},'%')
+			</when>
+			<otherwise>
+				WHERE ${key} = CONCAT('%',#{word},'%')
+			</otherwise>
+		</choose>
+	</if>
+	ORDER BY tmp.exno DESC
+          ) AS ex
+	WHERE rnum &lt;= #{end}
+	AND rnum &gt;= #{start}                
+</select>
 
 </mapper>
 

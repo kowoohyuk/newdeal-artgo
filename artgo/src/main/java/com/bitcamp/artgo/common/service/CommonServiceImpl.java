@@ -21,10 +21,15 @@ public class CommonServiceImpl implements CommonService {
 		int listSize = ListConstance.LIST_COUNT;
 
 		PageNavigation navigation = new PageNavigation();
-		int totalMemberCount = sqlSession.getMapper(CommonDao.class).getTotalMemberCount(param);
-		System.out.println(totalMemberCount);
-		int totalPageCount = (totalMemberCount - 1) / listSize + 1;
-		navigation.setTotalArticleCount(totalMemberCount);
+		int totalCount = 0;
+		if(param.get("page-type").equals("member")) {
+		  totalCount = sqlSession.getMapper(CommonDao.class).getTotalMemberCount(param);
+		}else if(param.get("page-type").equals("exhibit")) {
+		  totalCount = sqlSession.getMapper(CommonDao.class).getTotalExhibitCount(param);
+		}
+		System.out.println(totalCount);
+		int totalPageCount = (totalCount - 1) / listSize + 1;
+		navigation.setTotalArticleCount(totalCount);
 		navigation.setTotalPageCount(totalPageCount);
 		navigation.setPageNo(pg);
 		navigation.setNowFirst(pg <= pageSize);

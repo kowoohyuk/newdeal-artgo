@@ -109,6 +109,7 @@ public class MemberController {
         return "common/result.part";
       }
       session.setAttribute("userInfo", user);
+      System.out.println(user);
       return "common/main.page";
     } else {
       redirectAttributes.addAttribute("err", "1");
@@ -128,6 +129,7 @@ public class MemberController {
     MemberDto tmp = memberService.selectMember(id);
     if (tmp != null) {
       session.setAttribute("userInfo", tmp);
+      System.out.println(tmp);
       result.put("result", "success");
     } else {
       memberDto.setId(id);

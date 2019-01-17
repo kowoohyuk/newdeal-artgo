@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="pg" value="${param.pg}" />
+<c:set var="key" value="${param.key}" />
+<c:set var="word" value="${param.word}" />
 <link href="/resources/artgo/css/exhibit.css" rel="stylesheet">
 <div class="container">
 
@@ -108,4 +112,10 @@
 	  	</div>
 	  </li>
 	</ul>
+	
 </div>
+<form action="" id="commonForm" method="get">
+<input type="hidden" id="pg" name="pg" value="${pg}">
+<input type="hidden" id="key" name="key" value="${key}">
+<input type="hidden" id="word" name="word" value="${word}">
+</form>

@@ -15,9 +15,9 @@ import com.bitcamp.artgo.board.model.NoticeDto;
 
 public interface BoardDao {
   int writeBoardByNotice(NoticeDto noticeDto);
-  int writeBoardByExhibition(ExhibitionDto exhibitionDto);
+  int writeBoardByExhibit(ExhibitionDto exhibitionDto);
   int modifyBoardByNotice(NoticeDto noticeDto);
-  int modifyBoardByExhibition(ExhibitionDto exhibitionDto);
+  int modifyBoardByExhibit(ExhibitionDto exhibitionDto);
   int deleteBoard(int boardNo);
   BoardDto getBoard(int boardNo);
   List<BoardDto> getBoardList(Map<String, String> param);
