@@ -65,6 +65,7 @@
 		                    <li><a href="/exhibit/list.do?pg=1&key=&word=">전시회 목록</a></li>
 		                    <li><a href="/exhibit/write.do">전시회 추가</a></li>
 		                    <li><a href="/exhibit/modify.do">???</a></li>
+		                    <li><a href="/review/write.do">리뷰</a></li>
 							</ul></li>
 						<li><a href="#">지역</a>
 						</li>

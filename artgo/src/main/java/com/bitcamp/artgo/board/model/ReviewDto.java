@@ -6,7 +6,7 @@ package com.bitcamp.artgo.board.model;
 
 public class ReviewDto {
 	private int rno;
-	private int comment;
+	private String comment;
 	private int score;
 	private int status;
 	private int exno;
@@ -22,11 +22,11 @@ public class ReviewDto {
 		this.rno = rno;
 	}
 
-	public int getComment() {
+	public String getComment() {
 		return comment;
 	}
 
-	public void setComment(int comment) {
+	public void setComment(String comment) {
 		this.comment = comment;
 	}
 
@@ -76,6 +76,12 @@ public class ReviewDto {
 
 	public void setDate(String date) {
 		this.date = date;
+	}
+
+	@Override
+	public String toString() {
+		return "ReviewDto [rno=" + rno + ", comment=" + comment + ", score=" + score + ", status=" + status + ", exno="
+				+ exno + ", mno=" + mno + ", name=" + name + ", date=" + date + "]";
 	}
 
 }

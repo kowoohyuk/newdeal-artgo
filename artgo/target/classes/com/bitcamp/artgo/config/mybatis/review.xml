@@ -5,10 +5,10 @@
 <mapper namespace="com.bitcamp.artgo.board.dao.ReviewDao">
 	<insert id="writeReview" parameterType="reviewDto">
 		INSERT INTO review(comment, score, status, exno, mno, date)
-		VALUES (#{comment}, #{score}, #{status}, #{exno}, #{mno}, sysdate)
+		VALUES (#{comment}, #{score}, 1, 4, #{mno}, now())
 	</insert>
 
-	<select id="getReviewList" parameterType="map" resultType="reviewDto">
+	<select id="getReviewList" parameterType="int" resultType="reviewDto">
 		SELECT r.*, m.name 
 		FROM review r, member m
 		WHERE r.exno = #{exno}

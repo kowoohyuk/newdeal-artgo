@@ -142,9 +142,15 @@ public class AdminSerivceImpl implements AdminService {
     return json.toString();
   }
 
+//  @Override
+//  public List<ReviewDto> getReviewList(Map<String, String> param) {
+//    return sqlSession.getMapper(ReviewDao.class).getReviewList(param);
+//  }
+  
+
   @Override
-  public List<ReviewDto> getReviewList(Map<String, String> param) {
-    return sqlSession.getMapper(ReviewDao.class).getReviewList(param);
+  public List<ReviewDto> getReviewList(int reviewNo) {
+    return sqlSession.getMapper(ReviewDao.class).getReviewList(reviewNo);
   }
 
   @Override

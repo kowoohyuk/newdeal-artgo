@@ -25,6 +25,7 @@ public interface AdminService {
   int deleteReview(int reviewNo);
   List<NoticeDto> getNoticeList(Map<String, String> param);
   String getMemberList(Map<String, String> param);
-  List<ReviewDto> getReviewList(Map<String, String> param);
+  //List<ReviewDto> getReviewList(Map<String, String> param);
   int updateMember(MemberDto memberDto);
+  List<ReviewDto> getReviewList(int reviewNo);
 }

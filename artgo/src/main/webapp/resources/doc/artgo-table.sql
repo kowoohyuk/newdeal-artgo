@@ -24,265 +24,254 @@ DROP TABLE IF EXISTS AUTH RESTRICT;
 
 -- 회원
 CREATE TABLE MEMBER (
-	MNO       INTEGER      NOT NULL COMMENT '회원 번호', -- 회원 번호
-	ID        VARCHAR(60)  NOT NULL UNIQUE COMMENT '아이디', -- 아이디
-	PWD       VARCHAR(80)  NULL     COMMENT '비밀번호', -- 비밀번호
-	TYPE      VARCHAR(60)  NOT NULL COMMENT '플랫폼 타입', -- 플랫폼 타입
-	NAME      VARCHAR(255) NOT NULL COMMENT '이름', -- 이름
-	TELL      VARCHAR(30)  NULL     COMMENT '휴대전화번호', -- 휴대전화번호
-	STATUS    INTEGER      NOT NULL COMMENT '상태', -- 상태
-	CONFIRM   INTEGER      NOT NULL COMMENT '이메일 인증', -- 이메일 인증
-	GRADE     VARCHAR(60)  NOT NULL COMMENT '등급', -- 등급
-	ROLE      VARCHAR(60)  NOT NULL COMMENT '권한', -- 권한
-	JOINDATE  DATE         NOT NULL COMMENT '가입일', -- 가입일
-	FINALDATE DATE         NOT NULL COMMENT '최종 방문일', -- 최종 방문일
-	BIRTH     DATE         NULL     COMMENT '생일' -- 생일
+    MNO       INTEGER      NOT NULL COMMENT '회원 번호', -- 회원 번호
+    ID        VARCHAR(60)  NOT NULL UNIQUE COMMENT '아이디', -- 아이디
+    PWD       VARCHAR(80)  NULL     COMMENT '비밀번호', -- 비밀번호
+    TYPE      VARCHAR(60)  NOT NULL COMMENT '플랫폼 타입', -- 플랫폼 타입
+    NAME      VARCHAR(255) NOT NULL COMMENT '이름', -- 이름
+    TELL      VARCHAR(30)  NULL     COMMENT '휴대전화번호', -- 휴대전화번호
+    STATUS    INTEGER      NOT NULL COMMENT '상태', -- 상태
+    CONFIRM   INTEGER      NOT NULL COMMENT '이메일 인증', -- 이메일 인증
+    GRADE     VARCHAR(60)  NOT NULL COMMENT '등급', -- 등급
+    ROLE      VARCHAR(60)  NOT NULL COMMENT '권한', -- 권한
+    JOINDATE  DATE         NOT NULL COMMENT '가입일', -- 가입일
+    FINALDATE DATE         NOT NULL COMMENT '최종 방문일', -- 최종 방문일
+    BIRTH     DATE         NULL     COMMENT '생일' -- 생일
 )
 COMMENT '회원';
 
 -- 회원
 ALTER TABLE MEMBER
-	ADD CONSTRAINT PK_MEMBER -- 회원 기본키
-		PRIMARY KEY (
-			MNO -- 회원 번호
-		);
+    ADD CONSTRAINT PK_MEMBER -- 회원 기본키
+        PRIMARY KEY (
+            MNO -- 회원 번호
+        );
 
 ALTER TABLE MEMBER
-	MODIFY COLUMN MNO INTEGER NOT NULL AUTO_INCREMENT COMMENT '회원 번호';
+    MODIFY COLUMN MNO INTEGER NOT NULL AUTO_INCREMENT COMMENT '회원 번호';
 
 -- 즐겨찾기
 CREATE TABLE FAVORITE (
-	EXNO INTEGER NOT NULL COMMENT '전시회 번호', -- 전시회 번호
-	MNO  INTEGER NOT NULL COMMENT '회원 번호' -- 회원 번호
+    EXNO INTEGER NOT NULL COMMENT '전시회 번호', -- 전시회 번호
+    MNO  INTEGER NOT NULL COMMENT '회원 번호' -- 회원 번호
 )
 COMMENT '즐겨찾기';
 
 -- 즐겨찾기
 ALTER TABLE FAVORITE
-	ADD CONSTRAINT PK_FAVORITE -- 즐겨찾기 기본키
-		PRIMARY KEY (
-			EXNO, -- 전시회 번호
-			MNO   -- 회원 번호
-		);
+    ADD CONSTRAINT PK_FAVORITE -- 즐겨찾기 기본키
+        PRIMARY KEY (
+            EXNO, -- 전시회 번호
+            MNO   -- 회원 번호
+        );
 
 -- 전시회
 CREATE TABLE BOARD_EXHIBITION (
-	EXNO        INTEGER      NOT NULL COMMENT '전시회 번호', -- 전시회 번호
-	TEENPRICE   INTEGER      NOT NULL COMMENT '청소년 가격', -- 청소년 가격
-	NORMALPRICE INTEGER      NOT NULL COMMENT '일반 가격', -- 일반 가격
-	STARTDATE   DATE         NOT NULL COMMENT '시작일', -- 시작일
-	ENDDATE     DATE         NOT NULL COMMENT '종료일', -- 종료일
-	ADDRESS     VARCHAR(255) NOT NULL COMMENT '주소', -- 주소
-	PLACE       VARCHAR(255) NOT NULL COMMENT '장소', -- 장소
-	BNO         INTEGER      NOT NULL COMMENT '게시글 번호' -- 게시글 번호
+    EXNO        INTEGER      NOT NULL COMMENT '전시회 번호', -- 전시회 번호
+    TEENPRICE   INTEGER      NOT NULL COMMENT '청소년 가격', -- 청소년 가격
+    NORMALPRICE INTEGER      NOT NULL COMMENT '일반 가격', -- 일반 가격
+    STARTDATE   DATE         NOT NULL COMMENT '시작일', -- 시작일
+    ENDDATE     DATE         NOT NULL COMMENT '종료일', -- 종료일
+    ADDRESS     VARCHAR(255) NOT NULL COMMENT '주소', -- 주소
+    PLACE       VARCHAR(255) NOT NULL COMMENT '장소', -- 장소
+    BNO         INTEGER      NOT NULL COMMENT '게시글 번호' -- 게시글 번호
 )
 COMMENT '전시회';
 
 -- 전시회
 ALTER TABLE BOARD_EXHIBITION
-	ADD CONSTRAINT PK_BOARD_EXHIBITION -- 전시회 기본키
-		PRIMARY KEY (
-			EXNO -- 전시회 번호
-		);
+    ADD CONSTRAINT PK_BOARD_EXHIBITION -- 전시회 기본키
+        PRIMARY KEY (
+            EXNO -- 전시회 번호
+        );
 
 ALTER TABLE BOARD_EXHIBITION
-	MODIFY COLUMN EXNO INTEGER NOT NULL AUTO_INCREMENT COMMENT '전시회 번호';
+    MODIFY COLUMN EXNO INTEGER NOT NULL AUTO_INCREMENT COMMENT '전시회 번호';
 
 -- 결제 내역
 CREATE TABLE PAYMENT (
-	PNO         INTEGER  NOT NULL COMMENT '결제 번호', -- 결제 번호
-	PAY         INTEGER  NOT NULL COMMENT '결제 금액', -- 결제 금액
-	FINALPAY    INTEGER  NOT NULL COMMENT '최종 결제 금액', -- 최종 결제 금액
-	TEENCOUNT   INTEGER  NOT NULL COMMENT '청소년 수량', -- 청소년 수량
-	NORMALCOUNT INTEGER  NOT NULL COMMENT '일반 수량', -- 일반 수량
-	DATE        DATETIME NOT NULL COMMENT '결제일', -- 결제일
-	STATUS      INTEGER  NOT NULL COMMENT '결제 상태', -- 결제 상태
-	EXNO        INTEGER  NOT NULL COMMENT '전시회 번호', -- 전시회 번호
-	MNO         INTEGER  NOT NULL COMMENT '회원 번호' -- 회원 번호
+    PNO         INTEGER  NOT NULL COMMENT '결제 번호', -- 결제 번호
+    PAY         INTEGER  NOT NULL COMMENT '결제 금액', -- 결제 금액
+    FINALPAY    INTEGER  NOT NULL COMMENT '최종 결제 금액', -- 최종 결제 금액
+    TEENCOUNT   INTEGER  NOT NULL COMMENT '청소년 수량', -- 청소년 수량
+    NORMALCOUNT INTEGER  NOT NULL COMMENT '일반 수량', -- 일반 수량
+    DATE        DATETIME NOT NULL COMMENT '결제일', -- 결제일
+    STATUS      INTEGER  NOT NULL COMMENT '결제 상태', -- 결제 상태
+    EXNO        INTEGER  NOT NULL COMMENT '전시회 번호', -- 전시회 번호
+    MNO         INTEGER  NOT NULL COMMENT '회원 번호' -- 회원 번호
 )
 COMMENT '결제 내역';
 
 -- 결제 내역
 ALTER TABLE PAYMENT
-	ADD CONSTRAINT PK_PAYMENT -- 결제 내역 기본키
-		PRIMARY KEY (
-			PNO -- 결제 번호
-		);
+    ADD CONSTRAINT PK_PAYMENT -- 결제 내역 기본키
+        PRIMARY KEY (
+            PNO -- 결제 번호
+        );
 
 ALTER TABLE PAYMENT
-	MODIFY COLUMN PNO INTEGER NOT NULL AUTO_INCREMENT COMMENT '결제 번호';
+    MODIFY COLUMN PNO INTEGER NOT NULL AUTO_INCREMENT COMMENT '결제 번호';
 
 -- 게시판
 CREATE TABLE BOARD (
-	BNO     INTEGER      NOT NULL COMMENT '게시글 번호', -- 게시글 번호
-	TITLE   VARCHAR(255) NOT NULL COMMENT '제목', -- 제목
-	CONTENT TEXT         NOT NULL COMMENT '내용', -- 내용
-	HIT     INTEGER      NOT NULL COMMENT '조회수', -- 조회수
-	STATUS  INTEGER      NOT NULL COMMENT '상태', -- 상태
-	DATE    TIMESTAMP    NOT NULL COMMENT '작성일', -- 작성일
-	MNO     INTEGER      NOT NULL COMMENT '회원 번호' -- 회원 번호
+    BNO     INTEGER      NOT NULL COMMENT '게시글 번호', -- 게시글 번호
+    TITLE   VARCHAR(255) NOT NULL COMMENT '제목', -- 제목
+    CONTENT TEXT         NOT NULL COMMENT '내용', -- 내용
+    HIT     INTEGER      NOT NULL COMMENT '조회수', -- 조회수
+    STATUS  INTEGER      NOT NULL COMMENT '상태', -- 상태
+    DATE    TIMESTAMP    NOT NULL COMMENT '작성일', -- 작성일
+    MNO     INTEGER      NOT NULL COMMENT '회원 번호' -- 회원 번호
 )
 COMMENT '게시판';
 
 -- 게시판
 ALTER TABLE BOARD
-	ADD CONSTRAINT PK_BOARD -- 게시판 기본키
-		PRIMARY KEY (
-			BNO -- 게시글 번호
-		);
+    ADD CONSTRAINT PK_BOARD -- 게시판 기본키
+        PRIMARY KEY (
+            BNO -- 게시글 번호
+        );
 
 ALTER TABLE BOARD
-	MODIFY COLUMN BNO INTEGER NOT NULL AUTO_INCREMENT COMMENT '게시글 번호';
+    MODIFY COLUMN BNO INTEGER NOT NULL AUTO_INCREMENT COMMENT '게시글 번호';
 
 -- 후기
 CREATE TABLE REVIEW (
-	RNO     INTEGER   NOT NULL COMMENT '후기 번호', -- 후기 번호
-	COMMENT INTEGER   NOT NULL COMMENT '평점', -- 평점
-	SCORE   TEXT      NOT NULL COMMENT '내용', -- 내용
-	STATUS  INTEGER   NOT NULL COMMENT '상태', -- 상태
-	DATE    TIMESTAMP NOT NULL COMMENT '작성일', -- 작성일
-	EXNO    INTEGER   NOT NULL COMMENT '전시회 번호', -- 전시회 번호
-	MNO     INTEGER   NOT NULL COMMENT '회원 번호' -- 회원 번호
+    RNO     INTEGER   	 NOT NULL COMMENT '후기 번호', -- 후기 번호
+    COMMENT VARCHAR(255) NOT NULL COMMENT '평점', -- 평점
+    SCORE   TEXT      	 NOT NULL COMMENT '내용', -- 내용
+    STATUS  INTEGER   	 NOT NULL COMMENT '상태', -- 상태
+    DATE    TIMESTAMP 	 NOT NULL COMMENT '작성일', -- 작성일
+    EXNO    INTEGER   	 NOT NULL COMMENT '전시회 번호', -- 전시회 번호
+    MNO     INTEGER   	 NOT NULL COMMENT '회원 번호' -- 회원 번호
 )
 COMMENT '후기';
 
 -- 후기
 ALTER TABLE REVIEW
-	ADD CONSTRAINT PK_REVIEW -- 후기 기본키
-		PRIMARY KEY (
-			RNO -- 후기 번호
-		);
+    ADD CONSTRAINT PK_REVIEW -- 후기 기본키
+        PRIMARY KEY (
+            RNO -- 후기 번호
+        );
 
 ALTER TABLE REVIEW
-	MODIFY COLUMN RNO INTEGER NOT NULL AUTO_INCREMENT COMMENT '후기 번호';
+    MODIFY COLUMN RNO INTEGER NOT NULL AUTO_INCREMENT COMMENT '후기 번호';
 
 -- 파일
 CREATE TABLE FILE (
-	FNO      INTEGER      NOT NULL COMMENT '파일 번호', -- 파일 번호
-	FOLDER   VARCHAR(255) NOT NULL COMMENT '파일 저장 경로', -- 파일 저장 경로
-	SAVENAME VARCHAR(255) NOT NULL COMMENT '파일 저장 이름', -- 파일 저장 이름
-	NAME     VARCHAR(255) NOT NULL COMMENT '파일 이름', -- 파일 이름
-	FILESIZE BIGINT       NOT NULL COMMENT '파일 크기', -- 파일 크기
-	THUMB    INTEGER      NOT NULL COMMENT '썸네일 여부', -- 썸네일 여부
-	BNO      INTEGER      NOT NULL COMMENT '게시글 번호' -- 게시글 번호
+    FNO      INTEGER      NOT NULL COMMENT '파일 번호', -- 파일 번호
+    FOLDER   VARCHAR(255) NOT NULL COMMENT '파일 저장 경로', -- 파일 저장 경로
+    SAVENAME VARCHAR(255) NOT NULL COMMENT '파일 저장 이름', -- 파일 저장 이름
+    NAME     VARCHAR(255) NOT NULL COMMENT '파일 이름', -- 파일 이름
+    FILESIZE BIGINT       NOT NULL COMMENT '파일 크기', -- 파일 크기
+    THUMB    INTEGER      NOT NULL COMMENT '썸네일 여부', -- 썸네일 여부
+    BNO      INTEGER      NOT NULL COMMENT '게시글 번호' -- 게시글 번호
 )
 COMMENT '파일';
 
 -- 파일
 ALTER TABLE FILE
-	ADD CONSTRAINT PK_FILE -- 파일 기본키
-		PRIMARY KEY (
-			FNO -- 파일 번호
-		);
+    ADD CONSTRAINT PK_FILE -- 파일 기본키
+        PRIMARY KEY (
+            FNO -- 파일 번호
+        );
 
 ALTER TABLE FILE
-	MODIFY COLUMN FNO INTEGER NOT NULL AUTO_INCREMENT COMMENT '파일 번호';
+    MODIFY COLUMN FNO INTEGER NOT NULL AUTO_INCREMENT COMMENT '파일 번호';
 
 -- 인증
 CREATE TABLE AUTH (
-	MNO       INTEGER      NOT NULL COMMENT '회원 번호', -- 회원 번호
-	ID        VARCHAR(60)  NOT NULL COMMENT '아이디', -- 아이디
-	AUTHKEY   VARCHAR(255) NOT NULL COMMENT '인증번호', -- 인증번호
-	FINALDATE DATETIME     NOT NULL COMMENT '생성시간' -- 생성시간
+    ID        VARCHAR(60)  NOT NULL COMMENT '아이디', -- 아이디
+    AUTHKEY   VARCHAR(255) NOT NULL COMMENT '인증번호', -- 인증번호
+    FINALDATE DATETIME     NOT NULL COMMENT '생성시간' -- 생성시간
 )
 COMMENT '인증';
 
 -- 즐겨찾기
 ALTER TABLE FAVORITE
-	ADD CONSTRAINT FK_BOARD_EXHIBITION_TO_FAVORITE -- 전시회 -> 즐겨찾기
-		FOREIGN KEY (
-			EXNO -- 전시회 번호
-		)
-		REFERENCES BOARD_EXHIBITION ( -- 전시회
-			EXNO -- 전시회 번호
-		);
+    ADD CONSTRAINT FK_BOARD_EXHIBITION_TO_FAVORITE -- 전시회 -> 즐겨찾기
+        FOREIGN KEY (
+            EXNO -- 전시회 번호
+        )
+        REFERENCES BOARD_EXHIBITION ( -- 전시회
+            EXNO -- 전시회 번호
+        );
 
 -- 즐겨찾기
 ALTER TABLE FAVORITE
-	ADD CONSTRAINT FK_MEMBER_TO_FAVORITE -- 회원 -> 즐겨찾기
-		FOREIGN KEY (
-			MNO -- 회원 번호
-		)
-		REFERENCES MEMBER ( -- 회원
-			MNO -- 회원 번호
-		);
+    ADD CONSTRAINT FK_MEMBER_TO_FAVORITE -- 회원 -> 즐겨찾기
+        FOREIGN KEY (
+            MNO -- 회원 번호
+        )
+        REFERENCES MEMBER ( -- 회원
+            MNO -- 회원 번호
+        );
 
 -- 전시회
 ALTER TABLE BOARD_EXHIBITION
-	ADD CONSTRAINT FK_BOARD_TO_BOARD_EXHIBITION -- 게시판 -> 전시회
-		FOREIGN KEY (
-			BNO -- 게시글 번호
-		)
-		REFERENCES BOARD ( -- 게시판
-			BNO -- 게시글 번호
-		);
+    ADD CONSTRAINT FK_BOARD_TO_BOARD_EXHIBITION -- 게시판 -> 전시회
+        FOREIGN KEY (
+            BNO -- 게시글 번호
+        )
+        REFERENCES BOARD ( -- 게시판
+            BNO -- 게시글 번호
+        );
 
 -- 결제 내역
 ALTER TABLE PAYMENT
-	ADD CONSTRAINT FK_BOARD_EXHIBITION_TO_PAYMENT -- 전시회 -> 결제 내역
-		FOREIGN KEY (
-			EXNO -- 전시회 번호
-		)
-		REFERENCES BOARD_EXHIBITION ( -- 전시회
-			EXNO -- 전시회 번호
-		);
+    ADD CONSTRAINT FK_BOARD_EXHIBITION_TO_PAYMENT -- 전시회 -> 결제 내역
+        FOREIGN KEY (
+            EXNO -- 전시회 번호
+        )
+        REFERENCES BOARD_EXHIBITION ( -- 전시회
+            EXNO -- 전시회 번호
+        );
 
 -- 결제 내역
 ALTER TABLE PAYMENT
-	ADD CONSTRAINT FK_MEMBER_TO_PAYMENT -- 회원 -> 결제 내역
-		FOREIGN KEY (
-			MNO -- 회원 번호
-		)
-		REFERENCES MEMBER ( -- 회원
-			MNO -- 회원 번호
-		);
+    ADD CONSTRAINT FK_MEMBER_TO_PAYMENT -- 회원 -> 결제 내역
+        FOREIGN KEY (
+            MNO -- 회원 번호
+        )
+        REFERENCES MEMBER ( -- 회원
+            MNO -- 회원 번호
+        );
 
 -- 게시판
 ALTER TABLE BOARD
-	ADD CONSTRAINT FK_MEMBER_TO_BOARD -- 회원 -> 게시판
-		FOREIGN KEY (
-			MNO -- 회원 번호
-		)
-		REFERENCES MEMBER ( -- 회원
-			MNO -- 회원 번호
-		);
+    ADD CONSTRAINT FK_MEMBER_TO_BOARD -- 회원 -> 게시판
+        FOREIGN KEY (
+            MNO -- 회원 번호
+        )
+        REFERENCES MEMBER ( -- 회원
+            MNO -- 회원 번호
+        );
 
 -- 후기
 ALTER TABLE REVIEW
-	ADD CONSTRAINT FK_BOARD_EXHIBITION_TO_REVIEW -- 전시회 -> 후기
-		FOREIGN KEY (
-			EXNO -- 전시회 번호
-		)
-		REFERENCES BOARD_EXHIBITION ( -- 전시회
-			EXNO -- 전시회 번호
-		);
+    ADD CONSTRAINT FK_BOARD_EXHIBITION_TO_REVIEW -- 전시회 -> 후기
+        FOREIGN KEY (
+            EXNO -- 전시회 번호
+        )
+        REFERENCES BOARD_EXHIBITION ( -- 전시회
+            EXNO -- 전시회 번호
+        );
 
 -- 후기
 ALTER TABLE REVIEW
-	ADD CONSTRAINT FK_MEMBER_TO_REVIEW -- 회원 -> 후기
-		FOREIGN KEY (
-			MNO -- 회원 번호
-		)
-		REFERENCES MEMBER ( -- 회원
-			MNO -- 회원 번호
-		);
+    ADD CONSTRAINT FK_MEMBER_TO_REVIEW -- 회원 -> 후기
+        FOREIGN KEY (
+            MNO -- 회원 번호
+        )
+        REFERENCES MEMBER ( -- 회원
+            MNO -- 회원 번호
+        );
 
 -- 파일
 ALTER TABLE FILE
-	ADD CONSTRAINT FK_BOARD_TO_FILE -- 게시판 -> 파일
-		FOREIGN KEY (
-			BNO -- 게시글 번호
-		)
-		REFERENCES BOARD ( -- 게시판
-			BNO -- 게시글 번호
-		);
-
--- 인증
-ALTER TABLE AUTH
-	ADD CONSTRAINT FK_MEMBER_TO_AUTH -- 회원 -> 인증
-		FOREIGN KEY (
-			MNO -- 회원 번호
-		)
-		REFERENCES MEMBER ( -- 회원
-			MNO -- 회원 번호
-		);
+    ADD CONSTRAINT FK_BOARD_TO_FILE -- 게시판 -> 파일
+        FOREIGN KEY (
+            BNO -- 게시글 번호
+        )
+        REFERENCES BOARD ( -- 게시판
+            BNO -- 게시글 번호
+        );

@@ -16,5 +16,6 @@ public interface ReviewService {
   int modifyReview(ReviewDto reviewDto);
   int deleteReview(int reviewNo);
   //ReviewDto getReview(int reviewNo);
-  List<ReviewDto> getReviewList(Map<String, String> param);
+  //List<ReviewDto> getReviewList(Map<String, String> param);
+  List<ReviewDto> getReviewList(int rno);
 }

@@ -16,5 +16,7 @@ public interface ReviewDao {
   int modifyReview(ReviewDto reviewDto);
   int deleteReview(int rno);
   //ReviewDto getReview(int rno);
-  List<ReviewDto> getReviewList(Map<String, String> param);
+  //List<ReviewDto> getReviewList(Map<String, String> param);
+  List<ReviewDto> getReviewList(int rno);
+  
 }
