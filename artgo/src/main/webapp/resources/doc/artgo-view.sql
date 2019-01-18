@@ -16,5 +16,9 @@ SELECT b.bno, b.title, b.content,
        ex.exno, ex.teenPrice, ex.normalPrice, 
        DATE_FORMAT(ex.startDate, '%Y-%m-%d') as startDate, 
        DATE_FORMAT(ex.endDate, '%Y-%m-%d') as endDate, 
-       ex.address, ex.place 
-FROM   board_exhibition ex, board b;
+       ex.address, ex.place, f.fno, f.folder, f.name, f.savename
+FROM   board_exhibition ex, board b, file f
+WHERE  ex.exno = b.bno
+AND    f.bno = b.bno
+AND    f.thumb = 1;
+

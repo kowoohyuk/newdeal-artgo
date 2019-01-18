@@ -204,7 +204,7 @@ public class MemberController {
     
     if(memberService.updateMember(tmp)>0) {
       redirectAttributes.addAttribute("err", "1");
-      return "redirect:main.do";      
+      return "redirect:main.do";
     }
     return "redirect:main.page";
   }

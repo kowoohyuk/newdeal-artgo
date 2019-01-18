@@ -40,7 +40,7 @@ public class ExhibitionController {
   public ModelAndView exhibitList(@RequestParam Map<String, String> param, Model model) {
     ModelAndView modelAndView = new ModelAndView();
     List<ExhibitionDto> list = exhibitionService.getExhibitList(param);
-    
+    System.out.println(list);
     param.put("page-type", "exhibit"); // 페이지 네비게이션을 여러 곳에서 쓰기 위함.
     PageNavigation navigation = commonService.makePageNavigation(param);
     navigation.setRoot("/exhibit");
@@ -52,8 +52,8 @@ public class ExhibitionController {
   }
 
   @RequestMapping(value = "exhibit/view.do", method = RequestMethod.GET)
-  public String exhibitView() {
-
+  public String exhibitView(String bno, Model model) {
+    model.addAttribute("exhibit",exhibitionService.getExhibit(bno));
     return "exhibit/view.page";
   }
 
@@ -66,7 +66,7 @@ public class ExhibitionController {
   public String exhibitWrite(ExhibitionDto exhibitionDto, HttpSession session,
       @RequestParam("picture") MultipartFile multipartFile, Model model) {
     MemberDto memberDto = (MemberDto) session.getAttribute("userInfo");
-    System.out.println(memberDto.getMno());
+    
     exhibitionDto.setMno(memberDto.getMno());
     adminService.writeExhibit(exhibitionDto, multipartFile);
     return "redirect:/main.do";
@@ -74,7 +74,7 @@ public class ExhibitionController {
 
   @RequestMapping(value = "exhibit/modify.do", method = RequestMethod.GET)
   public String exhibitModify() {
-
+    
     return "exhibit/modify.page";
   }
 }
