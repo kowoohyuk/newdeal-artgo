@@ -1,118 +1,33 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <c:set var="pg" value="${param.pg}" />
 <c:set var="key" value="${param.key}" />
 <c:set var="word" value="${param.word}" />
 <link href="/resources/artgo/css/exhibit.css" rel="stylesheet">
 <div class="container">
-
 	<p class="p-ex-header">전시회 목록<p>
-	<ul class="list-group exhib-ul">
-	  <li class="list-group-item ex-list-li">
-	  	<a class="a-ex-flag">
-		  	<div class="row list-div-row">
-			  <div class="list-div">
-			  	<img alt="" src="/resources/artgo/img/test/test1.jpg">
-			  </div>
-			  <div class="list-div div-text">
-			  	<p class="p-title">제목 : 러빙빈센트 전</p>
-			  	<p class="p-blur">
-			  		2019-01-24 ~ 2019-02-20<br>주소 : 서울시 강남구 삼성동
-			  	</p>
-			  </div>	  
-		  	</div>
-	  	</a>
-	  </li>
-	  <li class="list-group-item ex-list-li">
-	  	<div class="row list-div-row">
-		  <div class="list-div">
-		  	<img alt="" src="/resources/artgo/img/test/test2.jpg">
-		  </div>
-		  <div class="list-div div-text">
-		  	<p>여기에 제목이 들어가요.</p>
-		  	<p>여기에 주소가 들어가요.</p>
-		  	<p>여기에 기간이 들어가요.</p>
-		  </div>	  
-	  	</div>
-	  </li>
-	  <li class="list-group-item ex-list-li">
-	  	<div class="row list-div-row">
-		  <div class="list-div">
-		  	<img alt="" src="/resources/artgo/img/test/test3.jpg">
-		  </div>
-		  <div class="list-div div-text">
-		  	<p>여기에 제목이 들어가요.</p>
-		  	<p>여기에 주소가 들어가요.</p>
-		  	<p>여기에 기간이 들어가요.</p>
-		  </div>	  
-	  	</div>
-	  </li>
-	  <li class="list-group-item ex-list-li">
-	  	<div class="row list-div-row">
-		  <div class="list-div">
-		  	<img alt="" src="/resources/artgo/img/test/test4.jpg">
-		  </div>
-		  <div class="list-div div-text">
-		  	<p>여기에 제목이 들어가요.</p>
-		  	<p>여기에 주소가 들어가요.</p>
-		  	<p>여기에 기간이 들어가요.</p>
-		  </div>	  
-	  	</div>
-	  </li>
-	  
-	  
-	  
-	  	  <li class="list-group-item ex-list-li">
-	  	<div class="row list-div-row">
-		  <div class="list-div">
-		  	<img alt="" src="/resources/artgo/img/test/test1.jpg">
-		  </div>
-		  <div class="list-div div-text">
-		  	<p>여기에 제목이 들어가요.</p>
-		  	<p>여기에 주소가 들어가요.</p>
-		  	<p>여기에 기간이 들어가요.</p>
-		  </div>	  
-	  	</div>
-	  </li>
-	  <li class="list-group-item ex-list-li">
-	  	<div class="row list-div-row">
-		  <div class="list-div">
-		  	<img alt="" src="/resources/artgo/img/test/test2.jpg">
-		  </div>
-		  <div class="list-div div-text">
-		  	<p>여기에 제목이 들어가요.</p>
-		  	<p>여기에 주소가 들어가요.</p>
-		  	<p>여기에 기간이 들어가요.</p>
-		  </div>	  
-	  	</div>
-	  </li>
-	  <li class="list-group-item ex-list-li">
-	  	<div class="row list-div-row">
-		  <div class="list-div">
-		  	<img alt="" src="/resources/artgo/img/test/test3.jpg">
-		  </div>
-		  <div class="list-div div-text">
-		  	<p>여기에 제목이 들어가요.</p>
-		  	<p>여기에 주소가 들어가요.</p>
-		  	<p>여기에 기간이 들어가요.</p>
-		  </div>	  
-	  	</div>
-	  </li>
-	  <li class="list-group-item ex-list-li">
-	  	<div class="row list-div-row">
-		  <div class="list-div">
-		  	<img alt="" src="/resources/artgo/img/test/test4.jpg">
-		  </div>
-		  <div class="list-div div-text">
-		  	<p>여기에 제목이 들어가요.</p>
-		  	<p>여기에 주소가 들어가요.</p>
-		  	<p>여기에 기간이 들어가요.</p>
-		  </div>	  
-	  	</div>
-	  </li>
-	</ul>
-	
+		<ul class="list-group exhib-ul">
+			<c:forEach var="exhibit" items="${articlelist}">
+			  <li class="list-group-item ex-list-li">
+			  	<a class="a-ex-flag" href="/exhibit/view.do?bno=${exhibit.bno}">
+				  <div class="row list-div-row exhibit-target">
+					  <div class="list-div">
+					  	<img alt="${exhibit.title}" src='<spring:url value="/img/${exhibit.folder}/${exhibit.saveName}"/>'>
+					  </div>
+					  <div class="list-div div-text">
+						<p class="p-title">${exhibit.title}</p>
+						<p class="p-blur">
+						  ${exhibit.startDate} ~ ${exhibit.endDate}
+						  <br>장소 : ${exhibit.place}
+						</p>
+					 </div>
+				  </div>
+			  	</a>
+			  </li>
+			</c:forEach>
+		</ul>
 </div>
 <form action="" id="commonForm" method="get">
 <input type="hidden" id="pg" name="pg" value="${pg}">

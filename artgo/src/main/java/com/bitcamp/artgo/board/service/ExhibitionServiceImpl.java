@@ -27,7 +27,8 @@ public class ExhibitionServiceImpl implements ExhibitionService {
   ServletContext servletcontext;
 
   @Override
-  public ExhibitionDto getExhibit(int boardNo) {
+  public ExhibitionDto getExhibit(String bno) {
+    int boardNo = Integer.parseInt(bno);
     return sqlSession.getMapper(ExhibitionDao.class).getExhibit(boardNo);
   }
 

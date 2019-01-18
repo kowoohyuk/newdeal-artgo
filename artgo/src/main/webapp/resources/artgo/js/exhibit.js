@@ -62,9 +62,34 @@ $(function() {
 			return;
 		}
 	}
-
+	
+	
 });
 
+$(".btn-category").click(function(){
+	var anchor = $(this).attr('anchor');
+	$(".btn-category").removeClass('exhib-view-active');
+	$(this).addClass('exhib-view-active');
+	if(anchor=="1"){
+		$("#review-zone").css("display", "none");
+		$("#map-zone").css("display", "none");
+		$("#detail-zone").fadeOut(function() {
+			$("#detail-zone").css("display", "block");
+		});		
+	}else if(anchor=="2"){
+		$("#detail-zone").css("display", "none");
+		$("#map-zone").css("display", "none");
+		$("#review-zone").fadeOut(function() {
+			$("#review-zone").css("display", "block");
+		});
+	}else if(anchor=="3"){
+		$("#review-zone").css("display", "none");
+		$("#detail-zone").css("display", "none");
+		$("#map-zone").fadeOut(function() {
+			$("#map-zone").css("display", "block");
+		});		
+	}
+});
 
 $(document).on("dragover drop", function(e) {
     e.preventDefault();  // allow dropping and don't navigate to file on drop

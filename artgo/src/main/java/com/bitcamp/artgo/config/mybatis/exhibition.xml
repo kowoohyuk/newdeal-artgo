@@ -10,21 +10,27 @@
 	VALUES (#{teenPrice}, #{normalPrice}, #{startDate}, #{endDate}, #{address}, #{place}, #{bno});
 </insert>
 
+<select id="getExhibit" parameterType="int" resultType="exhibitionDto">
+	SELECT *
+	FROM   exhibitlistview
+	WHERE  bno = #{bno}
+</select>
+
 <select id="getExhibitList" parameterType="Map" resultType="exhibitionDto">
 	SELECT ex.* 
-	FROM (SELECT @rownum:=@rownum+1 AS rnum, tmp.* FROM exhibitlistview AS tmp,
+	FROM   (SELECT @rownum:=@rownum+1 AS rnum, tmp.* FROM exhibitlistview AS tmp,
                (SELECT @rownum:=0) as r
 	<if test="word != null and word != ''">
 		<choose>
 			<when test="key == 'title'">
-              		WHERE tmp.title LIKE CONCAT('%',#{word},'%')
+              	WHERE tmp.title LIKE CONCAT('%',#{word},'%')
 			</when>
 			<otherwise>
 				WHERE ${key} = CONCAT('%',#{word},'%')
 			</otherwise>
 		</choose>
 	</if>
-	ORDER BY tmp.exno DESC
+				ORDER BY tmp.exno DESC
           ) AS ex
 	WHERE rnum &lt;= #{end}
 	AND rnum &gt;= #{start}                

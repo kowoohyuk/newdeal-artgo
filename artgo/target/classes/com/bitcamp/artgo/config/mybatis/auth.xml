@@ -4,8 +4,8 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.bitcamp.artgo.mail.dao.AuthDao">
 	<insert id="createAuthKey" parameterType="authDto">
-		insert into auth (id, authKey)
-		values (#{id}, #{authKey})
+		insert into auth (id, authKey, finalDate)
+		values (#{id}, #{authKey}, now())
 	</insert>
 	
 	<update id="userAuth" parameterType="authDto">

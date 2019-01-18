@@ -15,6 +15,10 @@ public class ExhibitionDto extends BoardDto {
   private String address;
   private String place;
   private String endDate;
+  private int fno;
+  private String name;
+  private String folder;
+  private String saveName;
   
   public int getExno() {
     return exno;
@@ -58,10 +62,34 @@ public class ExhibitionDto extends BoardDto {
   public void setPlace(String place) {
     this.place = place;
   }
+  public int getFno() {
+    return fno;
+  }
+  public void setFno(int fno) {
+    this.fno = fno;
+  }
+  public String getName() {
+    return name;
+  }
+  public void setName(String name) {
+    this.name = name;
+  }
+  public String getFolder() {
+    return folder;
+  }
+  public void setFolder(String folder) {
+    this.folder = folder;
+  }
+  public String getSaveName() {
+    return saveName;
+  }
+  public void setSaveName(String saveName) {
+    this.saveName = saveName;
+  }
   @Override
   public String toString() {
     return "ExhibitionDto [exno=" + exno + ", teenPrice=" + teenPrice + ", normalPrice="
         + normalPrice + ", startDate=" + startDate + ", address=" + address + ", place=" + place
-        + ", endDate=" + endDate + "]";
+        + ", endDate=" + endDate + ", fno=" + fno + ", name=" + name + ", folder=" + folder + "]";
   }
 }

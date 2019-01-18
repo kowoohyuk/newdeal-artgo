@@ -65,7 +65,7 @@ public class AdminSerivceImpl implements AdminService {
         if (multipartFile != null && !multipartFile.isEmpty()) {
           String opicture = multipartFile.getOriginalFilename();
           //String realPath = servletcontext.getRealPath("/resources/upload");
-          String realPath = "C:\\Users\\kowoo\\Documents\\artgo_upload";
+          String realPath = "C:\\artgo-upload";
           DateFormat df = new SimpleDateFormat("yyMMdd");
           String saveFolder = df.format(new Date());
           String fullSaveFolder = realPath + File.separator + saveFolder;
