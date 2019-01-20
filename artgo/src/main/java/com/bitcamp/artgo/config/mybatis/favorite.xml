@@ -3,4 +3,32 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.bitcamp.artgo.member.dao.FavoriteDao">
+
+	<insert id="addFavorite" parameterType="Map">
+		INSERT 
+		INTO   favorite (exno, mno)
+		VALUES (#{exno}, #{mno})
+	</insert>
+	
+	<delete id="removeFavorite" parameterType="Map">
+		DELETE 
+		FROM   favorite
+		WHERE  mno = #{mno}
+		AND    exno = #{exno}
+	</delete>
+	
+	<select id="getFavoriteList" parameterType="int" resultType="favoriteDto">
+		SELECT f.*, ex.* 
+		FROM   favorite f, exhibitlistview ex
+		WHERE  f.mno = #{mno}
+		AND    ex.exno = f.exno
+	</select>
+
+	<select id="checkFavorite" parameterType="int" resultType="favoriteDto">
+		SELECT *
+		FROM   favorite
+		WHERE  mno = #{mno}
+		AND    exno = ${exno}
+	</select>
+	
 </mapper>

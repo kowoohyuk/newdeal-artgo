@@ -14,7 +14,7 @@
 			  	<a class="a-ex-flag" href="/exhibit/view.do?bno=${exhibit.bno}">
 				  <div class="row list-div-row exhibit-target">
 					  <div class="list-div">
-					  	<img alt="${exhibit.title}" src='<spring:url value="/img/${exhibit.folder}/${exhibit.saveName}"/>'>
+					  	<img title="${exhibit.title}" class="img-ex" src='<spring:url value="/img/${exhibit.folder}/${exhibit.saveName}"/>'>
 					  </div>
 					  <div class="list-div div-text">
 						<p class="p-title">${exhibit.title}</p>

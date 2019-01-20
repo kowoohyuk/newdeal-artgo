@@ -3,6 +3,7 @@ package com.bitcamp.artgo.member.dao;
 import java.util.List;
 import java.util.Map;
 import com.bitcamp.artgo.board.model.ExhibitionDto;
+import com.bitcamp.artgo.member.model.FavoriteDto;
 
 /**
 * 파일명: FavoriteDao.java
@@ -12,10 +13,10 @@ import com.bitcamp.artgo.board.model.ExhibitionDto;
 */
 
 public interface FavoriteDao {
-  int writeFavorite(Map<String, String> param);
-  int deleteFavorite(int boardNo);
-  ExhibitionDto getFavorite(int boardNo);
-  List<ExhibitionDto> getFavoriteList(Map<String, String> param);
+  int addFavorite(Map<String, String> param);
+  int removeFavorite(Map<String, String> param);
+  FavoriteDto checkFavorite(Map<String, String> param);
+  List<FavoriteDto> getFavoriteList(int mno);
 }
 
 

@@ -140,7 +140,7 @@ public class MemberController {
       memberDto.setRole("ROLE_USER");
       memberDto.setConfirm(1);
       if (memberService.addMember(memberDto) > 0) {
-        session.setAttribute("userInfo", tmp);
+        session.setAttribute("userInfo", memberDto);
         result.put("result", "success");
       } else {
         result.put("result", "fail");

@@ -55,6 +55,25 @@
 	width: 100%;
 	text-align: right !important;
 }
+.favor-mini-ul, .favor-mini-ul-head{
+	width: 100%;
+	text-align: center;
+	display: inline-flex;
+	margin: 1em;
+}
+.favor-mini-ul-head li{
+	width: 20%;
+	color : gray;
+	font-weight: 700;
+}
+.favor-mini-ul li{
+	width: 20%;
+}
+.favorDeleteBtn{
+	background-color: crimson;
+    color: white;
+    width: 20%;
+}
 
 .top-social-area {
 	margin-top : 30px;
@@ -64,4 +83,29 @@
 }
 .header-member-text{
 	font-weight: normal;
+}
+.active-favor{
+	background-color: red;
+}
+.active-favor:hover{
+	background-color: gray;
+}
+.a-favor{
+	color: darkblue;
+	font-weight: 700;
+}
+.a-favor:hover{
+	text-decoration: underline;
+}
+.favorite-modal{
+	display : none;
+	min-width : 300px;
+	max-width : 400px;
+	min-height : 300px;
+	max-height : 400px;
+	position: fixed;
+	z-index: 100;
+	box-shadow: 10px 10px 10px darkgrey;
+    border: 0.5px solid whitesmoke;
+    background-color: aliceblue;
 }

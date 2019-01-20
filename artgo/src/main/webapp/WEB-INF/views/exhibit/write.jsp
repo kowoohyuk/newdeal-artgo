@@ -46,7 +46,7 @@
 				</div>
 				<div class="col-lg-10">
 					<div class="col-lg-6 div-exhibit-text address-div">
-						<input type="text" class="form-control" placeholder="주소" name="address" id="address">
+						<input type="text" class="form-control" placeholder="주소" name="address" id="address" readonly="readonly">
 					</div>
 					<div class="col-lg-6 div-exhibit-text address-div">
 						<input type="text" class="form-control" placeholder="상세주소" id="detail-address">
@@ -72,4 +72,7 @@
 	</div>
 </div>
 
-<script src="/resources/artgo/js/exhibit.js"></script>
+<span id="guide" style="color:#999;display:none"></span>
+
+<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
+<script src="/resources/artgo/js/exhibit-write.js"></script>

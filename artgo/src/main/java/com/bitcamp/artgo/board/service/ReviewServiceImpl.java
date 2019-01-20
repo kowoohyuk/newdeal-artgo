@@ -1,8 +1,9 @@
 package com.bitcamp.artgo.board.service;
 
 import java.util.List;
-import java.util.Map;
 import org.apache.ibatis.session.SqlSession;
+import org.json.JSONArray;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.bitcamp.artgo.board.dao.ReviewDao;
@@ -37,8 +38,25 @@ public class ReviewServiceImpl implements ReviewService {
   }
 
   @Override
-  public List<ReviewDto> getReviewList(int reviewNo) {
-    return sqlSession.getMapper(ReviewDao.class).getReviewList(reviewNo);
+  public String getReviewList(int exno) {
+    List<ReviewDto> list = sqlSession.getMapper(ReviewDao.class).getReviewList(exno);
+    JSONObject json = new JSONObject();
+    JSONArray jsonArr = new JSONArray();
+    for(ReviewDto reviewDto: list) {
+        reviewDto.setComment(reviewDto.getComment().replace("\n", "<br>"));
+        
+        JSONObject review = new JSONObject();
+        review.put("rno", reviewDto.getRno());
+        review.put("name", reviewDto.getName());
+        review.put("date", reviewDto.getDate());
+        review.put("exno", reviewDto.getExno());
+        review.put("comment", reviewDto.getComment());
+        review.put("score", reviewDto.getScore());
+        
+        jsonArr.put(review);
+    }
+    json.put("reviewlist", jsonArr);
+    return json.toString();
   }
 
 //  @Override

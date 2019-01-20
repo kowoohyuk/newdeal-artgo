@@ -1,3 +1,5 @@
+DROP VIEW MEMBERLISTVIEW;
+DROP VIEW EXHIBITLISTVIEW;
 
 -- 관리자 회원 목록 조회용
 CREATE VIEW MEMBERLISTVIEW AS
@@ -22,3 +24,11 @@ WHERE  ex.exno = b.bno
 AND    f.bno = b.bno
 AND    f.thumb = 1;
 
+-- 후기 조회용 페이징 하려다 시간 안돼서 패스..
+CREATE VIEW reviewlistview as
+SELECT r.rno, r.comment, r.score,
+r.status, r.exno, r.mno, 
+DATE_FORMAT(date, '%Y-%m-%d %H:%i:%S') as date, m.name
+FROM review r, member m
+WHERE r.mno = m.mno
+AND r.status = 1;

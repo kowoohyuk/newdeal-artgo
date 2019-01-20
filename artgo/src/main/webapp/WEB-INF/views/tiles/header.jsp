@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <header class="header-area">
 	<!-- Top Header Area -->
 	<div class="top-header">
@@ -40,7 +41,6 @@
 
 					<!-- Subscribe btn -->
 					<div class="subscribe-btn">
-						<a href="#" class="btn btn-my-modal">내 정보</a>
 					</div>
 
 					<!-- Navbar Toggler -->
@@ -57,32 +57,20 @@
 							</div>
 						</div>
             		<!-- Nav Start -->
-		            <div class="classynav">
-		              <ul>
-		                <li><a href="/main.do">홈</a></li>
-		                <li><a href="/exhibit/list.do?pg=1&key=&word=">전시</a>
-		                  <ul class="dropdown">
-		                    <li><a href="/exhibit/list.do?pg=1&key=&word=">전시회 목록</a></li>
-		                    <li><a href="/exhibit/write.do">전시회 추가</a></li>
-		                    <li><a href="/exhibit/modify.do">???</a></li>
-		                    <li><a href="/review/write.do">리뷰</a></li>
-							</ul></li>
-						<li><a href="#">지역</a>
-						</li>
-						<li><a href="" data-toggle="modal" data-target="#myModal">즐겨찾기</a></li>
-						<li><a href="/member/main.do">마이 티켓</a>
-						</li>
-					</ul>
-
-							<!-- Search Form  -->
-							<div id="search-wrapper">
-								<form action="#">
-									<input type="text" id="search"
-										placeholder="Search something...">
-									<div id="close-icon"></div>
-									<input class="d-none" type="submit" value="">
-								</form>
-							</div>
+			            <div class="classynav">
+			              	<ul>
+				                <li><a href="/main.do">홈</a></li>
+				                <li><a href="/exhibit/list.do?pg=1&key=&word=">전시</a>
+				                  <ul class="dropdown">
+				                    <li><a href="/exhibit/list.do?pg=1&key=&word=">전시회 목록</a></li>
+				                    <li><a href="/exhibit/write.do">전시회 추가</a></li>
+				                    <li><a href="/exhibit/modify.do">???</a></li>
+				                    <li><a href="/review/write.do">리뷰</a></li>
+									</ul></li>
+								<li><a href="#" id="favorBtn">즐겨찾기</a></li>
+								<li><a href="/member/main.do">마이 티켓</a>
+								</li>
+							</ul>
 						</div>
 						<!-- Nav End -->
 					</div>
@@ -107,5 +95,9 @@
                 </div>
             </div>
         </div>
+    </div>
+    
+    <div class="favorite-modal">
+    	
     </div>
 </header>

@@ -1,5 +1,7 @@
 package com.bitcamp.artgo.member.model;
 
+import com.bitcamp.artgo.board.model.ExhibitionDto;
+
 /**
 * 파일명: FavoriteDto.java
 * 설 명: 즐겨찾기 객체 정의
@@ -8,7 +10,7 @@ package com.bitcamp.artgo.member.model;
 */
 
 
-public class FavoriteDto {
+public class FavoriteDto extends ExhibitionDto {
   private int exhibitionNo;
   private int memberNo;
   

@@ -1,5 +1,7 @@
 package com.bitcamp.artgo.member.service;
 
+import java.util.Map;
+
 /**
 * 파일명: FavoriteService.java
 * 설 명: 설명내용
@@ -7,8 +9,11 @@ package com.bitcamp.artgo.member.service;
 * 작성자: 고 우 혁
 */
 
-public class FavoriteService {
-
+public interface FavoriteService {
+  String addFavorite(Map<String, String> param);
+  String removeFavorite(Map<String, String> param);
+  String checkFavorite(Map<String, String> param);
+  String getFavoriteList(int mno);
 }
 
 

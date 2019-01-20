@@ -1,15 +1,13 @@
 package com.bitcamp.artgo.board.controller;
 
 import javax.servlet.http.HttpSession;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-
+import org.springframework.web.bind.annotation.RestController;
 import com.bitcamp.artgo.board.model.ReviewDto;
 import com.bitcamp.artgo.board.service.ReviewService;
 import com.bitcamp.artgo.member.model.MemberDto;
@@ -22,38 +20,29 @@ import com.bitcamp.artgo.member.model.MemberDto;
 * 작성일: 2019. 1. 11.
 * 작성자: 고 우 혁
 */
-@Controller
+@RestController
+@RequestMapping(value="exhibit/", produces="application/json;charset=UTF-8")
 public class ReviewController {
 	
 	@Autowired
 	ReviewService reviewService;
 
-	@RequestMapping(value="review/list.do", method=RequestMethod.GET)
-	public String list(HttpSession session, ReviewDto reviewDto) {
-		System.out.println("여기 들어와요lllll");
-		System.out.println(reviewDto);
-		return "review/write.page";
+	@RequestMapping(value="review.do/{exno}", method=RequestMethod.GET)
+	public @ResponseBody String list(@PathVariable(value="exno") int exno) {
+	  return reviewService.getReviewList(exno);
 	}
 	
 	
-	@RequestMapping(value="review/list.do", method=RequestMethod.POST, headers={"Content-type=application/json"})
+	@RequestMapping(value="review.do", method=RequestMethod.POST)
 	public @ResponseBody String write(@RequestBody ReviewDto reviewDto, HttpSession session) {
 		MemberDto memberDto = (MemberDto) session.getAttribute("userInfo");
-		System.out.println(memberDto);
 		
 		reviewDto.setMno(memberDto.getMno());
 		
 		if(reviewService.writeReview(reviewDto)>0) {
-		
-//			reviewDto.setComment(reviewDto.getComment());
-//			reviewDto.setScore(reviewDto.getScore());
-//			reviewDto.setExno(4);
-//			reviewDto.setMno(memberDto.getMno());
-//			reviewDto.setName(memberDto.getName());
-//			int cnt = reviewService.writeReview(reviewDto);
-			System.out.println(reviewDto);
+		  
 		}
-		return "review/write.page";
+		return reviewService.getReviewList(reviewDto.getExno());
 	}
 	
 	@RequestMapping(value="review/{rno}/{exno}", method=RequestMethod.GET)
@@ -61,7 +50,7 @@ public class ReviewController {
 		return "review/list.do";
 	}
 	
-	@RequestMapping(value="review/{rno}", method=RequestMethod.PUT, headers={"Content-type=application/json"})
+	@RequestMapping(value="review/{rno}", method=RequestMethod.PUT)
 	public @ResponseBody String modify(@PathVariable(value="rno") int rno, @RequestBody ReviewDto reviewDto, HttpSession session) {
 		MemberDto memberDto = (MemberDto) session.getAttribute("userInfo");
 		if(memberDto != null) {

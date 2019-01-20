@@ -1,7 +1,5 @@
 package com.bitcamp.artgo.board.service;
 
-import java.util.List;
-import java.util.Map;
 import com.bitcamp.artgo.board.model.ReviewDto;
 
 /**
@@ -17,5 +15,5 @@ public interface ReviewService {
   int deleteReview(int reviewNo);
   //ReviewDto getReview(int reviewNo);
   //List<ReviewDto> getReviewList(Map<String, String> param);
-  List<ReviewDto> getReviewList(int rno);
+  String getReviewList(int exno);
 }
