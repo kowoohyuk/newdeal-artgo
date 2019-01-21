@@ -3,12 +3,15 @@ package com.bitcamp.artgo.payment.service;
 import java.util.List;
 import java.util.Map;
 import org.apache.ibatis.session.SqlSession;
+import org.json.JSONArray;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.bitcamp.artgo.board.dao.ExhibitionDao;
+import com.bitcamp.artgo.common.service.CommonService;
 import com.bitcamp.artgo.payment.dao.PaymentDao;
 import com.bitcamp.artgo.payment.model.PaymentDto;
 import com.bitcamp.artgo.util.ListConstance;
+import com.bitcamp.artgo.util.PageNavigation;
 
 /**
 * 파일명: PaymentServiceImpl.java
@@ -23,18 +26,46 @@ public class PaymentServiceImpl implements PaymentService {
   @Autowired
   private SqlSession sqlSession;
   
+  @Autowired
+  private CommonService commonService;
+  
   public int writePayment(PaymentDto paymentDto) {
     return sqlSession.getMapper(PaymentDao.class).writePayment(paymentDto);
   }
 
   @Override
-  public List<PaymentDto> getPaymentList(Map<String, String> param) {
+  public String getPaymentList(Map<String, String> param) {
     int pg = Integer.parseInt(param.get("pg"));
     int end = pg*ListConstance.LIST_COUNT;
     int start = end-ListConstance.LIST_COUNT;
     param.put("start", start+"");
     param.put("end", end+"");
-    return sqlSession.getMapper(PaymentDao.class).getPaymentList(param);
+    List<PaymentDto> list = sqlSession.getMapper(PaymentDao.class).getPaymentList(param);
+    JSONObject json = new JSONObject();
+    JSONArray jsonArr = new JSONArray();
+    for(PaymentDto paymentDto: list) {
+        JSONObject payment = new JSONObject();
+        payment.put("pno", paymentDto.getPno());
+        payment.put("pay", paymentDto.getPay());
+        payment.put("finalPay", paymentDto.getFinalPay());
+        payment.put("teenCount", paymentDto.getTeenCount());
+        payment.put("title", paymentDto.getTitle());
+        payment.put("normalCount", paymentDto.getNormalCount());
+        payment.put("status", paymentDto.getStatus());
+        payment.put("date", paymentDto.getDate());
+        payment.put("exno", paymentDto.getExno());
+        payment.put("mno", paymentDto.getMno());
+        
+        jsonArr.put(payment);
+    }
+    param.put("page-type", "payment"); // 페이지 네비게이션을 여러 곳에서 쓰기 위함.
+    PageNavigation navigation = commonService.makePageNavigation(param);
+    navigation.setRoot("/member");
+    navigation.makeNavigator();
+    
+    json.put("paymentList", jsonArr);
+    json.put("navigator", navigation);
+    return json.toString();
   }
 }
 

@@ -268,7 +268,6 @@ function payment(data){
 	let teenCount = $('#teenCount').val();
 	let exno = $('#exno').val();
 	
-	
 	let parameter = JSON.stringify({
 		'pay' : pay,
 		'finalPay' : finalPay,

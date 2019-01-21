@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
+<input type="hidden" value="1" id="m-pg">
 <link href="/resources/artgo/css/member-main.css" rel="stylesheet">
 <link href="/resources/base/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="/resources/artgo/css/ticket-list.css"
@@ -9,36 +10,61 @@
 
 <div class="container member-main-div-container">
 	<div class="row">
-		<div class="col-lg-5 div-mypage">
-				<p>접속 아이디 ${userInfo.id}</p> <br>
-				<p>생일 </p>
-				<c:choose>
-					<c:when test="${userInfo.birth == ''">
-						<p>생일을 등록하세요</p>  <br>
-					</c:when>
-					<c:otherwise>
-					
-					 	<p>${userInfo.birth} </p>  <br>
-					</c:otherwise>
+		<div class="col-lg-6 div-mypage mypage-A">
+			<h3>내 정보</h3>
+			<div class="thin-line"></div>
+			<p>별명 : ${userInfo.name}</p> <br>
+			<p>등급 : ${userInfo.grade}</p> <br>
+			<c:choose>
+				<c:when test="${userInfo.type == 'kakao'}">
+					<p>플랫폼 : 카카오</p>  <br>
+				</c:when>
+				<c:otherwise>
+				 	<p>플랫폼 : 일반</p>  <br>
+				</c:otherwise>
+			
+			</c:choose>
+			<c:choose>
+				<c:when test="${userInfo.birth == '' || userInfo.birth == null}">
+					<p>생일 : 생일이 등록되지 않았습니다.</p>  <br>
+				</c:when>
+				<c:otherwise>
+				 	<p>생일 : ${userInfo.birth} </p>  <br>
+				</c:otherwise>
+			
+			</c:choose>
+			<c:choose>
+				<c:when test="${userInfo.birth == '' || userInfo.birth == null}">
+					<p>휴대전화 : 전화번호가 등록되지 않았습니다.</p>  <br>
+				</c:when>
+				<c:otherwise>
+				 	<p>휴대전화 : ${userInfo.tell}</p> <br>
+				</c:otherwise>
+			
+			</c:choose>
 				
-				</c:choose>
-				<p>전화번호 ${userInfo.tell}</p> <br>
-			<button type="button" class="btn btn-red-mini btn-mypage" data-toggle="modal"
+			<button type="button" class="btn btn-mypage" data-toggle="modal"
 				data-target="#myModal1">내 정보 수정</button>
-			<button type="button" class="btn btn-red-mini btn-mypage" id="delBtn"  data-toggle="modal"
+			<button type="button" class="btn btn-mypage" id="delBtn"  data-toggle="modal"
 				data-target="#myModal2">탈퇴 하기</button>
 		</div>
-		<div class="col-lg-5 div-mypage">
-		
+		<div class="col-lg-6 div-mypage">
+			<h3>예매 내역</h3>
+			<div class="thin-line"></div>
+			<div class="payment-zone">
+			
+			</div>
 		</div>
 	</div>
 	
 	<div class="row">
-		<div class="col-lg-5 div-mypage">
-		
+		<div class="col-lg-6 div-mypage">
+			<h3>즐겨찾기</h3>
+			<div class="thin-line"></div>
 		</div>
-		<div class="col-lg-5 div-mypage">
-		
+		<div class="col-lg-6 div-mypage">
+			<h3>후기</h3>
+			<div class="thin-line"></div>
 		</div>
 	</div>
 </div>
@@ -65,8 +91,6 @@
 
 <div id="myModal2" class="modal fade" role="dialog" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal-dialog">
-
-
 		<div class="modal-content">
 			<div class="modal-header">
 				<h4 class="modal-title member-main-text">ArtGo 회원 탈퇴</h4>

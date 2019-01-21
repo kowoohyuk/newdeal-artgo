@@ -9,6 +9,18 @@
     padding-top: 10px;
     margin-bottom: 0px;
 }
+.member-mini-ul{
+	width: 100%;
+	text-align: center;
+	display: inline-flex;
+	margin-top: 1em;
+}
+.member-mini-ul .li-title{
+	font-weight: 700;
+}
+.member-mini-ul li{
+	width: 33.3%;
+}
 .member-main-info{
     font-size: 15px;
     font-weight: bold;
@@ -78,12 +90,25 @@ div.favorite {
 	font-size : 16px;
 	font-weight : 700;	
 }
+.btn-mypage:hover {
+	color : white;
+	background-color: black;
+}
+.mypage-A{
+	font-weight: 700;
+}
+.div-mypage h3{
+	font-weight: 700;
+}
+.thin-line{
+	margin-top : 10px;
+	margin-bottom : 10px;
+	border : 0.5px solid whitesmoke;
+}
 .div-mypage{
-	margin: 0 auto;
-    margin-top: 2em;
-    margin-bottom: 1em;
     height: 400px;
-	box-shadow: 3px 3px 3px darkgrey;
+	background-color: floralwhite;
+	padding : 3%;
 }
 .btn-red-mini{
 	background-color: black !important;

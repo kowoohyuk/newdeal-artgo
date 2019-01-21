@@ -1,8 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<link href="/resources/artgo/css/member-main-common.css"
-	rel="stylesheet">
 <link href="/resources/artgo/css/member-main.css" rel="stylesheet">
 <link href="/resources/artgo/css/member-modify.css" rel="stylesheet">
 
@@ -64,7 +62,7 @@
 					class="list-group-item d-flex justify-content-between align-items-center member-join-li">
 					<div class="form-group member-modify-div">
 						<input type="text" class="form-control member-join-input-text"
-							placeholder="휴대폰" id="tell" name="tell"> 
+							placeholder="휴대폰" id="tell" name="tell" value="${userInfo.tell}"> 
 							<label class="hidden-label member-modify-label"></label>
 					</div>
 				</li>

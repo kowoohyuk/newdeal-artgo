@@ -9,4 +9,6 @@ package com.bitcamp.artgo.util;
 public class ListConstance {
   public final static int LIST_COUNT = 10;
   public final static int PAGE_COUNT = 10;
+  public final static int MINI_LIST_COUNT = 5;
+  public final static int MINI_PAGE_COUNT = 5;
 }

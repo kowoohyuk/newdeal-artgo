@@ -253,18 +253,10 @@ public class MemberController {
   }
   
   
-  @RequestMapping(value = "member/payment.do", method = RequestMethod.GET)
-  public ModelAndView exhibitPaymentList(@RequestParam Map<String, String> param, Model model) {
-      ModelAndView modelAndView = new ModelAndView();
-      List<PaymentDto> list = paymentService.getPaymentList(param);
-      System.out.println(list);
-      param.put("page-type", "payment"); // 페이지 네비게이션을 여러 곳에서 쓰기 위함.
-      PageNavigation navigation = commonService.makePageNavigation(param);
-      navigation.setRoot("/member");
-      navigation.makeNavigator();
-      modelAndView.addObject("articlelist", list);
-      modelAndView.setViewName("member/payment.page");
-      return modelAndView;
+  @RequestMapping(value = "member/payment.do", method = RequestMethod.GET, produces="application/json;charset=UTF-8")
+  public @ResponseBody String exhibitPaymentList(@RequestParam Map<String, String> param, Model model) {
+    System.out.println(param.get("pg"));
+    return paymentService.getPaymentList(param);
   }
 
 

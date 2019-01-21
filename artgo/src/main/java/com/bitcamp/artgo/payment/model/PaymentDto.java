@@ -13,6 +13,7 @@ public class PaymentDto{
   private int finalPay;
   private int teenCount;
   private int normalCount;
+  private String title;
   private String date;
   private String status;
   private int exno;
@@ -71,6 +72,12 @@ public class PaymentDto{
   }
   public void setMno(int mno) {
     this.mno = mno;
+  }
+  public String getTitle() {
+    return title;
+  }
+  public void setTitle(String title) {
+    this.title = title;
   }
   @Override
   public String toString() {
