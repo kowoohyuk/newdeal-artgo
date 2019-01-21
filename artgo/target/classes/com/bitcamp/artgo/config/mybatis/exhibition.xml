@@ -16,6 +16,15 @@
 	WHERE  bno = #{bno}
 </select>
 
+<select id="getImminentExhibit" resultType="exhibitionDto">
+	SELECT ex.* 
+	FROM   (SELECT @rownum:=@rownum+1 AS rnum, tmp.* FROM exhibitlistview AS tmp,
+               (SELECT @rownum:=0) as r
+				ORDER BY tmp.endDate
+          ) AS ex
+	WHERE rnum &lt;= 5
+</select>
+
 <select id="getExhibitList" parameterType="Map" resultType="exhibitionDto">
 	SELECT ex.* 
 	FROM   (SELECT @rownum:=@rownum+1 AS rnum, tmp.* FROM exhibitlistview AS tmp,
@@ -33,7 +42,7 @@
 				ORDER BY tmp.exno DESC
           ) AS ex
 	WHERE rnum &lt;= #{end}
-	AND rnum &gt;= #{start}                
+	AND rnum &gt;= #{start}        
 </select>
 
 </mapper>

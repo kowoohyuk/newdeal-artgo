@@ -53,10 +53,20 @@
 	</beans:bean>
 	<mvc:interceptors>
 		<mvc:interceptor>
-			<mvc:mapping path="/admin/**"/>
-			<mvc:exclude-mapping path="/artgo/**"/>
-			<mvc:exclude-mapping path="/base/**"/>
+			<mvc:mapping path="/member/main.do"/>
+			<mvc:mapping path="/member/pay/list.do"/>
+			<mvc:mapping path="/member/minpayment.do"/>
 			<beans:ref bean="loginInterceptor"/>
+		</mvc:interceptor>
+	</mvc:interceptors>
+	
+		<beans:bean id="roleInterceptor"
+		class="com.bitcamp.artgo.common.interceptor.RoleInterceptor">
+	</beans:bean>
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/admin/**"/>
+			<beans:ref bean="roleInterceptor"/>
 		</mvc:interceptor>
 	</mvc:interceptors>
     

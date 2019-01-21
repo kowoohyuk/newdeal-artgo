@@ -41,12 +41,9 @@ public class MemberServiceImpl implements MemberService {
     @Override
     public int updateMember(MemberDto memberDto) {
       memberDto.setPwd(enc(memberDto.getPwd()));
-      System.out.println(memberDto);
       if(sqlSession.getMapper(MemberDao.class).checkMember(memberDto)!=null) {
-        System.out.println("성공");
         return sqlSession.getMapper(MemberDao.class).updateMember(memberDto);
       }else {
-        System.out.println("실패");
         return 0;
       }
     }

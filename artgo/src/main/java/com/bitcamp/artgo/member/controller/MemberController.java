@@ -91,7 +91,6 @@ public class MemberController {
 
   @RequestMapping(value = "member/findPwd.do", method = RequestMethod.POST)
   public @ResponseBody String memberFindPwd(@RequestParam Map<String, String> param, Model model) {
-    System.out.println(param.get("id"));
     return authService.createTmpPwd(param.get("id"));
   }
 
@@ -99,6 +98,22 @@ public class MemberController {
   public String memberModify() {
     return "member/modify.page";
   }
+  
+  @RequestMapping(value = "/member/pay/list.do", method = RequestMethod.GET)
+  public ModelAndView memberPayment(@RequestParam Map<String, String> param, Model model) {
+      ModelAndView modelAndView = new ModelAndView();
+      List<PaymentDto> list = paymentService.getPaymentList(param);
+      System.out.println(list.size());
+      param.put("page-type", "payment"); // 페이지 네비게이션을 여러 곳에서 쓰기 위함.
+      PageNavigation navigation = commonService.makePageNavigation(param);
+      navigation.setRoot("/member");
+      navigation.makeNavigator();
+      modelAndView.addObject("articlelist", list);
+      modelAndView.addObject("navigator", navigation);
+      modelAndView.setViewName("member/payment.page");
+      return modelAndView;
+  }
+  
 
   @RequestMapping(value = "member/login.do", method = RequestMethod.POST)
   public String memberLogin(MemberDto memberDto, HttpSession session, Model model,
@@ -120,7 +135,6 @@ public class MemberController {
         return "common/result.part";
       }
       session.setAttribute("userInfo", user);
-      System.out.println(user);
       return "common/main.page";
     } else {
       redirectAttributes.addAttribute("err", "1");
@@ -140,7 +154,6 @@ public class MemberController {
     MemberDto tmp = memberService.selectMember(id);
     if (tmp != null) {
       session.setAttribute("userInfo", tmp);
-      System.out.println(tmp);
       result.put("result", "success");
     } else {
       memberDto.setId(id);
@@ -222,10 +235,8 @@ public class MemberController {
   @RequestMapping("member/delete.do")
   public String deleteMember(String pwd, Model model, HttpSession session,
       RedirectAttributes redirectAttributes) {
-    System.out.println(pwd);
     MemberDto memberDto = (MemberDto) session.getAttribute("userInfo");
     memberDto.setPwd(pwd);
-    System.out.println(memberDto);
     if (memberService.deleteMember(memberDto) > 0) {
       model.addAttribute("type", "7");
       session.invalidate();
@@ -253,10 +264,11 @@ public class MemberController {
   }
   
   
-  @RequestMapping(value = "member/payment.do", method = RequestMethod.GET, produces="application/json;charset=UTF-8")
-  public @ResponseBody String exhibitPaymentList(@RequestParam Map<String, String> param, Model model) {
-    System.out.println(param.get("pg"));
-    return paymentService.getPaymentList(param);
+  @RequestMapping(value = "member/minpayment.do", method = RequestMethod.GET, produces="application/json;charset=UTF-8")
+  public @ResponseBody String exhibitPaymentList(@RequestParam Map<String, String> param, Model model, HttpSession session) {
+    MemberDto memberDto = (MemberDto) session.getAttribute("userInfo");
+    param.put("mno", memberDto.getMno()+"");
+    return paymentService.getMinPaymentList(param);
   }
 
 

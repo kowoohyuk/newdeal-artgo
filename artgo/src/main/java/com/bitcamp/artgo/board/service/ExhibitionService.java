@@ -16,5 +16,5 @@ public interface ExhibitionService {
 
   ExhibitionDto getExhibit(String bno);
   List<ExhibitionDto> getExhibitList(Map<String, String> param);
-  
+  String getImminentExhibit();
 }

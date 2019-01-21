@@ -9,62 +9,54 @@
 	type="text/css">
 
 <div class="container member-main-div-container">
+	<h2>마이 페이지</h2>
+	<div class="thin-line"></div>
 	<div class="row">
 		<div class="col-lg-6 div-mypage mypage-A">
 			<h3>내 정보</h3>
 			<div class="thin-line"></div>
-			<p>별명 : ${userInfo.name}</p> <br>
-			<p>등급 : ${userInfo.grade}</p> <br>
-			<c:choose>
-				<c:when test="${userInfo.type == 'kakao'}">
-					<p>플랫폼 : 카카오</p>  <br>
-				</c:when>
-				<c:otherwise>
-				 	<p>플랫폼 : 일반</p>  <br>
-				</c:otherwise>
-			
-			</c:choose>
-			<c:choose>
-				<c:when test="${userInfo.birth == '' || userInfo.birth == null}">
-					<p>생일 : 생일이 등록되지 않았습니다.</p>  <br>
-				</c:when>
-				<c:otherwise>
-				 	<p>생일 : ${userInfo.birth} </p>  <br>
-				</c:otherwise>
-			
-			</c:choose>
-			<c:choose>
-				<c:when test="${userInfo.birth == '' || userInfo.birth == null}">
-					<p>휴대전화 : 전화번호가 등록되지 않았습니다.</p>  <br>
-				</c:when>
-				<c:otherwise>
-				 	<p>휴대전화 : ${userInfo.tell}</p> <br>
-				</c:otherwise>
-			
-			</c:choose>
+			<div class="info-zone">
+				<p>별명 : ${userInfo.name}</p> <br>
+				<p>등급 : ${userInfo.grade}</p> <br>
+				<c:choose>
+					<c:when test="${userInfo.type == 'kakao'}">
+						<p>플랫폼 : 카카오</p>  <br>
+					</c:when>
+					<c:otherwise>
+					 	<p>플랫폼 : 일반</p>  <br>
+					</c:otherwise>
 				
-			<button type="button" class="btn btn-mypage" data-toggle="modal"
-				data-target="#myModal1">내 정보 수정</button>
-			<button type="button" class="btn btn-mypage" id="delBtn"  data-toggle="modal"
-				data-target="#myModal2">탈퇴 하기</button>
-		</div>
-		<div class="col-lg-6 div-mypage">
-			<h3>예매 내역</h3>
-			<div class="thin-line"></div>
-			<div class="payment-zone">
-			
+				</c:choose>
+				<c:choose>
+					<c:when test="${userInfo.birth == '' || userInfo.birth == null}">
+						<p>생일 : 생일이 등록되지 않았습니다.</p>  <br>
+					</c:when>
+					<c:otherwise>
+					 	<p>생일 : ${userInfo.birth} </p>  <br>
+					</c:otherwise>
+				
+				</c:choose>
+				<c:choose>
+					<c:when test="${userInfo.birth == '' || userInfo.birth == null}">
+						<p>휴대전화 : 전화번호가 등록되지 않았습니다.</p>  <br>
+					</c:when>
+					<c:otherwise>
+					 	<p>휴대전화 : ${userInfo.tell}</p> <br>
+					</c:otherwise>
+				
+				</c:choose>
+					
+				<button type="button" class="btn btn-mypage" data-toggle="modal"
+					data-target="#myModal1">내 정보 수정</button>
+				<button type="button" class="btn btn-mypage" id="delBtn"  data-toggle="modal"
+					data-target="#myModal2">탈퇴 하기</button>
 			</div>
 		</div>
-	</div>
-	
-	<div class="row">
-		<div class="col-lg-6 div-mypage">
-			<h3>즐겨찾기</h3>
+		<div class="col-lg-6 div-mypage mypage-B">
+			<h3>예매 내역</h3><a class="l-a" href="/member/pay/list.do?pg=1&key=&word=">더보기</a>
 			<div class="thin-line"></div>
-		</div>
-		<div class="col-lg-6 div-mypage">
-			<h3>후기</h3>
-			<div class="thin-line"></div>
+			<div class="payment-zone">
+			</div>
 		</div>
 	</div>
 </div>

@@ -16,7 +16,7 @@ public class CommonController {
 
   @RequestMapping(value = "/", method = RequestMethod.GET)
   public String startPage() {
-    return "common/main.page";
+    return "redirect:/main.do";
   }
 
   @RequestMapping(value = "/main.do", method = RequestMethod.GET)

@@ -28,9 +28,12 @@ public class PaymentController {
   public @ResponseBody String exhibitPayment(@RequestBody PaymentDto paymentDto, HttpSession session) {
     MemberDto memberDto = (MemberDto) session.getAttribute("userInfo");
     paymentDto.setMno(memberDto.getMno());
-    paymentService.writePayment(paymentDto);
-
-    return "exhibit/modify.page";
+    int result =paymentService.writePayment(paymentDto);
+    if(result>0) {
+      return "{result : success}";
+    }else {
+      return "{result : fail}";
+    }
   }
   
 }

@@ -12,6 +12,18 @@
 		SELECT pay.* 
 		FROM   (SELECT @rownum:=@rownum+1 AS rnum, tmp.* FROM paymentlistview AS tmp,
 	               (SELECT @rownum:=0) as r
+	               	WHERE tmp.mno = #{mno}
+					ORDER BY tmp.exno DESC
+	          ) AS pay
+		WHERE rnum &lt;= #{end}
+		AND rnum &gt;= #{start}
+	</select>
+	
+	<select id="getMinPaymentList" parameterType="Map" resultType="paymentDto">
+		SELECT pay.* 
+		FROM   (SELECT @rownum:=@rownum+1 AS rnum, tmp.* FROM paymentlistview AS tmp,
+	               (SELECT @rownum:=0) as r
+	               	WHERE tmp.mno = #{mno}
 					ORDER BY tmp.exno DESC
 	          ) AS pay
 		WHERE rnum &lt;= #{end}

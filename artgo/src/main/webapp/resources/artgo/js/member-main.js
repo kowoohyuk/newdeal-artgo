@@ -8,7 +8,7 @@ $(function(){
 function getPaymentList(){
 	let mpg = $("#m-pg").val();
 	$.ajax({
-		url : 'payment.do?pg='+mpg,
+		url : 'minpayment.do?pg='+mpg,
 		type : 'GET',
 		contentType : 'application/json;charset=UTF-8',
 		dataType : 'json',
@@ -20,7 +20,7 @@ function getPaymentList(){
 
 function makePaymentList(data){
 	$('.payment-zone').empty();
-	
+	let navigator = data.navigator;
 	let plist = data.paymentList;
 	let len = plist.length;
 	let output = '';
@@ -32,8 +32,8 @@ function makePaymentList(data){
 	
 	for (let i = 0; i < len; i++) {
 		output += '<ul class="member-mini-ul">';
-		output += '<li>' + plist[i].title + '</li>';
-		output += '<li>' + plist[i].finalPay+ '</li>';
+		output += '<li><a href="/exhibit/view.do?bno='+plist[i].exno+'">' + plist[i].title + '</a></li>';
+		output += '<li>' + plist[i].finalPay+ '원</li>';
 		output += '<li>' + plist[i].date+ '</li>';
 		output += '</ul>';
 	}

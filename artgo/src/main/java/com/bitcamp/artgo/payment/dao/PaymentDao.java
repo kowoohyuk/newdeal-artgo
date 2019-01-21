@@ -14,6 +14,7 @@ import com.bitcamp.artgo.payment.model.PaymentDto;
 public interface PaymentDao {
   int writePayment(PaymentDto paymentDto);
   List<PaymentDto> getPaymentList(Map<String, String> param);
+  List<PaymentDto> getMinPaymentList(Map<String, String> param);
 }
 
 

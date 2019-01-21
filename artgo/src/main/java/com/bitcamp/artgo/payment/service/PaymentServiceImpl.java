@@ -34,10 +34,19 @@ public class PaymentServiceImpl implements PaymentService {
   }
 
   @Override
-  public String getPaymentList(Map<String, String> param) {
+  public List<PaymentDto> getPaymentList(Map<String, String> param) {
     int pg = Integer.parseInt(param.get("pg"));
     int end = pg*ListConstance.LIST_COUNT;
     int start = end-ListConstance.LIST_COUNT;
+    param.put("start", start+"");
+    param.put("end", end+"");
+    return sqlSession.getMapper(PaymentDao.class).getPaymentList(param);
+  }
+  
+  public String getMinPaymentList(Map<String, String> param) {
+    int pg = Integer.parseInt(param.get("pg"));
+    int end = pg*ListConstance.MINI_LIST_COUNT;
+    int start = end-ListConstance.MINI_LIST_COUNT;
     param.put("start", start+"");
     param.put("end", end+"");
     List<PaymentDto> list = sqlSession.getMapper(PaymentDao.class).getPaymentList(param);
@@ -46,8 +55,10 @@ public class PaymentServiceImpl implements PaymentService {
     for(PaymentDto paymentDto: list) {
         JSONObject payment = new JSONObject();
         payment.put("pno", paymentDto.getPno());
-        payment.put("pay", paymentDto.getPay());
-        payment.put("finalPay", paymentDto.getFinalPay());
+        String pay = String.format("%,d", paymentDto.getPay());
+        String finalPay = String.format("%,d", paymentDto.getFinalPay());
+        payment.put("pay", pay);
+        payment.put("finalPay", finalPay);
         payment.put("teenCount", paymentDto.getTeenCount());
         payment.put("title", paymentDto.getTitle());
         payment.put("normalCount", paymentDto.getNormalCount());

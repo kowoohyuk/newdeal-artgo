@@ -1,5 +1,6 @@
 package com.bitcamp.artgo.payment.service;
 
+import java.util.List;
 import java.util.Map;
 import com.bitcamp.artgo.payment.model.PaymentDto;
 
@@ -12,8 +13,8 @@ import com.bitcamp.artgo.payment.model.PaymentDto;
 
 public interface PaymentService {
   int writePayment(PaymentDto paymentDto);
-  String getPaymentList(Map<String, String> param);
-  
+  List<PaymentDto> getPaymentList(Map<String, String> param);
+  String getMinPaymentList(Map<String, String> param);
 }
 
 

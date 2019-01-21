@@ -9,11 +9,31 @@
     padding-top: 10px;
     margin-bottom: 0px;
 }
+.info-zone{
+	padding: 2em;
+}
 .member-mini-ul{
 	width: 100%;
 	text-align: center;
 	display: inline-flex;
 	margin-top: 1em;
+}
+.mypage-B h3{
+	display: inline-block;
+}
+.mypage-B .l-a{
+	float: right;
+	cursor: pointer;
+	font-weight: 700;
+}
+.mypage-B .l-a:hover{
+	color : crimson;
+}
+.member-mini-ul li a{
+	font-weight: 700;
+}
+.member-mini-ul li a:hover{
+	color: crimson;
 }
 .member-mini-ul .li-title{
 	font-weight: 700;
@@ -105,9 +125,12 @@ div.favorite {
 	margin-bottom : 10px;
 	border : 0.5px solid whitesmoke;
 }
+.member-main-div-container h2{
+	font-weight: 700;
+	margin-bottom: 10px;
+}
 .div-mypage{
     height: 400px;
-	background-color: floralwhite;
 	padding : 3%;
 }
 .btn-red-mini{

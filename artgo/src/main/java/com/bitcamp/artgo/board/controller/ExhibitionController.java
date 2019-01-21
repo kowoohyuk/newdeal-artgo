@@ -72,11 +72,10 @@ public class ExhibitionController {
     adminService.writeExhibit(exhibitionDto, multipartFile);
     return "redirect:/main.do";
   }
-
-  @RequestMapping(value = "exhibit/modify.do", method = RequestMethod.GET)
-  public String exhibitModify() {
-    
-    return "exhibit/modify.page";
+  
+  @RequestMapping(value = "exhibit/Imlist.do", method = RequestMethod.GET, produces="application/json;charset=UTF-8")
+  public @ResponseBody String exhibitModify() {
+    return exhibitionService.getImminentExhibit();
   }
 
 }

@@ -26,6 +26,12 @@
 .img-logo{
 	padding-top: 20px;
 }
+#mainFavorDiv .post-tag:hover, #mainExhibDiv .post-tag:hover{
+	color : red !important;
+}
+#mainFavorDiv .post-tag, #mainExhibDiv .post-tag{
+	font-size : 14px !important;
+}
 
 .modal-cutton {
 	position: fixed;
