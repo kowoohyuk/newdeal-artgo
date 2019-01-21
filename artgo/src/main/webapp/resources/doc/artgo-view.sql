@@ -32,3 +32,10 @@ DATE_FORMAT(date, '%Y-%m-%d %H:%i:%S') as date, m.name
 FROM review r, member m
 WHERE r.mno = m.mno
 AND r.status = 1;
+
+CREATE VIEW paymentlistview AS
+    SELECT p.*, ex.title, ex.bno, ex.place, 
+			     ex.address, ex.folder, ex.fno, ex.name,
+			     ex.savename
+		FROM   payment p, exhibitlistview ex
+		WHERE  p.exno = ex.exno;

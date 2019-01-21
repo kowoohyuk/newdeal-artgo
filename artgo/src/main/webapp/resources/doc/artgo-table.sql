@@ -22,6 +22,10 @@ DROP TABLE IF EXISTS BOARD RESTRICT;
 -- 회원
 DROP TABLE IF EXISTS MEMBER RESTRICT;
 
+
+-- 회원
+DROP TABLE IF EXISTS MEMBER RESTRICT;
+
 -- 회원
 CREATE TABLE MEMBER (
     MNO       INTEGER      NOT NULL COMMENT '회원 번호', -- 회원 번호
@@ -136,13 +140,13 @@ ALTER TABLE BOARD
 
 -- 후기
 CREATE TABLE REVIEW (
-    RNO     INTEGER   	   NOT NULL COMMENT '후기 번호', -- 후기 번호
+    RNO     INTEGER          NOT NULL COMMENT '후기 번호', -- 후기 번호
     COMMENT VARCHAR(255)   NOT NULL COMMENT '내용', -- 내용
     SCORE   INTEGER        NOT NULL COMMENT '점수', -- 점수
-    STATUS  INTEGER   	   NOT NULL COMMENT '상태', -- 상태
-    DATE    TIMESTAMP 	   NOT NULL COMMENT '작성일', -- 작성일
-    EXNO    INTEGER   	   NOT NULL COMMENT '전시회 번호', -- 전시회 번호
-    MNO     INTEGER   	   NOT NULL COMMENT '회원 번호' -- 회원 번호
+    STATUS  INTEGER          NOT NULL COMMENT '상태', -- 상태
+    DATE    TIMESTAMP        NOT NULL COMMENT '작성일', -- 작성일
+    EXNO    INTEGER          NOT NULL COMMENT '전시회 번호', -- 전시회 번호
+    MNO     INTEGER          NOT NULL COMMENT '회원 번호' -- 회원 번호
 )
 COMMENT '후기';
 

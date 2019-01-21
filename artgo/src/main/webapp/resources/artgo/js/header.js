@@ -32,7 +32,6 @@ $(function(){
 	$('#favorBtn').on('click', function(){
 		$('.favorite-modal').css('top', $(this).offset().top+30);
 		$('.favorite-modal').css('left', $(this).offset().left);
-		
 		getFavorList();
 	});
 	
@@ -82,7 +81,7 @@ function makeFavorList(favors){
 		output += '<li>'+flist[i].place+'</li>';
 		output += '<li>'+flist[i].startDate+'</li>';
 		output += '<li>'+flist[i].endDate+'</li>';
-		output += '<li><button class="favorDeleteBtn" value="'+flist[i].exno+'">X</button></li>';
+		output += '<li><button class="favorDeleteBtn" value="'+flist[i].exno+'">x</button></li>';
 		output += '</ul>';
 	}
 	$('.favorite-modal').append(output);

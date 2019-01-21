@@ -7,22 +7,22 @@ package com.bitcamp.artgo.payment.model;
 * 작성자: 고 우 혁
 */
 
-public class PaymentDto {
-  private int paymentNo;
+public class PaymentDto{
+  private int pno;
   private int pay;
   private int finalPay;
-  private int teenAmount;
-  private int normalAmount;
+  private int teenCount;
+  private int normalCount;
   private String date;
   private String status;
-  private int exhibitionNo;
-  private int memberNo;
+  private int exno;
+  private int mno;
   
-  public int getPaymentNo() {
-    return paymentNo;
+  public int getPno() {
+    return pno;
   }
-  public void setPaymentNo(int paymentNo) {
-    this.paymentNo = paymentNo;
+  public void setPno(int pno) {
+    this.pno = pno;
   }
   public int getPay() {
     return pay;
@@ -36,17 +36,17 @@ public class PaymentDto {
   public void setFinalPay(int finalPay) {
     this.finalPay = finalPay;
   }
-  public int getTeenAmount() {
-    return teenAmount;
+  public int getTeenCount() {
+    return teenCount;
   }
-  public void setTeenAmount(int teenAmount) {
-    this.teenAmount = teenAmount;
+  public void setTeenCount(int teenCount) {
+    this.teenCount = teenCount;
   }
-  public int getNormalAmount() {
-    return normalAmount;
+  public int getNormalCount() {
+    return normalCount;
   }
-  public void setNormalAmount(int normalAmount) {
-    this.normalAmount = normalAmount;
+  public void setNormalCount(int normalCount) {
+    this.normalCount = normalCount;
   }
   public String getDate() {
     return date;
@@ -60,17 +60,23 @@ public class PaymentDto {
   public void setStatus(String status) {
     this.status = status;
   }
-  public int getExhibitionNo() {
-    return exhibitionNo;
+  public int getExno() {
+    return exno;
   }
-  public void setExhibitionNo(int exhibitionNo) {
-    this.exhibitionNo = exhibitionNo;
+  public void setExno(int exno) {
+    this.exno = exno;
   }
-  public int getMemberNo() {
-    return memberNo;
+  public int getMno() {
+    return mno;
   }
-  public void setMemberNo(int memberNo) {
-    this.memberNo = memberNo;
+  public void setMno(int mno) {
+    this.mno = mno;
+  }
+  @Override
+  public String toString() {
+    return "PaymentDto [pno=" + pno + ", pay=" + pay + ", finalPay=" + finalPay + ", teenCount="
+        + teenCount + ", normalCount=" + normalCount + ", date=" + date + ", status=" + status
+        + ", exno=" + exno + ", mno=" + mno + "]";
   }
   
 }

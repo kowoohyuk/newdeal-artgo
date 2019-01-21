@@ -78,4 +78,25 @@ div.favorite {
 	font-size : 16px;
 	font-weight : 700;	
 }
+.div-mypage{
+	margin: 0 auto;
+    margin-top: 2em;
+    margin-bottom: 1em;
+    height: 400px;
+	box-shadow: 3px 3px 3px darkgrey;
+}
+.btn-red-mini{
+	background-color: black !important;
+	cursor: pointer !important;
+	color: white !important;
+	width: 30%;
+}
+.btn-red-mini:hover, .btn-red-mini:active, .btn-red-mini:focus{
+	border-color: crimson !important;
+	background-color: crimson !important;
+}
+.btn-mypage{
+	font-size: 13px;
+    height: 40px !important;	
+}
 

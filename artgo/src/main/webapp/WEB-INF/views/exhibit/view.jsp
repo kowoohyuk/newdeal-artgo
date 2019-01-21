@@ -9,6 +9,9 @@
 <input type="hidden" value="${exhibit.exno}" id="exno">    
 <input type="hidden" value="${exhibit.address}" id="address">
 <input type="hidden" value="${exhibit.place}" id="place">
+<input type="hidden" value="${exhibit.title}" id="titleVal">
+<input type="hidden" value="${exhibit.normalPrice}" id="normalPrice">
+<input type="hidden" value="${exhibit.teenPrice}" id="teenPrice">
 <div class="container">
 	<div class="col-lg-10">
 		<div class="div-ex-title">
@@ -123,4 +126,5 @@
 </div>
 
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=7733d2fd81a122a372226b726f89ef71&libraries=services,clusterer,drawing"></script>
+<script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
 <script src="/resources/artgo/js/exhibit-view.js"></script>

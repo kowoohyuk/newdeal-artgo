@@ -68,7 +68,7 @@
 				                    <li><a href="/review/write.do">리뷰</a></li>
 									</ul></li>
 								<li><a href="#" id="favorBtn">즐겨찾기</a></li>
-								<li><a href="/member/main.do">마이 티켓</a>
+								<li><a href="/member/main.do">마이 페이지</a>
 								</li>
 							</ul>
 						</div>

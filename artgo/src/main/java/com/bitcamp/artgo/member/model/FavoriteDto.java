@@ -11,20 +11,19 @@ import com.bitcamp.artgo.board.model.ExhibitionDto;
 
 
 public class FavoriteDto extends ExhibitionDto {
-  private int exhibitionNo;
-  private int memberNo;
+  private int exno;
+  private int mno;
   
-  public int getExhibitionNo() {
-    return exhibitionNo;
+  public int getExno() {
+    return exno;
   }
-  public void setExhibitionNo(int exhibitionNo) {
-    this.exhibitionNo = exhibitionNo;
+  public void setExno(int exno) {
+    this.exno = exno;
   }
-  public int getMemberNo() {
-    return memberNo;
+  public int getMno() {
+    return mno;
   }
-  public void setMemberNo(int memberNo) {
-    this.memberNo = memberNo;
+  public void setMno(int mno) {
+    this.mno = mno;
   }
-  
 }

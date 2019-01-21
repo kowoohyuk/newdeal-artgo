@@ -40,5 +40,11 @@
 		</if>
 		
 	</select>
+	
+	<select id="getTotalPaymentCount" parameterType="Map" resultType="int">
+		SELECT count(*)
+		FROM payment
+		WHERE mno = #{mno}
+	</select>
 
 </mapper>

@@ -8,5 +8,6 @@ public interface CommonDao {
 	void updateHit(int seq);
 	int getTotalMemberCount(Map<String, String> param);
 	int getTotalExhibitCount(Map<String, String> param);
+	int getTotalPaymentCount(Map<String, String> param);
 	
 }

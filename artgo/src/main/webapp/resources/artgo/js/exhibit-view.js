@@ -222,3 +222,72 @@ geocoder.addressSearch(detailAddr, function(result, status) {
 } 
 });    
 
+$('.btn-kakao').on('click', function(){
+	let normalPrice = $('#normalPrice').val();
+	let normalCount = $('#normalCount').val();
+	let teenPrice = $('#teenPrice').val();
+	let teenCount = $('#teenCount').val();
+	
+	let resultPrice = normalPrice * normalCount + teenPrice * teenCount;
+	
+	var IMP = window.IMP; // 생략가능
+	IMP.init('imp27894932');  //'iamport' 대신 부여받은 "가맹점 식별코드"를 사용
+	
+	IMP.request_pay({
+	    pg : 'kakao', // version 1.1.0부터 지원.
+	    pay_method : 'card',
+	    merchant_uid : 'merchant_' + new Date().getTime(),
+	    name : $('#titleVal').val(),
+	    amount : resultPrice,
+	    buyer_email : $('#userId').val(),
+	    buyer_name : $('#userName').val(),
+	    buyer_tel : '010-9747-9112', //테스트 환경이라 내 전화번호 사용.
+	    buyer_addr : '서울특별시 강남구 삼성동', 
+	    buyer_postcode : '123-456',
+	    m_redirect_url : ''
+	}, function(rsp) {
+	    if ( rsp.success ) {
+//	        var msg = '결제가 완료되었습니다.';
+//	        msg += '고유ID : ' + rsp.imp_uid;
+//	        msg += '상점 거래ID : ' + rsp.merchant_uid;
+//	        msg += '결제 금액 : ' + rsp.paid_amount;
+//	        msg += '카드 승인번호 : ' + rsp.apply_num;
+	        payment(rsp);
+	    } else {
+//	        var msg = '결제에 실패하였습니다.';
+//	        msg += '에러내용 : ' + rsp.error_msg;
+	    }
+//	    alert(msg);
+	});
+});
+
+function payment(data){
+	let pay = data.paid_amount;
+	let finalPay = data.paid_amount;
+	let normalCount = $('#normalCount').val();
+	let teenCount = $('#teenCount').val();
+	let exno = $('#exno').val();
+	
+	
+	let parameter = JSON.stringify({
+		'pay' : pay,
+		'finalPay' : finalPay,
+		'normalCount' : normalCount,
+		'teenCount' : teenCount,
+		'exno' : exno
+	});
+	$.ajax({
+		url: 'payment.do',
+		type : 'POST',
+		contentType : 'application/json;charset=UTF-8',
+		dataType : 'json',
+		data : parameter,
+		success : function(data) {
+			alert('티켓이 예매 됐습니다! \n 예매된 티켓은 마이 티켓에서 확인하실 수 있습니다.');
+		},
+		fail : function(){
+			alert('티켓 예매가 실패하였습니다.');
+		}
+	});
+}
+		

@@ -17,10 +17,8 @@
 						<h3>가입자 추이</h3>
 						<button class="admin-btn member-date">주간</button>
 						<button class="admin-btn member-date btn-active">월간</button>
-						<button class="admin-btn member-date">연간</button>
 						|
 						<button class="admin-btn member-chart">곡선</button>
-						<button class="admin-btn member-chart">파이</button>							
 						<button class="admin-btn member-chart btn-active">바</button>
 					</div>
 					<div class="card-block">
@@ -36,10 +34,8 @@
 						<h3>매출</h3>
 						<button class="admin-btn member-date">주간</button>
 						<button class="admin-btn member-date btn-active">월간</button>
-						<button class="admin-btn member-date">연간</button>
 						|
 						<button class="admin-btn member-chart btn-active">곡선</button>
-						<button class="admin-btn member-chart">파이</button>							
 						<button class="admin-btn member-chart">바</button>
 					</div>
 					<div class="card-block">

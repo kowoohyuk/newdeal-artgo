@@ -1,22 +1,27 @@
 package com.bitcamp.artgo.member.controller;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import javax.servlet.http.HttpSession;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import com.bitcamp.artgo.common.service.CommonService;
 import com.bitcamp.artgo.mail.service.AuthService;
 import com.bitcamp.artgo.member.model.MemberDto;
 import com.bitcamp.artgo.member.service.MemberService;
+import com.bitcamp.artgo.payment.model.PaymentDto;
+import com.bitcamp.artgo.payment.service.PaymentService;
+import com.bitcamp.artgo.util.PageNavigation;
 
 /**
  * 파일명: MemberConrtoller.java
@@ -33,6 +38,12 @@ public class MemberController {
 
   @Autowired
   AuthService authService;
+  
+  @Autowired
+  PaymentService paymentService;
+  
+  @Autowired
+  CommonService commonService;
 
   @RequestMapping(value = "member/login.do", method = RequestMethod.GET)
   public String memberLogin(Model model) {
@@ -177,7 +188,6 @@ public class MemberController {
 
   @RequestMapping(value = "member/resend", method = RequestMethod.GET)
   public String resend(String id, Model model) {
-    System.out.println(id);
     authService.resendAuth(id);
     model.addAttribute("type", "6");
     model.addAttribute("id", id);
@@ -241,51 +251,21 @@ public class MemberController {
     }
     return "common/result.part";
   }
-
-  // @RequestMapping("member/ticket/list")
-  // public String ticketList() {
-  /**
-   * @함수명 : cardInsert(CardDTO card)
-   * @작성일 : 2019. 1. 11.
-   * @작성자 : 고 우 혁
-   * @설명 : 미정
-   * @param : 미정
-   * @return : 페이지
-   **/
-  // return "ticket/list";
-  // }
-  // @RequestMapping("member/ticket/list")
-  // public String ticket() {
-  // /**
-  // * @설명 : 미정
-  // * @param : 미정
-  // * @return : 페이지
-  // **/
-  // return "ticket/list";
-  // }
-
-
-  // @RequestMapping(value="member/delete.do", method = RequestMethod.POST)
-  // public String deleteMember(@RequestParam Map<String, String> param, Model model, HttpSession
-  // session, MemberDto memberDto) {
-  // String id = ((MemberDto)session.getAttribute("userInfo")).getId();
-  // int result = memberService.deleteMember(id, param.get("pwd"));
-  // System.out.println(memberDto);
-  // if(result>0) {
-  // model.addAttribute("title", "탈퇴");
-  // model.addAttribute("msg", "탈퇴되었습니다.");
-  // model.addAttribute("url", "common/main.page");
-  // model.addAttribute("move", "auto");
-  // return "member/delete.do";
-  // }else {
-  // model.addAttribute("title", "탈퇴 실패");
-  // model.addAttribute("msg", "다시 시도해주세요.");
-  // model.addAttribute("url", "member/main.page");
-  // model.addAttribute("move", "auto");
-  // return "member/delete.do";
-  // }
-  //
-  // }
+  
+  
+  @RequestMapping(value = "member/payment.do", method = RequestMethod.GET)
+  public ModelAndView exhibitPaymentList(@RequestParam Map<String, String> param, Model model) {
+      ModelAndView modelAndView = new ModelAndView();
+      List<PaymentDto> list = paymentService.getPaymentList(param);
+      System.out.println(list);
+      param.put("page-type", "payment"); // 페이지 네비게이션을 여러 곳에서 쓰기 위함.
+      PageNavigation navigation = commonService.makePageNavigation(param);
+      navigation.setRoot("/member");
+      navigation.makeNavigator();
+      modelAndView.addObject("articlelist", list);
+      modelAndView.setViewName("member/payment.page");
+      return modelAndView;
+  }
 
 
 }
