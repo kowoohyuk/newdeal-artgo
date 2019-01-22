@@ -13,8 +13,4 @@ public class PaymentDto{
   private int finalPay;
   private int teenCount;
   private int normalCount;
-  private String title;
-  private String date;
-  private String status;
-  private int exno;
 }
