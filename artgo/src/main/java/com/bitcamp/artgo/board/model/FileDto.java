@@ -15,48 +15,4 @@ public class FileDto {
   private int fileSize;
   private int thumb;
   private int bno;
-  
-  public int getFno() {
-    return fno;
-  }
-  public void setFno(int fno) {
-    this.fno = fno;
-  }
-  public String getFolder() {
-    return folder;
-  }
-  public void setFolder(String folder) {
-    this.folder = folder;
-  }
-  public String getSaveName() {
-    return saveName;
-  }
-  public void setSaveName(String saveName) {
-    this.saveName = saveName;
-  }
-  public String getName() {
-    return name;
-  }
-  public void setName(String name) {
-    this.name = name;
-  }
-  public int getFileSize() {
-    return fileSize;
-  }
-  public void setFileSize(int fileSize) {
-    this.fileSize = fileSize;
-  }
-  public int getThumb() {
-    return thumb;
-  }
-  public void setThumb(int thumb) {
-    this.thumb = thumb;
-  }
-  public int getBno() {
-    return bno;
-  }
-  public void setBno(int bno) {
-    this.bno = bno;
-  }
-  
 }

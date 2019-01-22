@@ -10,21 +10,4 @@ package com.bitcamp.artgo.admin.model;
 public class ChartDataDto {
   private String date;
   private int sum;
-  
-  public String getDate() {
-    return date;
-  }
-  public void setDate(String date) {
-    this.date = date;
-  }
-  public int getSum() {
-    return sum;
-  }
-  public void setSum(int sum) {
-    this.sum = sum;
-  }
-  @Override
-  public String toString() {
-    return "ChartDataDto [date=" + date + ", sum=" + sum + "]";
-  }
 }
