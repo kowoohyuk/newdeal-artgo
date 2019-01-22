@@ -17,5 +17,4 @@ public class PaymentDto{
   private String date;
   private String status;
   private int exno;
-  private int mno;
 }
