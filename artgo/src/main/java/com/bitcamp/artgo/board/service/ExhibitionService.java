@@ -2,8 +2,8 @@ package com.bitcamp.artgo.board.service;
 
 import java.util.List;
 import java.util.Map;
-import org.springframework.web.multipart.MultipartFile;
 import com.bitcamp.artgo.board.model.ExhibitionDto;
+import com.bitcamp.artgo.board.model.FileDto;
 
 /**
 * 파일명: ExhibitionService.java
@@ -17,4 +17,6 @@ public interface ExhibitionService {
   ExhibitionDto getExhibit(String bno);
   List<ExhibitionDto> getExhibitList(Map<String, String> param);
   String getImminentExhibit();
+  List<ExhibitionDto> getNewExhibit();
+  List<FileDto> getBannerList();
 }

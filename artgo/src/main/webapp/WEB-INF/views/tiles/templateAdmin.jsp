@@ -30,19 +30,15 @@
 <link rel="stylesheet" type="text/css" href="/resources/admin/css/admin.css">
 </head>
 <body>
+<input type="hidden" id="userId" value="${userInfo.id}">
+<input type="hidden" id="userName" value="${userInfo.name}">
+<input type="hidden" id="userRole" value="${userInfo.role}">
+<input type="hidden" id="userType" value="${userInfo.type}">
     <div style="width:100%; height:100%;">
     <div id="header"><tiles:insertAttribute name="header" /></div>
     <div id="header"><tiles:insertAttribute name="left" /></div>        
     <div id="main"><tiles:insertAttribute name="body" /></div>    
     </div>
-		
-		<!-- Chart js -->
-		<script src="/resources/admin/js/chart.min.js"></script>
-		<script src="/resources/admin/js/chart-data.js"></script>
-		
-		<!-- 어드민 js -->
-    	<script src="/resources/admin/js/admin.js"></script>
-    	
 		
 </body>
 </html>

@@ -12,16 +12,15 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
+import com.bitcamp.artgo.admin.dao.ChartDao;
+import com.bitcamp.artgo.admin.model.ChartDataDto;
 import com.bitcamp.artgo.board.dao.BoardDao;
 import com.bitcamp.artgo.board.dao.ExhibitionDao;
 import com.bitcamp.artgo.board.dao.FileDao;
-import com.bitcamp.artgo.board.dao.NoticeDao;
 import com.bitcamp.artgo.board.dao.ReviewDao;
 import com.bitcamp.artgo.board.model.ExhibitionDto;
 import com.bitcamp.artgo.board.model.FileDto;
-import com.bitcamp.artgo.board.model.NoticeDto;
 import com.bitcamp.artgo.board.model.ReviewDto;
 import com.bitcamp.artgo.member.dao.MemberDao;
 import com.bitcamp.artgo.member.model.MemberDto;
@@ -39,19 +38,6 @@ public class AdminSerivceImpl implements AdminService {
   @Autowired
   private SqlSession sqlSession;
   
-  @Override
-  @Transactional
-  public int writeNotice(NoticeDto noticeDto) {
-    sqlSession.getMapper(BoardDao.class).writeBoardByNotice(noticeDto);
-    return sqlSession.getMapper(NoticeDao.class).writeNotice(noticeDto);
-  }
-
-  @Override
-  @Transactional
-  public int modifyNotice(NoticeDto noticeDto) {
-    sqlSession.getMapper(BoardDao.class).modifyBoardByNotice(noticeDto);
-    return sqlSession.getMapper(NoticeDao.class).modifyNotice(noticeDto);
-  }
 
   @Override
   public int deleteNotice(int boardNo) {
@@ -111,11 +97,6 @@ public class AdminSerivceImpl implements AdminService {
   public int deleteReview(int reviewNo) {
     return sqlSession.getMapper(ReviewDao.class).deleteReview(reviewNo);
   }
-
-  @Override
-  public List<NoticeDto> getNoticeList(Map<String, String> param) {
-    return sqlSession.getMapper(NoticeDao.class).getNoticeList(param);
-  }
   
   @Override
   public String getMemberList(Map<String, String> param) {
@@ -156,6 +137,26 @@ public class AdminSerivceImpl implements AdminService {
   @Override
   public int updateMember(MemberDto memberDto) {
     return sqlSession.getMapper(MemberDao.class).updateMember(memberDto);
+  }
+  
+  @Override
+  public String getChartList() {
+    List<ChartDataDto> payListByWeek = sqlSession.getMapper(ChartDao.class).getPaymentChartDataByDay();
+    List<ChartDataDto> joinListByWeek = sqlSession.getMapper(ChartDao.class).getJoinChartDataByDay();
+    JSONObject json = new JSONObject();
+    JSONArray jsonArr = new JSONArray();
+    for(ChartDataDto chartData: payListByWeek) {
+        jsonArr.put(chartData.getSum());
+    }
+    json.put("payListbyWeek", jsonArr);
+    
+    jsonArr = new JSONArray();
+    for(ChartDataDto chartData: joinListByWeek) {
+      jsonArr.put(chartData.getSum());
+    }
+    json.put("joinListbyWeek", jsonArr);
+    
+    return json.toString();
   }
 
 }

@@ -15,8 +15,8 @@ import com.bitcamp.artgo.member.model.MemberDto;
 
 
 /**
-* 파일명: NoticeController.java
-* 설 명: 설명내용
+* 파일명: ReviewController.java
+* 설 명: 리뷰 컨트롤러
 * 작성일: 2019. 1. 11.
 * 작성자: 고 우 혁
 */
@@ -36,7 +36,9 @@ public class ReviewController {
 	@RequestMapping(value="review.do", method=RequestMethod.POST)
 	public @ResponseBody String write(@RequestBody ReviewDto reviewDto, HttpSession session) {
 		MemberDto memberDto = (MemberDto) session.getAttribute("userInfo");
-		
+		if(memberDto==null) {
+		  return "redirect:/member/login.do";
+		}
 		reviewDto.setMno(memberDto.getMno());
 		
 		if(reviewService.writeReview(reviewDto)>0) {
@@ -46,7 +48,7 @@ public class ReviewController {
 	}
 	
 	@RequestMapping(value="review/{rno}/{exno}", method=RequestMethod.GET)
-	public @ResponseBody String list(@PathVariable(value="rno") int rno, @PathVariable(value="exno") int exno) { //패스배리어블 = 경로에 포함된 값
+	public @ResponseBody String list(@PathVariable(value="rno") int rno, @PathVariable(value="exno") int exno) {
 		return "review/list.do";
 	}
 	
@@ -60,19 +62,10 @@ public class ReviewController {
 	}
 	
 	@RequestMapping(value="review/{rno}", method=RequestMethod.DELETE)
-	public @ResponseBody String delete(@PathVariable(value="rno") int rno) { //패스배리어블 = 경로에 포함된 값
+	public @ResponseBody String delete(@PathVariable(value="rno") int rno) {
 		reviewService.deleteReview(rno);
 		
 		return "";
 	}
 }
 
-
-/**
-* @함수명 : cardInsert(CardDTO card)
-* @작성일 : 2019. 1. 11.
-* @작성자 : 고 우 혁
-* @설명 : 카드를 생성한다.
-* @param CardDTO - projectNum, cardName
-* @return int 성공한 갯수
-**/

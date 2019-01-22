@@ -2,13 +2,19 @@ package com.bitcamp.artgo.admin.controller;
 
 import java.util.List;
 import java.util.Map;
+import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
+import com.bitcamp.artgo.admin.model.ChartDataDto;
+import com.bitcamp.artgo.admin.service.AdminService;
+import com.bitcamp.artgo.board.model.ExhibitionDto;
 import com.bitcamp.artgo.common.service.CommonService;
 import com.bitcamp.artgo.member.model.MemberDto;
 import com.bitcamp.artgo.member.service.MemberService;
@@ -30,10 +36,19 @@ public class AdminController {
   
   @Autowired
   CommonService commonService;
+  
+  @Autowired
+  AdminService adminService;
 
   @RequestMapping(value = "/main.do", method = RequestMethod.GET)
   public String adminMain() {
     return "admin/main.ad";
+  }
+
+  @RequestMapping(value = "/chart/list.do", method = RequestMethod.GET)
+  public @ResponseBody String chartList() {
+    return adminService.getChartList();
+
   }
   
   @RequestMapping(value = "/member/list.do", method = RequestMethod.GET)
@@ -64,5 +79,20 @@ public class AdminController {
   @RequestMapping(value = "/chart.do", method = RequestMethod.GET)
   public String adminChart() {
     return "admin/chart.page";
+  }
+
+  @RequestMapping(value = "/exhibit/write.do", method = RequestMethod.GET)
+  public String exhibitWrite() {
+    return "exhibit/write.page";
+  }
+
+  @RequestMapping(value = "/exhibit/write.do", method = RequestMethod.POST)
+  public String exhibitWrite(ExhibitionDto exhibitionDto, HttpSession session,
+      @RequestParam("picture") MultipartFile multipartFile, Model model) {
+    MemberDto memberDto = (MemberDto) session.getAttribute("userInfo");
+    
+    exhibitionDto.setMno(memberDto.getMno());
+    adminService.writeExhibit(exhibitionDto, multipartFile);
+    return "redirect:/main.do";
   }
 }

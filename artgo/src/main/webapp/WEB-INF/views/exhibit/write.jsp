@@ -10,7 +10,7 @@
 		<div class="col-lg-8">
 			<h3>전시회 등록</h3>
 		</div>
-		<form action="/exhibit/write.do" method="post" onsubmit="return check();" id="exWriteForm" enctype="multipart/form-data">
+		<form action="/admin/exhibit/write.do" method="post" onsubmit="return check();" id="exWriteForm" enctype="multipart/form-data">
 		
 			<div class="col-lg-12 div-exhibit-text">
 				<div class="col-lg-5 div-exhibit-text">

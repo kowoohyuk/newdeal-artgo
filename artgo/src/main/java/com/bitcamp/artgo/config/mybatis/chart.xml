@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bitcamp.artgo.admin.dao.ChartDao">
+	<select id="getPaymentChartDataByDay" resultType="chartDataDto">
+		SELECT  *
+		FROM    paymentday
+		WHERE   date
+		BETWEEN subdate(now(), INTERVAL 7 DAY)
+		AND     subdate(now(), INTERVAL 0 DAY)
+	</select>
+	
+	<select id="getJoinChartDataByDay" resultType="chartDataDto">
+		SELECT  *
+		FROM    joinday
+		WHERE   date
+		BETWEEN subdate(now(), INTERVAL 7 DAY)
+		AND     subdate(now(), INTERVAL 0 DAY)
+	</select>
+</mapper>

@@ -12,12 +12,12 @@
 		<typeAlias alias="memberDto" type="com.bitcamp.artgo.member.model.MemberDto"/>
 		<typeAlias alias="favoriteDto" type="com.bitcamp.artgo.member.model.FavoriteDto"/>
 		<typeAlias alias="boardDto" type="com.bitcamp.artgo.board.model.BoardDto"/>
-		<typeAlias alias="noticeDto" type="com.bitcamp.artgo.board.model.NoticeDto"/>
 		<typeAlias alias="exhibitionDto" type="com.bitcamp.artgo.board.model.ExhibitionDto"/>
 		<typeAlias alias="reviewDto" type="com.bitcamp.artgo.board.model.ReviewDto"/>
 		<typeAlias alias="fileDto" type="com.bitcamp.artgo.board.model.FileDto"/>
 		<typeAlias alias="boardDto" type="com.bitcamp.artgo.board.model.BoardDto"/>
 		<typeAlias alias="authDto" type="com.bitcamp.artgo.mail.model.AuthDto"/>
 		<typeAlias alias="paymentDto" type="com.bitcamp.artgo.payment.model.PaymentDto"/>
+		<typeAlias alias="chartDataDto" type="com.bitcamp.artgo.admin.model.ChartDataDto"/>
 	</typeAliases>
 </configuration>

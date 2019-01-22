@@ -16,6 +16,7 @@ public interface ExhibitionDao {
   int modifyExhibit(ExhibitionDto exhibitionDto);
   int deleteExhibit(int boardNo);
   List<ExhibitionDto> getImminentExhibit();
+  List<ExhibitionDto> getNewExhibit();
   ExhibitionDto getExhibit(int boardNo);
   List<ExhibitionDto> getExhibitList(Map<String, String> param);
 }

@@ -46,8 +46,12 @@ public class MemberController {
   CommonService commonService;
 
   @RequestMapping(value = "member/login.do", method = RequestMethod.GET)
-  public String memberLogin(Model model) {
-    return "member/login.part";
+  public String memberLogin(HttpSession session, Model model) {
+    if(loginCheck(session)) {
+      return "redirect:/main.do";
+    }else {
+      return "member/login.part";
+    }
   }
 
   @RequestMapping("member/main.do")
@@ -60,12 +64,20 @@ public class MemberController {
      * @param : MemberDto, HttpSession, Model
      * @return : 1) 로그인 성공 시 메인 화면 이동 2) 실패 시 현재 페이지 내 경고창 출력
      **/
-    return "member/main.page";
+    if(loginCheck(session)) {
+      return "member/main.page";
+    }else {
+      return "redirect:/member/login.do";
+    }
   }
 
   @RequestMapping(value = "member/join.do", method = RequestMethod.GET)
-  public String memberJoin() {
-    return "member/join.part";
+  public String memberJoin(HttpSession session) {
+    if(loginCheck(session)) {
+      return "redirect:/main.do";
+    }else {
+      return "member/join.part";
+    }
   }
 
   @RequestMapping(value = "member/logout.do", method = RequestMethod.GET)
@@ -75,28 +87,48 @@ public class MemberController {
   }
 
   @RequestMapping(value = "member/findId.do", method = RequestMethod.GET)
-  public String memberFindId() {
-    return "member/findId.part";
+  public String memberFindId(HttpSession session) {
+    if(loginCheck(session)) {
+      return "redirect:/main.do";
+    }else {
+      return "member/findId.part";
+    }
   }
 
   @RequestMapping(value = "member/findId.do", method = RequestMethod.POST)
-  public @ResponseBody String memberFindId(@RequestParam Map<String, String> param, Model model) {
-    return memberService.findId(param);
+  public @ResponseBody String memberFindId(@RequestParam Map<String, String> param, Model model, HttpSession session) {
+    if(loginCheck(session)) {
+      return "redirect:/main.do";
+    }else {
+      return memberService.findId(param);
+    }
   }
 
   @RequestMapping(value = "member/findPwd.do", method = RequestMethod.GET)
-  public String memberFindPwd() {
-    return "member/findPwd.part";
+  public String memberFindPwd(HttpSession session) {
+    if(loginCheck(session)) {
+      return "redirect:/main.do";
+    }else {
+      return "member/findPwd.part";
+    }
   }
 
   @RequestMapping(value = "member/findPwd.do", method = RequestMethod.POST)
-  public @ResponseBody String memberFindPwd(@RequestParam Map<String, String> param, Model model) {
-    return authService.createTmpPwd(param.get("id"));
+  public @ResponseBody String memberFindPwd(@RequestParam Map<String, String> param, Model model, HttpSession session) {
+    if(loginCheck(session)) {
+      return "redirect:/main.do";
+    }else {
+      return authService.createTmpPwd(param.get("id"));
+    }
   }
 
   @RequestMapping(value = "member/modify.do", method = RequestMethod.GET)
-  public String memberModify() {
-    return "member/modify.page";
+  public String memberModify(HttpSession session) {
+    if(loginCheck(session)) {
+      return "member/modify.page";
+    }else {
+      return "redirect:/member/login.do";
+    }
   }
   
   @RequestMapping(value = "/member/pay/list.do", method = RequestMethod.GET)
@@ -118,6 +150,23 @@ public class MemberController {
   @RequestMapping(value = "member/login.do", method = RequestMethod.POST)
   public String memberLogin(MemberDto memberDto, HttpSession session, Model model,
       RedirectAttributes redirectAttributes) {
+    if(loginCheck(session)) {
+      return "redirect:/main.do";
+    }else {
+      MemberDto user = memberService.checkMember(memberDto);
+      if (user != null) {
+        if (user.getConfirm() == 0) {
+          model.addAttribute("type", "4");
+          model.addAttribute("id", memberDto.getId());
+          return "common/result.part";
+        }
+        session.setAttribute("userInfo", user);
+        return "redirect:/main.do";
+      } else {
+        redirectAttributes.addAttribute("err", "1");
+        return "redirect:login.do";
+      }
+    }
     /**
      * @함수명 : memberLogin(MemberDto memberDto, HttpSession session, Model model)
      * @작성일 : 2019. 1. 11.
@@ -126,20 +175,6 @@ public class MemberController {
      * @param : MemberDto, HttpSession, Model
      * @return : 1) 로그인 성공 시 메인 화면 이동 2) 실패 시 현재 페이지 내 경고창 출력
      **/
-
-    MemberDto user = memberService.checkMember(memberDto);
-    if (user != null) {
-      if (user.getConfirm() == 0) {
-        model.addAttribute("type", "4");
-        model.addAttribute("id", memberDto.getId());
-        return "common/result.part";
-      }
-      session.setAttribute("userInfo", user);
-      return "common/main.page";
-    } else {
-      redirectAttributes.addAttribute("err", "1");
-      return "redirect:login.do";
-    }
   }
 
   @RequestMapping(value = "member/kakaoLogin.do", method = RequestMethod.POST,
@@ -185,18 +220,21 @@ public class MemberController {
   }
 
   @RequestMapping(value = "member/join.do", method = RequestMethod.POST)
-  public String memberJoin(MemberDto memberDto, Model model) {
-    // 트랜잭셔널 확인
-    memberDto.setType("normal");
-    memberDto.setConfirm(0);
-    memberService.addMember(memberDto);
-
-    if (authService.create(memberDto.getId()) > 0) {
-      model.addAttribute("type", "1");
-    } else {
-      model.addAttribute("type", "2");
+  public String memberJoin(MemberDto memberDto, Model model, HttpSession session) {
+    if(loginCheck(session)) {
+      return "redirect:/main.do";
+    }else {
+      memberDto.setType("normal");
+      memberDto.setConfirm(0);
+      memberService.addMember(memberDto);
+  
+      if (authService.create(memberDto.getId()) > 0) {
+        model.addAttribute("type", "1");
+      } else {
+        model.addAttribute("type", "2");
+      }
+      return "common/result.part";
     }
-    return "common/result.part";
   }
 
   @RequestMapping(value = "member/resend", method = RequestMethod.GET)
@@ -208,42 +246,42 @@ public class MemberController {
     return "common/result.part";
   }
 
-  // @RequestMapping(value = "member/{id}", method = RequestMethod.POST)
-  // public String modify(@PathVariable(value = "id") String id, HttpSession session, Model model) {
-  // if (id.equals((String) session.getAttribute("id"))) {
-  // model.addAttribute("member", memberService.selectMember(id));
-  // }
-  // return "member/modify";
-  // }
-
   @RequestMapping(value = "member/modify.do", method = RequestMethod.POST)
   public String modify(MemberDto memberDto, HttpSession session, Model model,
       RedirectAttributes redirectAttributes) {
-    MemberDto tmp = (MemberDto) session.getAttribute("userInfo");
-    tmp.setBirth(memberDto.getBirth());
-    tmp.setPwd(memberDto.getPwd());
-    tmp.setTell(memberDto.getTell());
-    tmp.setName(memberDto.getName());
-    
-    if(memberService.updateMember(tmp)>0) {
-      redirectAttributes.addAttribute("err", "1");
-      return "redirect:main.do";
+    if(loginCheck(session)) {
+      MemberDto tmp = (MemberDto) session.getAttribute("userInfo");
+      tmp.setBirth(memberDto.getBirth());
+      tmp.setPwd(memberDto.getPwd());
+      tmp.setTell(memberDto.getTell());
+      tmp.setName(memberDto.getName());
+      
+      if(memberService.updateMember(tmp)>0) {
+        return "";
+      }else {
+        return "redirect:main.page";
+      }
+    }else {
+      return "redirect:/main.do";
     }
-    return "redirect:main.page";
   }
 
   @RequestMapping("member/delete.do")
   public String deleteMember(String pwd, Model model, HttpSession session,
       RedirectAttributes redirectAttributes) {
-    MemberDto memberDto = (MemberDto) session.getAttribute("userInfo");
-    memberDto.setPwd(pwd);
-    if (memberService.deleteMember(memberDto) > 0) {
-      model.addAttribute("type", "7");
-      session.invalidate();
-      return "common/result.part";
-    } else {
-      redirectAttributes.addAttribute("err", "1");
-      return "redirect:main.do";
+    if(loginCheck(session)) {
+      MemberDto memberDto = (MemberDto) session.getAttribute("userInfo");
+      memberDto.setPwd(pwd);
+      if (memberService.deleteMember(memberDto) > 0) {
+        model.addAttribute("type", "7");
+        session.invalidate();
+        return "common/result.part";
+      } else {
+        redirectAttributes.addAttribute("err", "1");
+        return "redirect:/main.do";
+      }
+    }else {
+      return "redirect:/main.do";
     }
   }
 
@@ -266,9 +304,22 @@ public class MemberController {
   
   @RequestMapping(value = "member/minpayment.do", method = RequestMethod.GET, produces="application/json;charset=UTF-8")
   public @ResponseBody String exhibitPaymentList(@RequestParam Map<String, String> param, Model model, HttpSession session) {
+    if(loginCheck(session)) {
+      MemberDto memberDto = (MemberDto) session.getAttribute("userInfo");
+      param.put("mno", memberDto.getMno()+"");
+      return paymentService.getMinPaymentList(param);
+    }else {
+      return "redirect:/member/login.do";
+    }
+  }
+  
+  public boolean loginCheck(HttpSession session) {
     MemberDto memberDto = (MemberDto) session.getAttribute("userInfo");
-    param.put("mno", memberDto.getMno()+"");
-    return paymentService.getMinPaymentList(param);
+    if(memberDto==null) {
+      return false;
+    }else {
+      return true;
+    }
   }
 
 

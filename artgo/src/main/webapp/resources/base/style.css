@@ -583,9 +583,10 @@ img {
     .single-blog-area .single-blog-content .post-tag:hover, .single-blog-area .single-blog-content .post-tag:focus {
       color: #000000; }
   .single-blog-area .single-blog-content h4 a {
+  /*font-size: 24px -> 20px 수정*/
     display: inline-block;
     color: #000000;
-    font-size: 24px;
+    font-size: 20px;
     margin-bottom: 30px; }
     .single-blog-area .single-blog-content h4 a:hover, .single-blog-area .single-blog-content h4 a:focus {
       color: #30336b; }

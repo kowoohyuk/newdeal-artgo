@@ -51,7 +51,7 @@
                 		WHERE tmp.id LIKE CONCAT('%',#{word},'%')
 					</when>
 					<otherwise>
-						WHERE ${key} = CONCAT('%',#{word},'%')
+						WHERE ${key} LIKE CONCAT('%',#{word},'%')
 					</otherwise>
 				</choose>
 			</if>

@@ -9,7 +9,9 @@ import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.bitcamp.artgo.board.dao.ExhibitionDao;
+import com.bitcamp.artgo.board.dao.FileDao;
 import com.bitcamp.artgo.board.model.ExhibitionDto;
+import com.bitcamp.artgo.board.model.FileDto;
 import com.bitcamp.artgo.util.ListConstance;
 
 /**
@@ -62,6 +64,14 @@ public class ExhibitionServiceImpl implements ExhibitionService {
     }
     json.put("exhibitionlist", jsonArr);
     return json.toString();
+  }
+  
+  public List<ExhibitionDto> getNewExhibit(){
+    return sqlSession.getMapper(ExhibitionDao.class).getNewExhibit();
+  }
+  
+  public List<FileDto> getBannerList(){
+    return sqlSession.getMapper(FileDao.class).getBannerList();
   }
 }
 

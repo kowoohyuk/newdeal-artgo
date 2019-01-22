@@ -30,8 +30,13 @@ public class FavoriteController {
   @RequestMapping(value="favor.do", method = RequestMethod.POST)
   public @ResponseBody String addFavorite(@RequestBody Map<String, String> param, HttpSession session) {
     MemberDto memberDto = (MemberDto) session.getAttribute("userInfo");
-    param.put("mno", memberDto.getMno()+"");
-    return favoriteService.addFavorite(param);
+    if(memberDto==null) {
+      return "";
+    }else {
+      param.put("mno", memberDto.getMno()+"");
+      return favoriteService.addFavorite(param);
+    }
+    
   }
   
   @RequestMapping(value="favor.do/{exno}", method = RequestMethod.DELETE)

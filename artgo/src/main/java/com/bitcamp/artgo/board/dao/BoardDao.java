@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Map;
 import com.bitcamp.artgo.board.model.BoardDto;
 import com.bitcamp.artgo.board.model.ExhibitionDto;
-import com.bitcamp.artgo.board.model.NoticeDto;
 
 /**
 * 파일명: BoardDao.java
@@ -14,9 +13,7 @@ import com.bitcamp.artgo.board.model.NoticeDto;
 */
 
 public interface BoardDao {
-  int writeBoardByNotice(NoticeDto noticeDto);
   int writeBoardByExhibit(ExhibitionDto exhibitionDto);
-  int modifyBoardByNotice(NoticeDto noticeDto);
   int modifyBoardByExhibit(ExhibitionDto exhibitionDto);
   int deleteBoard(int boardNo);
   BoardDto getBoard(int boardNo);

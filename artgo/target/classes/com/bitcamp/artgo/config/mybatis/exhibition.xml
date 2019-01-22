@@ -25,6 +25,15 @@
 	WHERE rnum &lt;= 5
 </select>
 
+<select id="getNewExhibit" resultType="exhibitionDto">
+	SELECT ex.* 
+	FROM   (SELECT @rownum:=@rownum+1 AS rnum, tmp.* FROM exhibitlistview AS tmp,
+               (SELECT @rownum:=0) as r
+				ORDER BY tmp.exno DESC
+          ) AS ex
+	WHERE rnum &lt;= 3
+</select>
+
 <select id="getExhibitList" parameterType="Map" resultType="exhibitionDto">
 	SELECT ex.* 
 	FROM   (SELECT @rownum:=@rownum+1 AS rnum, tmp.* FROM exhibitlistview AS tmp,

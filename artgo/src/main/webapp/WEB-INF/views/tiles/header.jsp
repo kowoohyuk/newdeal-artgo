@@ -60,16 +60,9 @@
 			            <div class="classynav">
 			              	<ul>
 				                <li><a href="/main.do">홈</a></li>
-				                <li><a href="/exhibit/list.do?pg=1&key=&word=">전시</a>
-				                  <ul class="dropdown">
-				                    <li><a href="/exhibit/list.do?pg=1&key=&word=">전시회 목록</a></li>
-				                    <li><a href="/exhibit/write.do">전시회 추가</a></li>
-				                    <li><a href="/exhibit/modify.do">???</a></li>
-				                    <li><a href="/review/write.do">리뷰</a></li>
-									</ul></li>
+				                <li><a href="/exhibit/list.do?pg=1&key=&word=">전시회</a></li>
 								<li><a href="#" id="favorBtn">즐겨찾기</a></li>
-								<li><a href="/member/main.do">마이 페이지</a>
-								</li>
+								<li><a href="/member/main.do">마이 페이지</a></li>
 							</ul>
 						</div>
 						<!-- Nav End -->

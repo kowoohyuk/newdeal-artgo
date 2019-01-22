@@ -35,7 +35,15 @@ AND r.status = 1;
 
 CREATE VIEW paymentlistview AS
     SELECT p.*, ex.title, ex.bno, ex.place, 
-			     ex.address, ex.folder, ex.fno, ex.name,
-			     ex.savename
-		FROM   payment p, exhibitlistview ex
-		WHERE  p.exno = ex.exno;
+                 ex.address, ex.folder, ex.fno, ex.name,
+                 ex.savename
+        FROM   payment p, exhibitlistview ex
+        WHERE  p.exno = ex.exno;
+
+-- 관리자 차트용!
+create view paymentday as
+select (DATE_FORMAT(date, '%Y-%m-%d')) as 'date', sum(finalpay) as 'sum' from payment group by DATE_FORMAT(date, '%Y-%m-%d');
+
+-- 관리자 차트용2!
+create view joinday as
+select (DATE_FORMAT(joinDate, '%Y-%m-%d')) as 'joinDate', sum(status) as 'count' from member group by DATE_FORMAT(joinDate, '%Y-%m-%d');

@@ -10,6 +10,7 @@ $(function(){
 	if(headId != "") {
 		if(headRole == "ROLE_ADMIN"){
 			topCon += '<label class="header-member-label"> 관리자 접속 중</label>';
+			topCon += '<a href="/admin/exhibit/write.do">전시회 추가</a>';
 			topCon += '<a href="/admin/main.do" data-toggle="tooltip" data-placement="bottom" title="mypage"><span>관리 페이지</span></a>';
 			topCon += '<a href="/member/logout.do" data-toggle="tooltip" data-placement="bottom" title="logout"><span>로그 아웃</span></a>';
 			$('#header-top').append(topCon);

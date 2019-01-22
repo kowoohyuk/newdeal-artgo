@@ -7,6 +7,11 @@
 
 <div class="row">
 	<section id="main-content" class="column column-offset-20">
+		<div class="row grid-responsive">
+			<div class="column page-heading">
+				<h3>회원 관리</h3>
+			</div>
+		</div>
 		<div class="column  column-100">
 			<div class="card">
 				<div class="card-block paging-nav">
@@ -28,14 +33,21 @@
 								<td>${article.id}</td>
 								<td>${article.name}</td>
 								<td>${article.grade}</td>
-								<td><button class="">상세보기</button></td>
+								<td><button class="detailBtn">상세보기</button></td>
 							</tr>
 							<tr class="member-detail">
-								<td>${article.mno}</td>
-								<td>${article.type}</td>
-								<td>${article.id}</td>
-								<td>${article.name}</td>
-								<td>${article.grade}</td>
+								<th class="member-min-td">번호</th>
+								<th class="member-min-td">플랫폼</th>
+								<th class="member-max-td">아이디</th>
+								<th class="member-min-td">이름</th>
+								<th class="member-min-td">등급</th>
+							</tr>
+							<tr>
+								<td>${article.tell}</td>
+								<td>${article.role}</td>
+								<td>${article.finalDate}</td>
+								<td>${article.birth}</td>
+								<td>${article.joinDate}</td>
 							</tr>
 							</c:forEach>
 						</tbody>
@@ -65,3 +77,4 @@
 	
 </form>
 </div>
+<script src="/resources/admin/js/member-list.js"></script>

@@ -8,4 +8,18 @@
 		INSERT INTO	file (folder, savename, name, filesize, thumb, bno)
 		VALUES (#{folder}, #{saveName}, #{name}, #{fileSize}, 1, #{bno})
 	</insert>
+	
+	<insert id="writeBanner" parameterType="fileDto">
+		INSERT INTO	file (folder, savename, name, filesize, thumb, bno)
+		VALUES (#{folder}, #{saveName}, #{name}, #{fileSize}, 0, #{bno})
+	</insert>
+	
+	<select id="getBannerList" resultType="fileDto">
+		SELECT files.* 
+		FROM   (SELECT @rownum:=@rownum+1 AS rnum, tmp.* FROM file AS tmp,
+	               (SELECT @rownum:=0) as r
+	             WHERE tmp.thumb = 0
+	          ) AS files
+		WHERE rnum &lt;= 3
+	</select>
 </mapper>

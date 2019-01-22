@@ -29,7 +29,6 @@ public class CommonServiceImpl implements CommonService {
 		}else if(param.get("page-type").equals("payment")) {
           totalCount = sqlSession.getMapper(CommonDao.class).getTotalPaymentCount(param);
         }
-		System.out.println(totalCount);
 		int totalPageCount = (totalCount - 1) / listSize + 1;
 		navigation.setTotalArticleCount(totalCount);
 		navigation.setTotalPageCount(totalPageCount);

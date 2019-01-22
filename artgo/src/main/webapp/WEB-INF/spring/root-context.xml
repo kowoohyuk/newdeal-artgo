@@ -29,10 +29,10 @@
 				<value>classpath:com/bitcamp/artgo/config/mybatis/favorite.xml</value>
 				<value>classpath:com/bitcamp/artgo/config/mybatis/file.xml</value>
 				<value>classpath:com/bitcamp/artgo/config/mybatis/member.xml</value>
-				<value>classpath:com/bitcamp/artgo/config/mybatis/notice.xml</value>
 				<value>classpath:com/bitcamp/artgo/config/mybatis/payment.xml</value>
 				<value>classpath:com/bitcamp/artgo/config/mybatis/review.xml</value>
 				<value>classpath:com/bitcamp/artgo/config/mybatis/auth.xml</value>
+				<value>classpath:com/bitcamp/artgo/config/mybatis/chart.xml</value>
 			</list>
 		</property>
 	</bean>
