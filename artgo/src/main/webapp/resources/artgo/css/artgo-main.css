@@ -81,6 +81,10 @@
 #mainFavorDiv .post-tag, #mainExhibDiv .post-tag{
 	font-size : 14px !important;
 }
+.div-chat-input{
+	width: 100%;
+	display: inline-flex;
+}
 
 .modal-cutton {
 	position: fixed;
@@ -115,6 +119,9 @@
 	text-align: center;
 	display: inline-flex;
 	margin: 1em;
+}
+#dataInput{
+	resize: none;
 }
 .favor-mini-ul-head li{
 	width: 20%;
@@ -163,4 +170,65 @@
 	box-shadow: 10px 10px 10px darkgrey;
     border: 0.5px solid whitesmoke;
     background-color: aliceblue;
+}
+#modalChat{
+    display: none;
+    top: 20%;
+    right: 3%;
+    width: 325px;
+    background-color: whitesmoke;
+    border: 2px solid black;
+    padding: 10px;
+    position: fixed;
+    z-index: 10000;
+}
+#sendButton{
+	width: 25%;
+    border: 1px solid #2b2727;
+    background-color: #2b2727;
+    color: white;
+}
+#result .span-other{
+	font-size: 13px;
+    background-color: white;
+    padding: 6px;
+    border-radius: 5px;
+    display: inline-block;
+    float: left;
+    color: black;
+}
+.wrapSpan{
+	display: inline-block;
+	width: 100%;
+}
+.bx-wrapper .bx-controls-direction a {
+	z-index: 99 !important;	
+}
+.span-my{
+	font-size: 13px;
+    background-color: #f5f5ad;
+    padding: 6px;
+    border-radius: 5px;
+    display: inline-block;
+    float: right;
+    color: black;
+    margin-right: 5px;
+}
+#result{
+	height: 300px;
+	max-height: 300px;
+	overflow: auto;
+}
+#dataInput{
+	width: 75%;
+}
+#chatBtn:hover{
+	background-color: crimson;
+}
+#chatBtn{
+	background-color: black;
+    color: white;
+    position: fixed;
+    top: 75%;
+    right: 3%;
 }

@@ -68,4 +68,3 @@ function makeImExhibList(exhib){
 	}
 	$('#mainExhibDiv').append(output);
 }
-

@@ -13,6 +13,12 @@ h3{
 	border: 1px solid red;
 	outline: red;
 }
+.p-header{
+	background-color: gray;
+	text-align: center;
+	color : white;
+	cursor: pointer;
+}
 .member-min-td {
 	width : 15%;
 }
@@ -90,3 +96,65 @@ table tbody tr td a{
 	font-weight: bold;
 	cursor: pointer;
 } 
+.q-id:hover{
+	color: red;
+}
+.q-id{
+	font-weight: 700;
+	cursor: pointer;
+}
+#roomList{
+    width: 25%;
+    display: inline-block;
+    float: right;
+    padding-left: 5%;
+}
+#result p{
+	margin-top: 0px;
+    margin-bottom: 0px;
+}
+#roomList p{
+	margin-bottom: 0.5em;
+}
+#sendButton{
+	width: 25%;
+    border: 1px solid #2b2727;
+    background-color: #2b2727;
+    color: white;
+}
+#result .span-other{
+	font-size: 13px;
+    background-color: white;
+    padding: 6px;
+    border-radius: 5px;
+    display: inline-block;
+    float: left;
+    color: black;
+}
+.wrapSpan{
+	display: inline-block;
+	width: 100%;
+}
+.span-my{
+	font-size: 13px;
+    background-color: #f5f5ad;
+    padding: 6px;
+    border-radius: 5px;
+    display: inline-block;
+    float: right;
+    color: black;
+    margin-right: 5px;
+}
+#result{
+	height: 450px;
+	max-height: 450px;
+	overflow: auto;
+	background-color: white;
+	padding: 5px;
+}
+#dataInput{
+	width: 75%;
+	border: 1px solid black !important;
+	background-color: white;
+	resize: none;
+}

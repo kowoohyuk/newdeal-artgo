@@ -44,6 +44,11 @@ public class AdminController {
   public String adminMain() {
     return "admin/main.ad";
   }
+  
+  @RequestMapping(value = "/question.do", method = RequestMethod.GET)
+  public String adminQuestion() {
+    return "admin/question-list.ad";
+  }
 
   @RequestMapping(value = "/chart/list.do", method = RequestMethod.GET)
   public @ResponseBody String chartList() {

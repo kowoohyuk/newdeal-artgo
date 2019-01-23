@@ -45,7 +45,7 @@ $(function(){
 			success: function(data){
 				getFavorList();
 			}
-		});			
+		});
 	});
 	
 	$(document).on('click', function(){

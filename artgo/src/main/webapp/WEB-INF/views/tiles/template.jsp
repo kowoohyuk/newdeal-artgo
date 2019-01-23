@@ -79,7 +79,7 @@
    	</div>
     <div style="width:100%; height:100%;">
     <div id="header"><tiles:insertAttribute name="header" /></div>
-    <div id="main"><tiles:insertAttribute name="body" /></div>    
+    <div id="main"><tiles:insertAttribute name="body" /></div> 
     <div id="footer"><tiles:insertAttribute name="footer" /></div>
     </div>
     	<script src="/resources/artgo/js/header.js"></script>
