@@ -7,6 +7,10 @@
 /* .modal-content, .modal-body, .close { */
 /* 	z-index: 150 !important; */
 /* } */
+.hei-fix img{
+	width: 80%;
+    height: 100%;
+}
 .modal-my-content {
 	display: none;
 	margin: 0 auto;
