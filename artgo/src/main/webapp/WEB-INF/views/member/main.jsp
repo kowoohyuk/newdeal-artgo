@@ -7,7 +7,12 @@
 <link href="/resources/base/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="/resources/artgo/css/ticket-list.css"
 	type="text/css">
-
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
+<input type="hidden" value="${exhibit.name}" id="name">   
 <div class="container member-main-div-container">
 	<h2>마이 페이지</h2>
 	<div class="thin-line"></div>
@@ -57,6 +62,7 @@
 			<div class="thin-line"></div>
 			<div class="payment-zone">
 			</div>
+		
 		</div>
 	</div>
 </div>
@@ -98,6 +104,33 @@
 		</div>
 	</div>
 </div>
+
+
+
+
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <span>결제 정보</span>
+        </div>
+        <div class="modal-body">
+ 			<div class="row">
+ 				<div class="col-lg-6"><img src="/resources/artgo/img/admin.png"></div>
+				<div class="col-lg-6"><span id="Parse_Area">${exhibit.name}</span>
+					<div><span>주소: </span></div>
+					<div><span>기간: </span></div>
+				
+				</div>
+ 			</div>
+        </div>
+        <div class="modal-footer">
+       
+        </div>
+      </div>
+    </div>
+  </div> 
+
 
 <script src="/resources/base/js/jquery/jquery-2.2.4.min.js"></script>
 <script src="/resources/artgo/js/member-main.js"></script>

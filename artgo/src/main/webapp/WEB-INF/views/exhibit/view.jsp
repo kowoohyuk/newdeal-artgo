@@ -12,6 +12,7 @@
 <input type="hidden" value="${exhibit.title}" id="titleVal">
 <input type="hidden" value="${exhibit.normalPrice}" id="normalPrice">
 <input type="hidden" value="${exhibit.teenPrice}" id="teenPrice">
+<input type="hidden" value="${exhibit.bno}" id="bnoExhibit">
 <div class="container">
 	<div class="col-lg-10">
 		<div class="div-ex-title">
