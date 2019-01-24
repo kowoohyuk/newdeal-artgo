@@ -81,7 +81,7 @@
 	</div>
 </div>
 
-<script src="http://192.168.0.102:3000/socket.io/socket.io.js"></script>
+<script src="http://localhost:3000/socket.io/socket.io.js"></script>
 <script src="/resources/artgo/js/app.js"></script>
 
 <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>

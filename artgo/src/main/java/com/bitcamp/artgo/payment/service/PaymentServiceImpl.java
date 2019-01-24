@@ -1,5 +1,6 @@
 package com.bitcamp.artgo.payment.service;
 
+import java.io.File;
 import java.util.List;
 import java.util.Map;
 import org.apache.ibatis.session.SqlSession;
@@ -81,10 +82,11 @@ public class PaymentServiceImpl implements PaymentService {
   
   @Override
   public String getPaymentDetail(int pno) {
-    
     PaymentDto paymentDto = sqlSession.getMapper(PaymentDao.class).getPaymentDetail(pno);
     String pay = String.format("%,d", paymentDto.getPay());
     String finalPay = String.format("%,d", paymentDto.getFinalPay());
+    
+    System.out.println(paymentDto);
     
     JSONObject payment = new JSONObject();
     payment.put("pno", paymentDto.getPno());
@@ -98,7 +100,10 @@ public class PaymentServiceImpl implements PaymentService {
     payment.put("date", paymentDto.getDate());
     payment.put("exno", paymentDto.getExno());
     payment.put("mno", paymentDto.getMno());
+    payment.put("mno", paymentDto.getAddress());
     payment.put("saveName", paymentDto.getSaveName());
+    payment.put("address", paymentDto.getAddress());
+    payment.put("place", paymentDto.getPlace());
     payment.put("folder", paymentDto.getFolder());
     payment.put("name", paymentDto.getName());
     

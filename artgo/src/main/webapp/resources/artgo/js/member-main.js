@@ -33,7 +33,7 @@ function makePaymentList(data){
 	
 	for (let i = 0; i < len; i++) {
 		output += '<ul class="member-mini-ul">';
-		output += '<li><a href="/exhibit/view.do?bno='+plist[i].exno+'">' + plist[i].title + '</a></li>';
+		output += '<li><a data-toggle="modal" href="#myModal" class="a-pay-detail" target-pno="'+plist[i].pno+'">' + plist[i].title + '</a></li>';
 		output += '<li><a data-toggle="modal" href="#myModal" class="a-pay-detail" target-pno="'+plist[i].pno+'">' + plist[i].finalPay+ '원</a></li>';
 		output += '<li>' + plist[i].date+ '</li>';
 		output += '</ul>';
@@ -56,23 +56,39 @@ function makePaymentList(data){
 }
 
 function createDetailPay(pay){
-	
+	let filePath = pay.folder+'/'+pay.saveName;
+	filePath.replace('\\','\\\\');
 	$('#modal-body-zone').empty();
 	let output = '';
 	output+= '<div class="col-lg-6">';
-	//output+= '<img class="img-ex" src=\'<spring:url value="/img/'+pay.folder+'/'+pay.saveName+'"/>\'>';
+	output+= '<img class="img-ex" src="/img/'+filePath+'"/>';
 	output+= '</div>';
-	output+= '<div class="col-lg-6">';
-	output+= '<span id="Parse_Area">';
+	output+= '<div class="col-lg-6 detail-zone">';
+	output+= '<p class="detail-title">';
 	output+= pay.title;
-	output+= '</span>';
-	output+= '<p>';
-	output+= '가격 : '+ pay.finalPay + ', 성인 :' + pay.normalCount + '매 , 청소년 : '+pay.teenCount+'매, 결제일 : '+pay.date+', 장소 :'+pay.place;
 	output+= '</p>';
-	output+= '<a href="/exhibit/view.do?bno='+pay.bno+'">전시회 페이지 이동';
+	output+= '<p>';
+	output+= '결제 금액 : '+ pay.finalPay;
+	output+= '</p>';
+	output+= '<p>';
+	output+= '성 인  : ' + pay.normalCount + '매';
+	output+= '</p>';
+	output+= '<p>';
+	output+= '청소년: ' + pay.teenCount + '매';
+	output+= '</p>';
+	output+= '<p>';
+	output+= '결제일: ' + pay.date;
+	output+= '</p>';
+	output+= '<p>';
+	output+= '장 소 : ' + pay.place;
+	output+= '</p>';
+	output+= '<p>';
+	output+= '주 소 : ' + pay.address;
+	output+= '</p>';
+	output+= '<a class="a-move-ex" href="/exhibit/view.do?bno='+pay.bno+'">전시회 페이지 이동';
 	output+= '</a>';
 	output+= '</div>';
-	$('#modal-body-zone').add(output);
+	$('#modal-body-zone').append(output);
 	
 }
 

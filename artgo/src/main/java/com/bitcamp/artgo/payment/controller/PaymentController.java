@@ -38,7 +38,7 @@ public class PaymentController {
     }
   }
   
-  @RequestMapping(value = "/payment/detail.do/{pno}", method = RequestMethod.GET)
+  @RequestMapping(value = "/payment/detail.do/{pno}", method = RequestMethod.GET, produces="application/json;charset=UTF-8")
   public @ResponseBody String getPaymentDetail(@PathVariable(value="pno") int pno, HttpSession session) {
     MemberDto memberDto = (MemberDto) session.getAttribute("userInfo");
     if(memberDto==null) {

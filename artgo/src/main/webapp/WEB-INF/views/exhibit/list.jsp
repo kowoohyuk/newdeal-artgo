@@ -29,8 +29,24 @@
 			</c:forEach>
 		</ul>
 </div>
+<div class="serah-div-wrap">
+	<div class="search-div">
+		<select name="key" id="skey" class="search-bar select-bar">
+			<option value="title">제목</option>
+			<option value="address">지역
+		</option></select>
+		<input type="text" id="sword" class="search-bar keyword-bar">
+		<button id="searchBtn" class="search-btn">검색</button>
+	</div>
+</div>
+
+<div class="paging-div">
+	${navigator.navigator}
+</div>
+		
 <form action="" id="commonForm" method="get">
 <input type="hidden" id="pg" name="pg" value="${pg}">
 <input type="hidden" id="key" name="key" value="${key}">
 <input type="hidden" id="word" name="word" value="${word}">
 </form>
+<script src="/resources/artgo/js/exhibit-list.js"></script>

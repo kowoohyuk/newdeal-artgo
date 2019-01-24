@@ -47,3 +47,7 @@ select (DATE_FORMAT(date, '%Y-%m-%d')) as 'date', sum(finalpay) as 'sum' from pa
 -- 관리자 차트용2!
 create view joinday as
 select (DATE_FORMAT(joinDate, '%Y-%m-%d')) as 'joinDate', sum(status) as 'count' from member group by DATE_FORMAT(joinDate, '%Y-%m-%d');
+
+
+
+

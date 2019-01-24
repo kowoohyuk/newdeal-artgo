@@ -35,20 +35,6 @@
 								<td>${article.grade}</td>
 								<td><button class="detailBtn">상세보기</button></td>
 							</tr>
-							<tr class="member-detail">
-								<th class="member-min-td">번호</th>
-								<th class="member-min-td">플랫폼</th>
-								<th class="member-max-td">아이디</th>
-								<th class="member-min-td">이름</th>
-								<th class="member-min-td">등급</th>
-							</tr>
-							<tr>
-								<td>${article.tell}</td>
-								<td>${article.role}</td>
-								<td>${article.finalDate}</td>
-								<td>${article.birth}</td>
-								<td>${article.joinDate}</td>
-							</tr>
 							</c:forEach>
 						</tbody>
 					</table>

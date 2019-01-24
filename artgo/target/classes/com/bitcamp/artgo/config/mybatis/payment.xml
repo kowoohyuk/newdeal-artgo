@@ -32,7 +32,7 @@
 	
 	<select id="getPaymentDetail" parameterType="int" resultType="paymentDto">
 		SELECT *
-		FROM   paymentlistview
+		FROM  paymentlistview
 		WHERE pno = #{pno};
 	</select>
 </mapper>

@@ -112,7 +112,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <span>결제 정보</span>
+          <h5>결제 정보</h5>
         </div>
         <div class="modal-body">
  			<div class="row" id="modal-body-zone">

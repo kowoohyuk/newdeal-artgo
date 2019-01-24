@@ -12,6 +12,26 @@
 .info-zone{
 	padding: 2em;
 }
+.detail-zone p{
+	margin-bottom: 10px;
+}
+.detail-title{
+	font-size: 14px;
+	font-weight: 700;
+}
+.modal-header h5{
+	font-weight: 700;
+}
+.a-move-ex{
+    font-weight: 700;
+    background-color: red;
+    color: white;
+    padding: 5px;
+}
+.a-move-ex:hover{
+	background-color: black;
+	color: white;
+}
 .member-mini-ul{
 	width: 100%;
 	text-align: center;
