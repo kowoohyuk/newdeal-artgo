@@ -29,4 +29,10 @@
 		WHERE rnum &lt;= #{end}
 		AND rnum &gt;= #{start}
 	</select>
+	
+	<select id="getPaymentDetail" parameterType="int" resultType="paymentDto">
+		SELECT *
+		FROM   paymentlistview
+		WHERE pno = #{pno};
+	</select>
 </mapper>

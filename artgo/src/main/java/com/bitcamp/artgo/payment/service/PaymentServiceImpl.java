@@ -54,9 +54,9 @@ public class PaymentServiceImpl implements PaymentService {
     JSONArray jsonArr = new JSONArray();
     for(PaymentDto paymentDto: list) {
         JSONObject payment = new JSONObject();
-        payment.put("pno", paymentDto.getPno());
         String pay = String.format("%,d", paymentDto.getPay());
         String finalPay = String.format("%,d", paymentDto.getFinalPay());
+        payment.put("pno", paymentDto.getPno());
         payment.put("pay", pay);
         payment.put("finalPay", finalPay);
         payment.put("teenCount", paymentDto.getTeenCount());
@@ -78,14 +78,31 @@ public class PaymentServiceImpl implements PaymentService {
     json.put("navigator", navigation);
     return json.toString();
   }
+  
+  @Override
+  public String getPaymentDetail(int pno) {
+    
+    PaymentDto paymentDto = sqlSession.getMapper(PaymentDao.class).getPaymentDetail(pno);
+    String pay = String.format("%,d", paymentDto.getPay());
+    String finalPay = String.format("%,d", paymentDto.getFinalPay());
+    
+    JSONObject payment = new JSONObject();
+    payment.put("pno", paymentDto.getPno());
+    payment.put("bno", paymentDto.getBno());
+    payment.put("pay", pay);
+    payment.put("finalPay", finalPay);
+    payment.put("teenCount", paymentDto.getTeenCount());
+    payment.put("title", paymentDto.getTitle());
+    payment.put("normalCount", paymentDto.getNormalCount());
+    payment.put("status", paymentDto.getStatus());
+    payment.put("date", paymentDto.getDate());
+    payment.put("exno", paymentDto.getExno());
+    payment.put("mno", paymentDto.getMno());
+    payment.put("saveName", paymentDto.getSaveName());
+    payment.put("folder", paymentDto.getFolder());
+    payment.put("name", paymentDto.getName());
+    
+    return payment.toString();
+  }
 }
 
-
-/**
-* @함수명 : cardInsert(CardDTO card)
-* @작성일 : 2019. 1. 21.
-* @작성자 : 고 우 혁
-* @설명 : 카드를 생성한다.
-* @param CardDTO - projectNum, cardName
-* @return int 성공한 갯수
-**/

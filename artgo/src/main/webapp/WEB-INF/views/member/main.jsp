@@ -115,13 +115,7 @@
           <span>결제 정보</span>
         </div>
         <div class="modal-body">
- 			<div class="row">
- 				<div class="col-lg-6"><img src="/resources/artgo/img/admin.png"></div>
-				<div class="col-lg-6"><span id="Parse_Area">${exhibit.name}</span>
-					<div><span>주소: </span></div>
-					<div><span>기간: </span></div>
-				
-				</div>
+ 			<div class="row" id="modal-body-zone">
  			</div>
         </div>
         <div class="modal-footer">

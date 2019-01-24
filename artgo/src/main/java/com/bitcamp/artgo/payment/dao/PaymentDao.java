@@ -15,6 +15,7 @@ public interface PaymentDao {
   int writePayment(PaymentDto paymentDto);
   List<PaymentDto> getPaymentList(Map<String, String> param);
   List<PaymentDto> getMinPaymentList(Map<String, String> param);
+  PaymentDto getPaymentDetail(int pno);
 }
 
 

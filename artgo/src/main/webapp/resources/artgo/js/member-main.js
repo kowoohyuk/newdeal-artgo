@@ -34,39 +34,49 @@ function makePaymentList(data){
 	for (let i = 0; i < len; i++) {
 		output += '<ul class="member-mini-ul">';
 		output += '<li><a href="/exhibit/view.do?bno='+plist[i].exno+'">' + plist[i].title + '</a></li>';
-		output += '<li><a data-toggle="modal" href="#myModal" >' + plist[i].finalPay+ '원</a></li>';
+		output += '<li><a data-toggle="modal" href="#myModal" class="a-pay-detail" target-pno="'+plist[i].pno+'">' + plist[i].finalPay+ '원</a></li>';
 		output += '<li>' + plist[i].date+ '</li>';
 		output += '</ul>';
 	}
 	$('.payment-zone').append(output);
+	
+	$('.a-pay-detail').click(function(){
+		let targetP = $(this).attr('target-pno');
+		$.ajax({
+			url : '/payment/detail.do/'+targetP,
+			type : 'GET',
+			contentType : 'application/json;charset=UTF-8',
+			dataType : 'json',
+			success : function(data) {
+				createDetailPay(data);
+			}
+		});		
+	});
 
+}
+
+function createDetailPay(pay){
+	
+	$('#modal-body-zone').empty();
+	let output = '';
+	output+= '<div class="col-lg-6">';
+	//output+= '<img class="img-ex" src=\'<spring:url value="/img/'+pay.folder+'/'+pay.saveName+'"/>\'>';
+	output+= '</div>';
+	output+= '<div class="col-lg-6">';
+	output+= '<span id="Parse_Area">';
+	output+= pay.title;
+	output+= '</span>';
+	output+= '<p>';
+	output+= '가격 : '+ pay.finalPay + ', 성인 :' + pay.normalCount + '매 , 청소년 : '+pay.teenCount+'매, 결제일 : '+pay.date+', 장소 :'+pay.place;
+	output+= '</p>';
+	output+= '<a href="/exhibit/view.do?bno='+pay.bno+'">전시회 페이지 이동';
+	output+= '</a>';
+	output+= '</div>';
+	$('#modal-body-zone').add(output);
+	
 }
 
 $("#myModal").click(function(){
 	$("#myModal").modal();
 });
 
-
-$(document).ready(function(){
-	
-    $.ajax({
-        type : "GET", //전송방식을 지정한다 (POST,GET)
-        url : "main.do/" + bno,//호출 URL을 설정한다. GET방식일경우 뒤에 파라티터를 붙여서 사용해도된다.
-        dataType : "json",//호출한 페이지의 형식이다. xml,json,html,text등의 여러 방식을 사용할 수 있다.
-        error : function(){
-            alert("실패");
-        },
-        success : function(Parse_data){
-            $("#Parse_Area").html(Parse_data); //div에 받아온 값을 넣는다.
-            alert("통신 데이터 값 : " + Parse_data);
-        }
-         
-    });
-});
-
-		
-
-
-
-			
-	

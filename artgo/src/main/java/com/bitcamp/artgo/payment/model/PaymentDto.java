@@ -1,5 +1,7 @@
 package com.bitcamp.artgo.payment.model;
 
+import com.bitcamp.artgo.board.model.FileDto;
+
 /**
 * 파일명: PaymentDto.java
 * 설 명: 결제내역 객체 정의
@@ -7,7 +9,7 @@ package com.bitcamp.artgo.payment.model;
 * 작성자: 고 우 혁
 */
 
-public class PaymentDto{
+public class PaymentDto extends FileDto {
   private int pno;
   private int pay;
   private int finalPay;

@@ -15,6 +15,7 @@ public interface PaymentService {
   int writePayment(PaymentDto paymentDto);
   List<PaymentDto> getPaymentList(Map<String, String> param);
   String getMinPaymentList(Map<String, String> param);
+  String getPaymentDetail(int pno);
 }
 
 

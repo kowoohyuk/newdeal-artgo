@@ -3,10 +3,12 @@ package com.bitcamp.artgo.payment.controller;
 import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.support.SessionStatus;
 import com.bitcamp.artgo.member.model.MemberDto;
 import com.bitcamp.artgo.payment.model.PaymentDto;
 import com.bitcamp.artgo.payment.service.PaymentService;
@@ -35,6 +37,16 @@ public class PaymentController {
       return "{result : fail}";
     }
   }
+  
+  @RequestMapping(value = "/payment/detail.do/{pno}", method = RequestMethod.GET)
+  public @ResponseBody String getPaymentDetail(@PathVariable(value="pno") int pno, HttpSession session) {
+    MemberDto memberDto = (MemberDto) session.getAttribute("userInfo");
+    if(memberDto==null) {
+      return "redirect:/main.do";
+    }
+    return paymentService.getPaymentDetail(pno);
+  }
+  
   
 }
 
