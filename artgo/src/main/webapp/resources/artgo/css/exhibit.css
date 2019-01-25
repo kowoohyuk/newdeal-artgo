@@ -121,6 +121,7 @@ a-ex-flag:hover{
 .ex-list-li{
 	box-shadow: 1px 1px gray;
 	padding-top: 0px;
+	height: 350px;
 }
 .div-text{
 	padding-top : 10px;

@@ -1,6 +1,6 @@
 SET GLOBAL event_scheduler = ON;
-SET @@global.event_scheduler = ON;
 SET GLOBAL event_scheduler = 1;
+SET @@global.event_scheduler = ON;
 SET @@global.event_scheduler = 1;
 show variables like 'event%';
 --이벤트 온!
@@ -18,8 +18,8 @@ create table member_sum_days (
 
 CREATE EVENT IF NOT EXISTS ev_payment_sum_days
     ON SCHEDULE
-    EVERY 1 MONTH -- 1일 주기
-    STARTS ' 2019-01-26 00:00:00' -- 시작 시간 설정
+    EVERY 1 DAY -- 1일 주기
+    STARTS '2019-01-26 00:00:00' -- 시작 시간 설정
     DO
         INSERT
         INTO   payment_sum_days
@@ -30,8 +30,8 @@ CREATE EVENT IF NOT EXISTS ev_payment_sum_days
         
 CREATE EVENT IF NOT EXISTS ev_member_sum_days
     ON SCHEDULE
-    EVERY 1 MONTH -- 1일 주기
-    STARTS ' 2019-01-26 00:00:00' -- 시작 시간 설정
+    EVERY 1 DAY -- 1일 주기
+    STARTS '2019-01-26 00:00:00' -- 시작 시간 설정
     DO
         INSERT
         INTO   member_sum_days

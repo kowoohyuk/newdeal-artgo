@@ -73,7 +73,7 @@ public class PaymentServiceImpl implements PaymentService {
     param.put("page-type", "payment"); // 페이지 네비게이션을 여러 곳에서 쓰기 위함.
     PageNavigation navigation = commonService.makePageNavigation(param);
     navigation.setRoot("/member");
-    navigation.makeNavigator();
+    navigation.makeNavigator(param);
     
     json.put("paymentList", jsonArr);
     json.put("navigator", navigation);

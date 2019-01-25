@@ -30,10 +30,10 @@
 				</div>
 				<div class="col-lg-10">
 					<div class="col-lg-6 div-exhibit-text">
-						<input type="text" class="form-control" placeholder="시작일" name="startDate" id="startDate">
+						<input type="text" class="form-control datepic" placeholder="시작일" name="startDate" id="startDate">
 					</div>
 					<div class="col-lg-6 div-exhibit-text">
-						<input type="text" class="form-control" placeholder="종료일" name="endDate" id="endDate">
+						<input type="text" class="form-control datepic" placeholder="종료일" name="endDate" id="startDate">
 					</div>
 				</div>
 				<div class="col-lg-10">
@@ -73,6 +73,8 @@
 </div>
 
 <span id="guide" style="color:#999;display:none"></span>
-
+<script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/css/bootstrap-datepicker3.min.css">
+<script src="/resources/artgo/js/bootstrap-datepicker.kr.js" charset="UTF-8"></script>
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 <script src="/resources/artgo/js/exhibit-write.js"></script>

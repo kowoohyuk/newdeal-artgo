@@ -51,7 +51,7 @@
 				ORDER BY tmp.exno DESC
           ) AS ex
 	WHERE rnum &lt;= #{end}
-	AND rnum &gt;= #{start}        
+	AND rnum &gt; #{start}        
 </select>
 
 </mapper>

@@ -96,8 +96,8 @@ function sendMsg(){
 		alert('서버에 연결되어 있지 않습니다. 먼저 서버에 연결하세요.');
 		return;
 	}
-
 	socket.emit('message', output);
+	$('#dataInput').val('');
 }
 
 // 서버에 연결하는 함수 정의

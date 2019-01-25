@@ -39,8 +39,8 @@ public class ExhibitionServiceImpl implements ExhibitionService {
   @Override
   public List<ExhibitionDto> getExhibitList(Map<String, String> param) {
     int pg = Integer.parseInt(param.get("pg"));
-    int end = pg*ListConstance.LIST_COUNT;
-    int start = end-ListConstance.LIST_COUNT;
+    int end = pg*ListConstance.EX_LIST_COUNT;
+    int start = end-ListConstance.EX_LIST_COUNT;
     param.put("start", start+"");
     param.put("end", end+"");
     return sqlSession.getMapper(ExhibitionDao.class).getExhibitList(param);

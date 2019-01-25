@@ -11,4 +11,6 @@ public class ListConstance {
   public final static int PAGE_COUNT = 10;
   public final static int MINI_LIST_COUNT = 5;
   public final static int MINI_PAGE_COUNT = 5;
+  public final static int EX_LIST_COUNT = 12;
+  public final static int EX_PAGE_COUNT = 10;
 }

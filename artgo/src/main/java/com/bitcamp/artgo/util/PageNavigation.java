@@ -1,5 +1,7 @@
 package com.bitcamp.artgo.util;
 
+import java.util.Map;
+
 /**
 * 파일명: PageNavigation.java
 * 설 명: 페이징 처리를 해주는 클래스.
@@ -62,17 +64,16 @@ public class PageNavigation {
   public String getNavigator() {
       return navigator;
   }
-  public void makeNavigator() {
+  public void makeNavigator(Map<String, String> param) {
     /** 메서드 주석
     * @함수명 : makeNavigator()
-    * @작성일 : 2019. 1. 10.
+    * @작성일 : 2019. 1. 16.
     * @작성자 : 고 우 혁
     * @설명 : 페이지 네비게이션을 생성한다.
-    * @param : 없음
+    * @param : Map<String, String>
     * @return void
     **/
       StringBuffer tmpNavigator = new StringBuffer();
-      
       int pageSize = ListConstance.PAGE_COUNT;
       int preEnd = (pageNo-1)/pageSize * pageSize;
       tmpNavigator.append("  <ul>");

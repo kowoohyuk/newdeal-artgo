@@ -187,37 +187,30 @@ mapOption = {
     level: 3 // 지도의 확대 레벨
 };  
 
-//지도를 생성합니다    
 let map = new daum.maps.Map(mapContainer, mapOption); 
 
-//주소-좌표 변환 객체를 생성합니다
 let geocoder = new daum.maps.services.Geocoder();
 
 let space = /\s/g;
 let place = $("#place").val();
 let address = $("#address").val();
 let detailAddr = address + space + place
-//주소로 좌표를 검색합니다
 geocoder.addressSearch(detailAddr, function(result, status) {
 
-// 정상적으로 검색이 완료됐으면 
  if (status === daum.maps.services.Status.OK) {
 
     let coords = new daum.maps.LatLng(result[0].y, result[0].x);
 
-    // 결과값으로 받은 위치를 마커로 표시합니다
     let marker = new daum.maps.Marker({
         map: map,
         position: coords
     });
 
-    // 인포윈도우로 장소에 대한 설명을 표시합니다
     let infowindow = new daum.maps.InfoWindow({
         content: '<div style="width:150px;text-align:center;padding:6px 0;">'+place+'</div>'
     });
     infowindow.open(map, marker);
 
-    // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
     map.setCenter(coords);
 } 
 });    
@@ -231,7 +224,7 @@ $('.btn-kakao').on('click', function(){
 	let resultPrice = normalPrice * normalCount + teenPrice * teenCount;
 	
 	var IMP = window.IMP; // 생략가능
-	IMP.init('imp27894932');  //'iamport' 대신 부여받은 "가맹점 식별코드"를 사용
+	IMP.init('imp27894932');
 	
 	IMP.request_pay({
 	    pg : 'kakao', // version 1.1.0부터 지원.
@@ -247,17 +240,8 @@ $('.btn-kakao').on('click', function(){
 	    m_redirect_url : ''
 	}, function(rsp) {
 	    if ( rsp.success ) {
-//	        var msg = '결제가 완료되었습니다.';
-//	        msg += '고유ID : ' + rsp.imp_uid;
-//	        msg += '상점 거래ID : ' + rsp.merchant_uid;
-//	        msg += '결제 금액 : ' + rsp.paid_amount;
-//	        msg += '카드 승인번호 : ' + rsp.apply_num;
 	        payment(rsp);
-	    } else {
-//	        var msg = '결제에 실패하였습니다.';
-//	        msg += '에러내용 : ' + rsp.error_msg;
 	    }
-//	    alert(msg);
 	});
 });
 

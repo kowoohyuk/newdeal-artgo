@@ -1,5 +1,15 @@
 $(function(){
 	
+    $('.datepic').datepicker({
+        calendarWeeks: false,
+        todayHighlight: true,
+        autoclose: true,
+        format: "yyyy-mm-dd",
+        language: "kr"
+    });
+
+	$('.form-control').attr('autocomplete','off');
+	
 	$('#address').click(function() {
 		daumAddressAPI();
 	});
